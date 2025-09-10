@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>युवा प्रेरणा फाउंडेशन | Yuva Prerna Foundation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Kanit:wght@500;700&family=Manrope:wght@400;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/luxia" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-orange-50 shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="#home" class="text-3xl font-extrabold tracking-widest font-logo flex items-center cursor-pointer hover:opacity-80 transition-opacity">
+                        <span  class="logo-primary bg-gradient-to-r from-blue-600 to-green-500 text-transparent bg-clip-text drop-shadow-md">
+                          Y P
+                        </span>
+                        <span class="logo-accent text-orange-500 drop-shadow-md ml-1">
+                          F
+                        </span>
+                      </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4 font-nav">
+                        <a href="#home" class="text-[#334155] hover:text-[#EA580C] px-3 py-2 rounded-md text-sm font-semibold transition-colors flex items-center">
+                            <i class="fas fa-home mr-2"></i>Home
+                        </a>
+                        <a href="#about" class="text-[#334155] hover:text-[#EA580C] px-3 py-2 rounded-md text-sm font-semibold transition-colors flex items-center">
+                            <i class="fas fa-info-circle mr-2"></i>About
+                        </a>
+                        
+                        <a href="#activities" class="text-[#334155] hover:text-[#EA580C] px-3 py-2 rounded-md text-sm font-semibold transition-colors flex items-center">
+                            <i class="fas fa-images mr-2"></i>Gallery
+                        </a>
+                        <a href="#gallery" class="text-[#334155] hover:text-[#EA580C] px-3 py-2 rounded-md text-sm font-semibold transition-colors flex items-center">
+                            <i class="fas fa-hands-helping mr-2"></i>Our Impact
+                        </a>
+                        <a href="#contact" class="text-[#334155] hover:text-[#EA580C] px-3 py-2 rounded-md text-sm font-semibold transition-colors flex items-center">
+                            <i class="fas fa-envelope mr-2"></i>Contact
+                        </a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-[#334155] hover:text-[#EA580C] focus:outline-none font-nav">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t font-nav">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-[#334155] hover:text-[#EA580C] flex items-center">
+                    <i class="fas fa-home mr-3 w-5"></i>Home
+                </a>
+                <a href="#about" class="block px-3 py-2 text-[#334155] hover:text-[#EA580C] flex items-center">
+                    <i class="fas fa-info-circle mr-3 w-5"></i>About
+                </a>
+                <a href="#activities" class="block px-3 py-2 text-[#334155] hover:text-[#EA580C] flex items-center">
+                    <i class="fas fa-hands-helping mr-3 w-5"></i>Activities
+                </a>
+                <a href="#gallery" class="block px-3 py-2 text-[#334155] hover:text-[#EA580C] flex items-center">
+                    <i class="fas fa-images mr-3 w-5"></i>Gallery
+                </a>
+                <a href="#contact" class="block px-3 py-2 text-[#334155] hover:text-[#EA580C] flex items-center">
+                    <i class="fas fa-envelope mr-3 w-5"></i>Contact
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-start lg:justify-center relative overflow-hidden pt-24 md:pt-28 pb-6">
+        <div class="absolute inset-0 tiranga-gradient opacity-10"></div>
+        
+        <div class="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+                <!-- Left: 60% Description (3/5) -->
+                <div class="lg:col-span-3 text-center lg:text-left order-2 lg:order-1 hero-text-animate">
+                    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold hero-title-main mb-6 hero-animate-1">
+                        <span class="block">Yuva Prerna Foundation</span>
+                        <span class="block text-2xl sm:text-3xl lg:text-4xl font-light mt-4 hero-title-sub">Empowering Communities</span>
+                    </h1>
+                    <p class="text-xl sm:text-2xl hero-text-strong mb-8 max-w-3xl lg:max-w-none leading-relaxed mx-auto lg:mx-0 hero-animate-2">
+                        Building a better society through compassion, service, and social welfare.
+                    </p>
+                    <p class="text-lg sm:text-xl hero-text-soft mb-12 max-w-2xl lg:max-w-none mx-auto lg:mx-0 hero-animate-3">Join our mission to serve people and animals with care.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 lg:justify-start justify-center mb-4">
+                        <button id="joinUsBtn" class="btn-primary text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hero-animate-2">
+                            <i class="fas fa-heart mr-2"></i>
+                            Join Us 
+                        </button>
+                        <button id="donateBtn" class="bg-[#14B8A6] text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:bg-[#0EA5A3] transition-colors hero-animate-3">
+                            <i class="fas fa-donate mr-2"></i>
+                            Donate
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right: 40% Auto-changing photos (2/5) -->
+                <div class="lg:col-span-2 order-1 lg:order-2 hero-image-animate">
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl h-72 sm:h-96">
+                        <!-- Previous Arrow -->
+                        <button id="prevBtn" class="slider-arrow slider-arrow-left">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <!-- Next Arrow -->
+                        <button id="nextBtn" class="slider-arrow slider-arrow-right">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <!-- Slider -->
+                        <div class="slider-wrapper h-full">
+                            <div class="slider-track h-full" id="sliderTrack">
+                                
+                            </div>
+                        </div>
+                        <!-- Dots Indicator -->
+                        <div class="slider-dots"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-white text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 slide-up">
+                <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 flex items-center justify-center">
+                    <i class="fas fa-info-circle mr-4 text-blue-600"></i>About Us
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Dedicated to serving humanity and animals with compassion and care
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class=" border-2 border-gray-300 rounded-2xl p-4 text-center slide-up cursor-pointer blog-card hover:shadow-lg transition-all duration-300" data-blog="mission">
+                    <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-bullseye text-3xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Mission / मिशन</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        शिक्षा, स्वास्थ्य, पशु संरक्षण और आपदा राहत में समन्वित प्रयासों से दीर्घकालिक बदलाव—ताकि हर व्यक्ति गरिमा के साथ जी सके।
+                    </p>
+                </div>
+                
+                <div class=" border-2 border-gray-300 rounded-2xl p-4 text-center slide-up cursor-pointer blog-card hover:shadow-lg transition-all duration-300" data-blog="vision">
+                    <div class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-eye text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Vision / दृष्टि</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        समान अवसर, सुरक्षित जीवन और स्वच्छ पर्यावरण वाला आत्मनिर्भर समाज—जहाँ शिक्षा और स्वास्थ्य सबके लिए सुलभ हों।
+                    </p>
+                </div>
+                
+                <div class=" border-2 border-gray-300 rounded-2xl p-4 text-center slide-up cursor-pointer blog-card hover:shadow-lg transition-all duration-300" data-blog="values">
+                    <div class="bg-orange-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-hands-helping text-3xl text-orange-600"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Values/मूल्य</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        समानता, सेवा, करुणा, सतत विकास, सशक्तिकरण, पारदर्शिता और सहयोग—हमारे हर कार्य की पहचान।
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="py-20 section-gradient">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 slide-up">
+                <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+                    Our Activities 
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Making a difference through dedicated service and care
+                </p>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="activity-card bg-white rounded-2xl shadow-lg card-hover text-center overflow-hidden cursor-pointer" data-activity="medical">
+                    <div class="relative">
+                        <img src="https://savioursfoundation.org/wp-content/uploads/2020/03/Health.jpg" alt="Medical Care" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute top-4 right-4">
+                            <div class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-camera mr-1"></i>View Photos
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-stethoscope text-2xl text-red-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Medical Care</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Free medical treatment and healthcare services for underprivileged communities
+                        </p>
+                        <div class="text-xs text-gray-500">
+                            <i class="fas fa-images mr-1"></i>12 Photos Available
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-card bg-white rounded-2xl shadow-lg card-hover text-center overflow-hidden cursor-pointer" data-activity="animal">
+                    <div class="relative">
+                        <img src="/animal/an1.png">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute top-4 right-4">
+                            <div class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-camera mr-1"></i>View Photos
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-paw text-2xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Animal Care / पशु सेवा</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Rescue, treatment, and care for stray and injured animals
+                        </p>
+                        <div class="text-xs text-gray-500">
+                            <i class="fas fa-images mr-1"></i>8 Photos Available
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-card bg-white rounded-2xl shadow-lg card-hover text-center overflow-hidden cursor-pointer" data-activity="food">
+                    <div class="relative">
+                        <img src="/food/fd1.png">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute top-4 right-4">
+                            <div class="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-camera mr-1"></i>View Photos
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-utensils text-2xl text-orange-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Food Distribution / भोजन वितरण</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Emergency food distribution during floods and natural disasters
+                        </p>
+                        <div class="text-xs text-gray-500">
+                            <i class="fas fa-images mr-1"></i>15 Photos Available
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-card bg-white rounded-2xl shadow-lg card-hover text-center overflow-hidden cursor-pointer" data-activity="community">
+                    <div class="relative">
+                        <img src="/plantation/p3.jpeg">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute top-4 right-4">
+                            <div class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-camera mr-1"></i>View Photos
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-users text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Social Welfare / सामाजिक कल्याण</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Community development and social welfare programs
+                        </p>
+                        <div class="text-xs text-gray-500">
+                            <i class="fas fa-images mr-1"></i>10 Photos Available
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-[#0F172A] mb-4">Our Impact</h2>
+                <p class="text-lg sm:text-xl text-[#334155] max-w-3xl mx-auto">Numbers that reflect our commitment to service</p>
+            </div>
+
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <!-- Impact Card 1 -->
+                <div class="impact-card-up bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition">
+                    <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heartbeat text-2xl text-red-600"></i>
+                    </div>
+                    <div class="text-5xl font-extrabold text-[#0F172A] mb-2">500+</div>
+                    <div class="text-sm uppercase tracking-wide text-[#14B8A6] mb-1">Lives Saved</div>
+                    <p class="text-sm text-[#334155]">Medical treatments provided</p>
+                </div>
+
+                <!-- Impact Card 2 -->
+                <div class="impact-card-up bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-paw text-2xl text-green-600"></i>
+                    </div>
+                    <div class="text-5xl font-extrabold text-[#0F172A] mb-2">200+</div>
+                    <div class="text-sm uppercase tracking-wide text-[#14B8A6] mb-1">Animals Helped</div>
+                    <p class="text-sm text-[#334155]">Animals rescued and treated</p>
+                </div>
+
+                <!-- Impact Card 3 -->
+                <div class="impact-card-down bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition">
+                    <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-utensils text-2xl text-orange-600"></i>
+                    </div>
+                    <div class="text-5xl font-extrabold text-[#0F172A] mb-2">1000+</div>
+                    <div class="text-sm uppercase tracking-wide text-[#14B8A6] mb-1">Meals Served</div>
+                    <p class="text-sm text-[#334155]">During emergency situations</p>
+                </div>
+
+                <!-- Impact Card 4 -->
+                <div class="impact-card-down bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-2xl text-blue-600"></i>
+                    </div>
+                    <div class="text-5xl font-extrabold text-[#0F172A] mb-2">50+</div>
+                    <div class="text-sm uppercase tracking-wide text-[#14B8A6] mb-1">Communities</div>
+                    <p class="text-sm text-[#334155]">Communities served</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 section-gradient">
+    <h1 class="text-4xl text-center sm:text-5xl font-bold text-gray-900 mb-6">Contact Us & Certificates</h1> 
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 slide-up">
+                <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+                  
+               
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="slide-up">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-8">Get in Touch </h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Email </h4>
+                                <p class="text-gray-600">info@yuvaprerna.org</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-phone text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Phone </h4>
+                                <p class="text-gray-600">+91 96965 25287</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="bg-orange-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-orange-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Address </h4>
+                                <p class="text-gray-600">Nawabganj Gonda Uttar pradesh </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-semibold text-gray-900 mb-4">Follow Us </h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.instagram.com/yuvaa_foundation/?utm_source=qr&igsh=ZTc4cmM0YWdkb3Rp#" class="bg-blue-400 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com/yuvaa_foundation/?utm_source=qr&igsh=ZTc4cmM0YWdkb3Rp#" class="bg-pink-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://wa.me/919696525287" class="bg-green-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-700 transition-colors" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slide-up">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">
+                            Certificates & Awards 
+                        </h3>
+                        
+                        <!-- Awards Grid -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 award-grid">
+                            <!-- Certificate -->
+                            <div class="award-card group">
+                                <div class="award-image">
+                                    <img src="certificate.jpeg" alt="Registration Certificate" loading="lazy">
+                                    <div class="award-overlay">
+                                        <i class="fas fa-certificate text-3xl text-yellow-400"></i>
+                                    </div>
+                                </div>
+                                <div class="award-content">
+                                    <h4 class="award-title">Registration Certificate</h4>
+                                    <p class="award-organization">Society Registration Act</p>
+                                    <p class="award-year">Valid</p>
+                                </div>
+                            </div>
+
+                            <!-- Newspaper 1 -->
+                            <div class="award-card group">
+                                <div class="award-image">
+                                    <img src="newspaper/n1.jpeg" alt="Newspaper Coverage 1" loading="lazy">
+                                    <div class="award-overlay">
+                                        <i class="fas fa-newspaper text-3xl text-blue-500"></i>
+                                    </div>
+                                </div>
+                                <div class="award-content">
+                                    <h4 class="award-title">Newspaper Coverage</h4>
+                                    <p class="award-organization">Local Daily</p>
+                                    <p class="award-year">--</p>
+                                </div>
+                            </div>
+
+                            <!-- Newspaper 2 -->
+                            <div class="award-card group">
+                                <div class="award-image">
+                                    <img src="newspaper/n2.jpeg" alt="Newspaper Coverage 2" loading="lazy">
+                                    <div class="award-overlay">
+                                        <i class="fas fa-newspaper text-3xl text-green-500"></i>
+                                    </div>
+                                </div>
+                                <div class="award-content">
+                                    <h4 class="award-title">Newspaper Coverage</h4>
+                                    <p class="award-organization">Regional Press</p>
+                                    <p class="award-year">--</p>
+                                </div>
+                            </div>
+
+                            <!-- Newspaper 3 -->
+                            <div class="award-card group">
+                                <div class="award-image">
+                                    <img src="newspaper/n3.jpeg" alt="Newspaper Coverage 3" loading="lazy">
+                                    <div class="award-overlay">
+                                        <i class="fas fa-newspaper text-3xl text-red-500"></i>
+                                    </div>
+                                </div>
+                                <div class="award-content">
+                                    <h4 class="award-title">Newspaper Coverage</h4>
+                                    <p class="award-organization">Regional Press</p>
+                                    <p class="award-year">--</p>
+                                </div>
+                            </div>
+
+                            <!-- Newspaper 4 -->
+                            <div class="award-card group">
+                                <div class="award-image">
+                                    <img src="newspaper/n4.jpeg" alt="Newspaper Coverage 4" loading="lazy">
+                                    <div class="award-overlay">
+                                        <i class="fas fa-newspaper text-3xl text-purple-500"></i>
+                                    </div>
+                                </div>
+                                <div class="award-content">
+                                    <h4 class="award-title">Newspaper Coverage</h4>
+                                    <p class="award-organization">Regional Press</p>
+                                    <p class="award-year">--</p>
+                                </div>
+                            </div>
+
+                            <!-- Newspaper 5 -->
+                            <div class="award-card group">
+                                <div class="award-image">
+                                    <img src="newspaper/n5.jpeg" alt="Newspaper Coverage 5" loading="lazy">
+                                    <div class="award-overlay">
+                                        <i class="fas fa-newspaper text-3xl text-orange-500"></i>
+                                    </div>
+                                </div>
+                                <div class="award-content">
+                                    <h4 class="award-title">Newspaper Coverage</h4>
+                                    <p class="award-organization">Regional Press</p>
+                                    <p class="award-year">--</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recognition Stats -->
+                        <div class="bg-gradient-to-r from-blue-50 to-green-50 rounded-xl p-6 mb-6">
+                            <h4 class="text-lg font-semibold text-gray-800 mb-4 text-center flex items-center justify-center"><i class="fas fa-trophy mr-2 text-yellow-500"></i>Our Recognition</h4>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                <div class="text-center">
+                                    <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
+                                        <i class="fas fa-award text-blue-600"></i>
+                                    </div>
+                                    <div class="text-2xl font-bold text-blue-600">10+</div>
+                                    <div class="text-sm text-gray-600">Newspaper Coverage</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
+                                        <i class="fas fa-calendar-alt text-green-600"></i>
+                                    </div>
+                                    <div class="text-2xl font-bold text-green-600">3+</div>
+                                    <div class="text-sm text-gray-600">Years of Service</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
+                                        <i class="fas fa-certificate text-purple-600"></i>
+                                    </div>
+                                    <div class="text-2xl font-bold text-purple-600">5+</div>
+                                    <div class="text-sm text-gray-600">Certifications</div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="bg-orange-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
+                                        <i class="fas fa-shield-alt text-orange-600"></i>
+                                    </div>
+                                    <div class="text-2xl font-bold text-orange-600">100%</div>
+                                    <div class="text-sm text-gray-600">Transparency</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- View All Button -->
+                        <div class="text-center">
+                            <button id="viewAllCertificatesBtn" class="btn-primary text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+                                <i class="fas fa-certificate mr-2"></i>
+                                View All Certificates 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thank You Card Popup Modal -->
+    <div id="thankYouModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 transform transition-all duration-300 scale-95 opacity-0" id="thankYouCard">
+            <div class="p-8 text-center">
+                <!-- Close button -->
+                <button id="closeThankYouModal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+                
+                <!-- Success icon -->
+                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-check text-green-600 text-3xl"></i>
+                </div>
+                
+                <!-- Thank you message -->
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Thank You!</h3>
+                <p class="text-gray-600 mb-6">Thank you for joining <strong class="text-orange-600">Yuva Prerna Foundation</strong>!</p>
+                
+                <!-- User name display -->
+                <div class="bg-orange-50 rounded-lg p-4 mb-6">
+                    <div class="flex items-center justify-center gap-3">
+                        <div class="w-12 h-12 bg-orange-200 text-orange-700 rounded-full flex items-center justify-center text-xl font-bold" id="userInitial">
+                            Y
+                        </div>
+                        <div class="text-left">
+                            <h4 class="text-lg font-semibold text-gray-900" id="userName">New Volunteer</h4>
+                            <p class="text-sm text-gray-600">Welcome to our community!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Action buttons -->
+                <div class="flex gap-3">
+                    <button id="closeThankYouBtn" class="flex-1 bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                        Continue
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Join Feed: Thank You Cards (hidden for now) -->
+    <section id="join-feed" class="py-10 z-20 hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="joinFeedContainer" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </div>
+    </section>
+
+    <!-- Certificates Gallery Page (photos only) -->
+    <div id="certificatesPage" class="fixed inset-0 bg-black bg-opacity-80 z-50 hidden">
+        <div class="absolute inset-0 overflow-y-auto">
+            <div class="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8">
+                <!-- Top bar with back/close -->
+                <div class="flex items-center justify-between mb-4">
+                    <button id="backFromCertificates" class="text-white bg-[#14B8A6] hover:bg-[#0EA5A3] px-4 py-2 rounded-md font-semibold">
+                        <i class="fas fa-arrow-left mr-2"></i> Back
+                    </button>
+                    <button id="closeCertificates" class="text-white bg-white/10 hover:bg-white/20 px-4 py-2 rounded-md">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <!-- Grid of certificate photos only -->
+                <div id="certificatesGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                    <!-- Filled by JS with <img> only cards -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="text-3xl font-bold mb-4">
+                        <span class="text-blue-400">Yuva Prerna</span>
+                        <span class="text-green-400"> फाउंडेशन</span>
+                    </div>
+                    <p class="text-gray-300 mb-6 max-w-md">
+                        Dedicated to serving humanity and animals with compassion, care, and commitment to social welfare.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/yuvaa_foundation/?utm_source=qr&igsh=ZTc4cmM0YWdkb3Rp#" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="https://wa.me/919696525287" class="text-gray-400 hover:text-white transition-colors" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links </h3>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-300 hover:text-white transition-colors flex items-center"><i class="fas fa-info-circle mr-2"></i>About Us</a></li>
+                        <li><a href="#activities" class="text-gray-300 hover:text-white transition-colors flex items-center"><i class="fas fa-hands-helping mr-2"></i>Activities</a></li>
+                    
+                        <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors flex items-center"><i class="fas fa-envelope mr-2"></i>Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Support </h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" id="footerDonate" class="text-gray-300 hover:text-white transition-colors cursor-pointer flex items-center"><i class="fas fa-donate mr-2"></i>Donate</a></li>
+                        <li><a href="#" id="footerVolunteer" class="text-gray-300 hover:text-white transition-colors cursor-pointer flex items-center"><i class="fas fa-user-plus mr-2"></i>Volunteer</a></li>
+                        <li><a href="#" id="footerEmergency" class="text-gray-300 hover:text-white transition-colors cursor-pointer flex items-center"><i class="fas fa-phone mr-2"></i>Emergency Help</a></li>
+                        <li><a href="#" id="footerSupport" class="text-gray-300 hover:text-white transition-colors cursor-pointer flex items-center"><i class="fas fa-code mr-2"></i>Developer Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 युवा प्रेरणा फाउंडेशन (Yuva Prerna Foundation). All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Emergency Help Modal -->
+    <div id="emergencyModal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-8 text-center">
+            <div class="mb-6">
+                <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-phone text-2xl text-red-600"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Emergency Help</h3>
+                <p class="text-gray-600">For immediate assistance, please call:</p>
+            </div>
+            
+            <div class="bg-red-50 rounded-lg p-4 mb-6">
+                <p class="text-lg font-semibold text-gray-900 mb-2">Emergency Contact</p>
+                <a href="tel:+919876543210" class="text-2xl font-bold text-red-600 hover:text-red-700 transition-colors">
+                    +91 98765 43210
+                </a>
+                <p class="text-sm text-gray-600 mt-2">Available 24/7</p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-3">
+                <button id="callEmergency" class="flex-1 bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors">
+                    <i class="fas fa-phone mr-2"></i>
+                    Call Now
+                </button>
+                <button id="closeEmergency" class="flex-1 bg-gray-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-600 transition-colors">
+                    <i class="fas fa-times mr-2"></i>
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Join Us Form Modal -->
+    <div id="joinModal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="relative">
+                <!-- Close Button -->
+                <button id="closeJoinModal" class="absolute top-4 right-4 z-10 bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800 rounded-full w-10 h-10 flex items-center justify-center transition-all duration-300">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+                
+                <!-- Modal Header -->
+                <div class="bg-gradient-to-r from-blue-600 to-green-600 text-white p-8 text-center">
+                    <h2 class="text-3xl font-bold mb-2">Join Our Mission / हमारे मिशन में शामिल हों</h2>
+                    <p class="text-white/90">Be a part of positive change in society</p>
+                </div>
+                
+                <!-- Form Content -->
+                <div class="p-8 max-h-[70vh] overflow-y-auto">
+                    <form id="joinForm" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Full Name </label>
+                                <input type="text" name="fullName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Your Full Name">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Email </label>
+                                <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="your@email.com">
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Phone </label>
+                                <input type="tel" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="+91 98765 43210">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Age </label>
+                                <input type="number" name="age" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="25">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">City </label>
+                            <input type="text" name="city" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Your City">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Interested Areas </label>
+                            <div class="grid grid-cols-2 gap-3 mt-2">
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="interests" value="medical" class="mr-2">
+                                    <span class="text-sm">Medical Care </span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="interests" value="animal" class="mr-2">
+                                    <span class="text-sm">Animal Care </span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="interests" value="food" class="mr-2">
+                                    <span class="text-sm">Food Distribution </span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="interests" value="community" class="mr-2">
+                                    <span class="text-sm">Community Service </span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Availability </label>
+                            <select name="availability" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="weekends">Weekends </option>
+                                <option value="weekdays">Weekdays </option>
+                                <option value="flexible">Flexible </option>
+                                <option value="emergency">Emergency Only </option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Why do you want to join us? </label>
+                            <textarea name="motivation" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Tell us about your motivation..."></textarea>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button type="submit" class="flex-1 btn-primary text-white py-3 rounded-lg font-semibold">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Submit Application 
+                            </button>
+                            <button type="button" id="cancelJoinBtn" class="flex-1 bg-gray-500 text-white py-3 rounded-lg font-semibold hover:bg-gray-600 transition-colors">
+                                <i class="fas fa-times mr-2"></i>
+                                Cancel 
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Donate Popup Modal -->
+    <div id="donateModal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-start justify-center p-4 overflow-y-auto">
+        <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden mt-8 mb-8">
+            <div class="relative">
+                <!-- Close Button -->
+                <button id="closeDonateModal" class="absolute top-4 right-4 z-20 bg-white shadow-lg hover:shadow-xl text-gray-800 rounded-full w-12 h-12 flex items-center justify-center transition-all duration-300 hover:bg-red-50 hover:text-red-600 border-2 border-gray-200 hover:border-red-300">
+                    <i class="fas fa-times text-xl font-bold"></i>
+                </button>
+                
+                <!-- Quote Section -->
+                <div class="bg-gradient-to-r from-orange-500 to-red-500 text-white p-8 text-center">
+                    <div class="mb-4">
+                        <i class="fas fa-quote-left text-4xl opacity-50"></i>
+                    </div>
+                    <blockquote id="donateQuote" class="text-xl font-medium italic mb-4">
+                        "The best way to find yourself is to lose yourself in the service of others."
+                    </blockquote>
+                    <p id="donateAuthor" class="text-white/90 text-sm">- Mahatma Gandhi</p>
+                </div>
+                
+                <!-- QR Code Section -->
+                <div class="p-8 text-center">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Support Our Cause </h3>
+                    <p class="text-gray-600 mb-6">Scan QR code to donate </p>
+                    
+                    <!-- QR Code Image -->
+                    <div class="bg-gray-100 p-4 sm:p-6 rounded-lg mb-6 inline-block">
+                        <img src="qr.jpeg" alt="Donate QR Code" class="w-76 h-76 object-contain bg-white rounded-lg border-2 border-dashed border-gray-300">
+                    </div>
+                    
+                    <!-- Donation Info -->
+                    <div class="bg-blue-50 rounded-lg p-4 mb-6">
+                        <h4 class="font-semibold text-gray-900 mb-2">Bank Details </h4>
+                        <div class="text-sm text-gray-700 space-y-1">
+                            <p><strong>Account Name:</strong> Yuva Prerna Foundation</p>
+                            <p><strong>Account Number:</strong> 1234567890</p>
+                            <p><strong>IFSC Code:</strong> SBIN0001234</p>
+                            <p><strong>Bank:</strong> State Bank of India</p>
+                        </div>
+                    </div>
+                    
+                    <!-- UPI ID -->
+                    <div class="bg-green-50 rounded-lg p-4 mb-6">
+                        <h4 class="font-semibold text-gray-900 mb-2">UPI ID / यूपीआई आईडी</h4>
+                        <p class="text-lg font-mono text-green-600">yuvaprerna@paytm</p>
+                        <button onclick="navigator.clipboard.writeText('yuvaprerna@paytm')" class="mt-2 text-sm text-blue-600 hover:text-blue-800">
+                            <i class="fas fa-copy mr-1"></i>Copy UPI ID
+                        </button>
+                    </div>
+                    
+                    <div class="text-sm text-gray-500">
+                        <p>Every contribution makes a difference </p>
+                        <p>Thank you for your support! </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Activity Gallery Page -->
+    <div id="activityGalleryPage" class="hidden fixed inset-0 bg-white z-50 overflow-y-auto">
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-blue-600 to-green-600 text-white py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <button id="backToActivities" class="flex items-center text-white hover:text-gray-200 transition-colors mb-4">
+                            <i class="fas fa-arrow-left mr-2"></i>
+                            Back to Activities 
+                        </button>
+                        <h1 id="activityGalleryTitle" class="text-4xl font-bold mb-2">Activity Photos / गतिविधि की तस्वीरें</h1>
+                        <p id="activityGallerySubtitle" class="text-white/90 text-lg">View all photos related to this activity</p>
+                    </div>
+                    <button id="closeActivityGallery" class="text-white hover:text-gray-200 transition-colors">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Gallery Content -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <!-- Activity Info -->
+            <div id="activityInfo" class="mb-12">
+                <div class="bg-gray-50 rounded-2xl p-8">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h2 id="activityInfoTitle" class="text-3xl font-bold text-gray-900 mb-4">Activity Information</h2>
+                            <p id="activityInfoDescription" class="text-gray-600 leading-relaxed mb-6">
+                                Detailed information about this activity and its impact on the community.
+                            </p>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-white rounded-lg p-4 text-center">
+                                    <div class="bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2">
+                                        <i class="fas fa-users text-blue-600"></i>
+                                    </div>
+                                    <div id="activityStats1" class="text-2xl font-bold text-blue-600 mb-1">500+</div>
+                                    <div id="activityStats1Label" class="text-sm text-gray-600">People Helped</div>
+                                </div>
+                                <div class="bg-white rounded-lg p-4 text-center">
+                                    <div class="bg-green-100 w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-2">
+                                        <i class="fas fa-calendar-check text-green-600"></i>
+                                    </div>
+                                    <div id="activityStats2" class="text-2xl font-bold text-green-600 mb-1">50+</div>
+                                    <div id="activityStats2Label" class="text-sm text-gray-600">Events</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div id="activityIcon" class="w-32 h-32 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-heart text-5xl text-blue-600"></i>
+                            </div>
+                            <h3 id="activityCategory" class="text-xl font-semibold text-gray-900">Category</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Photo Grid -->
+            <div class="mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Photo Gallery </h3>
+                <div id="activityPhotoGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- Photos will be dynamically inserted here -->
+                </div>
+            </div>
+            
+            <!-- Call to Action -->
+           
+        </div>
+    </div>
+
+    <!-- Blog Page Overlay -->
+    <div id="blogPage" class="hidden fixed inset-0 bg-white z-50 overflow-y-auto">
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-blue-600 to-green-600 text-white py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <button id="backToHomeFromBlog" class="flex items-center text-white hover:text-gray-200 transition-colors mb-4">
+                            <i class="fas fa-arrow-left mr-2"></i>
+                            Back 
+                        </button>
+                        <h1 id="blogTitle" class="text-4xl font-bold mb-2">Blog</h1>
+                        <p id="blogSubtitle" class="text-white/90 text-lg">Subtitle</p>
+                    </div>
+                    <button id="closeBlogPage" class="text-white hover:text-gray-200 transition-colors">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Content -->
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div id="blogHero" class="rounded-2xl overflow-hidden mb-8 hidden">
+                <img id="blogHeroImage" src="" alt="" class="w-full h-64 object-cover">
+            </div>
+            <article id="blogContent" class="prose prose-lg max-w-none">
+                <!-- Blog paragraphs will be inserted here -->
+            </article>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
