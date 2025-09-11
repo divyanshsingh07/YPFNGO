@@ -61,6 +61,13 @@ body {
     transform: translateX(50px);
 }
 
+/* Prevent re-animation once completed */
+.hero-text-animate[data-animated="true"],
+.hero-image-animate[data-animated="true"] {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 @keyframes slideInFromLeft {
     to {
         opacity: 1;
@@ -923,4 +930,89 @@ select:focus {
 #thankYouModal.show {
     opacity: 1;
     visibility: visible;
+}
+
+/* Hero Section Enhanced Styles */
+.text-gradient {
+    background: linear-gradient(135deg, #f97316, #dc2626, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.hero-title-main {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    letter-spacing: -0.02em;
+}
+
+.hero-text-strong {
+    position: relative;
+}
+
+.hero-text-strong::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 60%;
+    background: linear-gradient(to bottom, #f97316, #dc2626);
+    border-radius: 2px;
+    opacity: 0.7;
+}
+
+.hero-text-soft {
+    position: relative;
+    padding-left: 20px;
+}
+
+.hero-text-soft::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 40%;
+    background: linear-gradient(to bottom, #14b8a6, #06b6d4);
+    border-radius: 1px;
+    opacity: 0.5;
+}
+
+/* Button Enhancements */
+.group:hover .group-hover\:animate-pulse {
+    animation: pulse 1s ease-in-out infinite;
+}
+
+.group:hover .group-hover\:animate-bounce {
+    animation: bounce 1s ease-in-out infinite;
+}
+
+/* Responsive Typography for Hero */
+@media (max-width: 640px) {
+    .hero-title-main {
+        font-size: 2.5rem;
+        line-height: 1.1;
+    }
+    
+    .hero-text-strong::before,
+    .hero-text-soft::before {
+        display: none;
+    }
+    
+    .hero-text-strong,
+    .hero-text-soft {
+        padding-left: 0;
+    }
 }

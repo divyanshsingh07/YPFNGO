@@ -1017,17 +1017,62 @@ function setupDonateModal() {
         }
     });
     
-    // Copy UPI ID functionality
-    const copyBtn = donateModal.querySelector('button[onclick*="clipboard"]');
-    if (copyBtn) {
-        copyBtn.addEventListener('click', async () => {
+    // Copy functionality for all buttons
+    const copyAccountBtn = donateModal.querySelector('.copy-account-btn');
+    const copyIfscBtn = donateModal.querySelector('.copy-ifsc-btn');
+    const copyUpiBtn = donateModal.querySelector('button[class*="text-blue-600"]:not(.copy-account-btn):not(.copy-ifsc-btn)');
+    
+    // Copy Account Number
+    if (copyAccountBtn) {
+        copyAccountBtn.addEventListener('click', async () => {
+            const accountNumber = '701801010050235';
             try {
-                await navigator.clipboard.writeText('yuvaprerna@paytm');
+                await navigator.clipboard.writeText(accountNumber);
+                showNotification('Account Number copied to clipboard! / खाता संख्या क्लिपबोर्ड में कॉपी हो गई!', 'success');
+            } catch (err) {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = accountNumber;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showNotification('Account Number copied to clipboard! / खाता संख्या क्लिपबोर्ड में कॉपी हो गई!', 'success');
+            }
+        });
+    }
+    
+    // Copy IFSC Code
+    if (copyIfscBtn) {
+        copyIfscBtn.addEventListener('click', async () => {
+            const ifscCode = 'UBIN0570184';
+            try {
+                await navigator.clipboard.writeText(ifscCode);
+                showNotification('IFSC Code copied to clipboard! / आईएफएससी कोड क्लिपबोर्ड में कॉपी हो गया!', 'success');
+            } catch (err) {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = ifscCode;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showNotification('IFSC Code copied to clipboard! / आईएफएससी कोड क्लिपबोर्ड में कॉपी हो गया!', 'success');
+            }
+        });
+    }
+    
+    // Copy UPI ID
+    if (copyUpiBtn) {
+        copyUpiBtn.addEventListener('click', async () => {
+            const upiId = 'QR919453309686-0235@unionbankofindia';
+            try {
+                await navigator.clipboard.writeText(upiId);
                 showNotification('UPI ID copied to clipboard! / यूपीआई आईडी क्लिपबोर्ड में कॉपी हो गई!', 'success');
             } catch (err) {
                 // Fallback for older browsers
                 const textArea = document.createElement('textarea');
-                textArea.value = 'yuvaprerna@paytm';
+                textArea.value = upiId;
                 document.body.appendChild(textArea);
                 textArea.select();
                 document.execCommand('copy');
@@ -1452,13 +1497,26 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Scroll-triggered animations
+// Scroll-triggered animations - Run once per session
 function setupScrollAnimations() {
+    // Check if animations have already been triggered in this session
+    const animationKey = 'yuvaPrernaAnimationsTriggered';
+    const hasAnimated = sessionStorage.getItem(animationKey);
+    
     // Create intersection observer
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const element = entry.target;
+                
+                // Check if this element has already been animated
+                if (element.dataset.animated === 'true') {
+                    observer.unobserve(element);
+                    return;
+                }
+                
+                // Mark as animated
+                element.dataset.animated = 'true';
                 
                 // Calculate delay based on element type and position
                 let delay = 0;
@@ -1502,6 +1560,36 @@ function setupScrollAnimations() {
         rootMargin: '0px 0px -50px 0px'
     });
 
+    // If animations have already been triggered, apply them immediately
+    if (hasAnimated) {
+        const animatedElements = document.querySelectorAll(`
+            .hero-text-animate,
+            .hero-image-animate,
+            .activity-card-left,
+            .activity-card-right,
+            .impact-card-up,
+            .impact-card-down
+        `);
+        
+        animatedElements.forEach(element => {
+            element.dataset.animated = 'true';
+            if (element.classList.contains('hero-text-animate')) {
+                element.style.animation = 'slideInFromLeft 0.8s ease-out forwards';
+            } else if (element.classList.contains('hero-image-animate')) {
+                element.style.animation = 'slideInFromRight 0.8s ease-out forwards';
+            } else if (element.classList.contains('activity-card-left')) {
+                element.style.animation = 'slideInFromLeft 0.8s ease-out forwards';
+            } else if (element.classList.contains('activity-card-right')) {
+                element.style.animation = 'slideInFromRight 0.8s ease-out forwards';
+            } else if (element.classList.contains('impact-card-up')) {
+                element.style.animation = 'slideInFromTop 0.8s ease-out forwards';
+            } else if (element.classList.contains('impact-card-down')) {
+                element.style.animation = 'slideInFromBottom 0.8s ease-out forwards';
+            }
+        });
+        return;
+    }
+
     // Observe all animated elements
     const animatedElements = document.querySelectorAll(`
         .hero-text-animate,
@@ -1515,6 +1603,9 @@ function setupScrollAnimations() {
     animatedElements.forEach(element => {
         observer.observe(element);
     });
+    
+    // Mark animations as triggered for this session
+    sessionStorage.setItem(animationKey, 'true');
 }
 
 // Blog Data and Handlers
