@@ -27,6 +27,8 @@ function initializeWebsite() {
     setupCertificatesGallery();
     setupBlogPages();
     setupScrollAnimations();
+    setupParallaxAnimations();
+    setupWhatsAppFloat();
 }
 
 // Helper: check if animations are disabled via HTML class
@@ -419,103 +421,101 @@ const galleryData = {
     }
 };
 
-// Image Slider Functionality
+// Image Slider Functionality using w3.CSS with Manual Navigation
 function setupImageGallery() {
-    const sliderTrack = document.getElementById('sliderTrack');
-    const dotsContainer = document.querySelector('.slider-dots');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const disabled = isAnimationsDisabled();
+    const sliderContainer = document.querySelector('.w3-content.w3-section');
+    const dotsContainer = document.getElementById('carouselDots');
+    const prevBtn = document.getElementById('carouselPrev');
+    const nextBtn = document.getElementById('carouselNext');
     
-    if (!sliderTrack || !dotsContainer) return;
+    if (!sliderContainer) return;
     
     // Build list of local images from known folders
     const plantationImages = ['p2.jpeg','p3.jpeg','p4.jpeg','p5.jpeg','p6.jpeg','p7.jpeg'].map(f => `plantation/${f}`);
     const newspaperImages = ['n1.jpeg','n2.jpeg','n3.jpeg','n4.jpeg','n5.jpeg','n6.jpeg'].map(f => `newspaper/${f}`);
     const achievementImages = ['Ach2.png','Ach3.png','Ach4.png'].map(f => `acchivment/${f}`);
-    // Add root images if present
     
     const imageSources = [
         ...plantationImages,
         ...achievementImages,
         ...newspaperImages,
-       
     ];
     
     // Clear any existing content
-    sliderTrack.innerHTML = '';
-    dotsContainer.innerHTML = '';
+    sliderContainer.innerHTML = '';
+    if (dotsContainer) dotsContainer.innerHTML = '';
     
-    // Create slides and dots dynamically
+    // Create images with w3.CSS classes
     imageSources.forEach((src, index) => {
-        const slide = document.createElement('div');
-        slide.className = 'slider-slide' + (index === 0 ? ' active' : '');
-        slide.innerHTML = `
-            <img src="${src}" alt="Slide ${index + 1}" class="slider-image">
-        `;
-        sliderTrack.appendChild(slide);
-        const dot = document.createElement('span');
-        dot.className = 'dot' + (index === 0 ? ' active' : '');
-        dot.setAttribute('data-slide', String(index));
-        dotsContainer.appendChild(dot);
+        const img = document.createElement('img');
+        img.className = 'mySlides w3-animate-fading';
+        img.src = src;
+        img.alt = `Slide ${index + 1}`;
+        img.style.width = '100%';
+        img.style.height = '100%';
+        img.style.objectFit = 'cover';
+        sliderContainer.appendChild(img);
+        
+        // Create dots
+        if (dotsContainer) {
+            const dot = document.createElement('span');
+            dot.className = 'carousel-dot';
+            if (index === 0) dot.classList.add('active');
+            dot.setAttribute('data-slide', index);
+            dotsContainer.appendChild(dot);
+        }
     });
     
-    // After building, get live NodeLists
-    const slides = sliderTrack.querySelectorAll('.slider-slide');
-    const dots = dotsContainer.querySelectorAll('.dot');
-    
-    let currentSlide = 0;
-    const totalSlides = slides.length;
+    // Carousel state
+    let myIndex = 0;
     let autoSlideInterval;
+    let isUserInteracting = false;
     
-    // Adjust track and slide widths to match dynamic count
-    if (totalSlides > 0) {
-        sliderTrack.style.width = `${totalSlides * 100}%`;
-        slides.forEach(slide => {
-            slide.style.width = `${100 / totalSlides}%`;
-            slide.style.flexBasis = `${100 / totalSlides}%`;
-        });
+    // Get slides and dots
+    const slides = document.getElementsByClassName("mySlides");
+    const dots = document.querySelectorAll('.carousel-dot');
+    const totalSlides = slides.length;
+    
+    // Show specific slide
+    function showSlide(index) {
+        // Hide all slides
+        for (let i = 0; i < totalSlides; i++) {
+            slides[i].style.display = "none";
+            if (dots[i]) dots[i].classList.remove('active');
+        }
+        
+        // Show current slide
+        if (slides[index]) {
+            slides[index].style.display = "block";
+            if (dots[index]) dots[index].classList.add('active');
+        }
+        
+        myIndex = index;
     }
     
-    // Update slide display
-    function updateSlide() {
-        // Remove active class from all slides
-        slides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
-        
-        // Add active class to current slide
-        slides[currentSlide].classList.add('active');
-        dots[currentSlide].classList.add('active');
-        
-        // Update track position
-        const step = 100 / totalSlides; // percent per slide
-        const translateX = -currentSlide * step;
-        sliderTrack.style.transform = `translateX(${translateX}%)`;
-    }
-    
-    // Go to next slide
+    // Next slide
     function nextSlide() {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        updateSlide();
+        const nextIndex = (myIndex + 1) % totalSlides;
+        showSlide(nextIndex);
     }
     
-    // Go to previous slide
+    // Previous slide
     function prevSlide() {
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-        updateSlide();
+        const prevIndex = (myIndex - 1 + totalSlides) % totalSlides;
+        showSlide(prevIndex);
     }
     
-    // Go to specific slide
-    function goToSlide(slideIndex) {
-        currentSlide = slideIndex;
-        updateSlide();
+    // Auto carousel function
+    function autoCarousel() {
+        if (!isUserInteracting) {
+            nextSlide();
+        }
     }
     
     // Start auto slide
     function startAutoSlide() {
-        if (disabled || totalSlides <= 1) return; // no auto slide when disabled or single image
         stopAutoSlide();
-        autoSlideInterval = setInterval(nextSlide, 4000);
+        autoSlideInterval = setInterval(autoCarousel, 5000);
     }
     
     // Stop auto slide
@@ -523,98 +523,98 @@ function setupImageGallery() {
         clearInterval(autoSlideInterval);
     }
     
-    // Event listeners
+    // Pause auto slide temporarily
+    function pauseAutoSlide() {
+        isUserInteracting = true;
+        stopAutoSlide();
+        setTimeout(() => {
+            isUserInteracting = false;
+            startAutoSlide();
+        }, 10000); // Resume after 10 seconds
+    }
+    
+    // Manual navigation event listeners
     if (nextBtn) {
         nextBtn.addEventListener('click', () => {
-            stopAutoSlide();
             nextSlide();
-            startAutoSlide();
+            pauseAutoSlide();
         });
     }
     
     if (prevBtn) {
         prevBtn.addEventListener('click', () => {
-            stopAutoSlide();
             prevSlide();
-            startAutoSlide();
+            pauseAutoSlide();
         });
     }
     
-    // Dot navigation
+    // Dots navigation
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
-            stopAutoSlide();
-            goToSlide(index);
-            startAutoSlide();
+            showSlide(index);
+            pauseAutoSlide();
         });
     });
     
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') {
-            stopAutoSlide();
-            prevSlide();
-            startAutoSlide();
-        } else if (e.key === 'ArrowRight') {
-            stopAutoSlide();
-            nextSlide();
-            startAutoSlide();
-        }
-    });
-    
-    // Touch/swipe support
+    // Touch/Swipe support
     let startX = 0;
     let endX = 0;
     
-    sliderTrack.addEventListener('touchstart', (e) => {
+    sliderContainer.addEventListener('touchstart', (e) => {
         startX = e.touches[0].clientX;
-        stopAutoSlide();
+        pauseAutoSlide();
     });
     
-    sliderTrack.addEventListener('touchend', (e) => {
+    sliderContainer.addEventListener('touchend', (e) => {
         endX = e.changedTouches[0].clientX;
         const diffX = startX - endX;
         
         if (Math.abs(diffX) > 50) { // Minimum swipe distance
             if (diffX > 0) {
-                nextSlide();
+                nextSlide(); // Swipe left - next slide
             } else {
-                prevSlide();
+                prevSlide(); // Swipe right - previous slide
             }
         }
-        
-        startAutoSlide();
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            prevSlide();
+            pauseAutoSlide();
+        } else if (e.key === 'ArrowRight') {
+            nextSlide();
+            pauseAutoSlide();
+        }
     });
     
     // Pause on hover
-    if (!disabled) {
-        sliderTrack.addEventListener('mouseenter', stopAutoSlide);
-        sliderTrack.addEventListener('mouseleave', startAutoSlide);
-    }
+    sliderContainer.addEventListener('mouseenter', () => {
+        isUserInteracting = true;
+        stopAutoSlide();
+    });
     
-    // Click on slide: disabled popup/modal behavior per request
-    // slides.forEach((slide, index) => {
-    //     slide.addEventListener('click', () => {
-    //         const slideType = getSlideType(index);
-    //         showImageModal(slideType);
-    //     });
-    // });
+    sliderContainer.addEventListener('mouseleave', () => {
+        isUserInteracting = false;
+        startAutoSlide();
+    });
     
     // Initialize
-    updateSlide();
+    showSlide(0);
     startAutoSlide();
     
     // Pause when not visible
     const sliderObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                startAutoSlide();
+                if (!isUserInteracting) startAutoSlide();
             } else {
                 stopAutoSlide();
             }
         });
     }, { threshold: 0.0 });
-    sliderObserver.observe(sliderTrack);
+    sliderObserver.observe(sliderContainer);
 }
 
 // Get slide type based on index
@@ -1175,9 +1175,12 @@ const activityPhotos = {
         stats2: "25+",
         stats2Label: "Distribution Points",
         photos: [
-            "food/Screenshot 2025-09-10 at 7.09.53 PM.png",
-            "food/Screenshot 2025-09-10 at 7.09.59 PM.png",
-            "food/fd1.png"
+            "food/fd1.png",
+            "food/fd2.png",
+            "food/fd3.png",
+            "food/fd4.jpeg",
+       
+           
         ]
     },
     community: {
@@ -1199,7 +1202,16 @@ const activityPhotos = {
             "plantation/p4.jpeg",
             "plantation/p5.jpeg",
             "plantation/p6.jpeg",
-            "plantation/p7.jpeg"
+            "plantation/p7.jpeg",
+            "plantation/p8.jpeg",
+            "plantation/p9.jpeg",
+            "plantation/p10.jpeg",
+            "plantation/p11.jpeg",
+            "plantation/p12.jpeg",
+            "plantation/p13.jpeg",
+            "plantation/p14.jpeg",
+        
+
         ]
     }
 };
@@ -1606,6 +1618,140 @@ function setupScrollAnimations() {
     
     // Mark animations as triggered for this session
     sessionStorage.setItem(animationKey, 'true');
+}
+
+// Parallax Animations
+function setupParallaxAnimations() {
+    if (isAnimationsDisabled()) return;
+    
+    // Parallax background elements
+    const parallaxElements = document.querySelectorAll('.hero-parallax-bg, .about-parallax-bg, .activities-parallax-bg, .gallery-parallax-bg, .contact-parallax-bg, .footer-parallax-bg');
+    
+    // Scroll-triggered animation elements
+    const scrollElements = document.querySelectorAll('.scroll-fade-in, .scroll-slide-left, .scroll-slide-right, .scroll-scale-up');
+    
+    // Parallax scroll handler
+    function handleParallaxScroll() {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * -0.5;
+        
+        parallaxElements.forEach(element => {
+            element.style.transform = `translateY(${rate}px)`;
+        });
+    }
+    
+    // Scroll-triggered animation handler
+    function handleScrollAnimations() {
+        scrollElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('visible');
+            }
+        });
+    }
+    
+    // Throttle scroll events for better performance
+    let ticking = false;
+    
+    function updateOnScroll() {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                handleParallaxScroll();
+                handleScrollAnimations();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }
+    
+    // Add scroll event listener
+    window.addEventListener('scroll', updateOnScroll);
+    
+    // Initial check for elements already in view
+    handleScrollAnimations();
+}
+
+// WhatsApp Float Functionality
+function setupWhatsAppFloat() {
+    const whatsappFloat = document.getElementById('whatsappFloat');
+    const whatsappLink = document.querySelector('.whatsapp-link');
+    
+    if (!whatsappFloat || !whatsappLink) return;
+    
+    // Show/hide WhatsApp float based on scroll position
+    let lastScrollTop = 0;
+    let isScrollingDown = false;
+    
+    function handleWhatsAppScroll() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Show WhatsApp float after scrolling down 300px
+        if (scrollTop > 300) {
+            whatsappFloat.style.display = 'block';
+            whatsappFloat.style.opacity = '1';
+            whatsappFloat.style.transform = 'translateY(0)';
+        } else {
+            whatsappFloat.style.opacity = '0';
+            whatsappFloat.style.transform = 'translateY(20px)';
+        }
+        
+        // Hide WhatsApp float when scrolling up (optional)
+        if (scrollTop < lastScrollTop && scrollTop > 100) {
+            // Scrolling up - keep visible
+            isScrollingDown = false;
+        } else if (scrollTop > lastScrollTop) {
+            // Scrolling down
+            isScrollingDown = true;
+        }
+        
+        lastScrollTop = scrollTop;
+    }
+    
+    // Throttle scroll events
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+        if (scrollTimeout) {
+            clearTimeout(scrollTimeout);
+        }
+        scrollTimeout = setTimeout(handleWhatsAppScroll, 10);
+    });
+    
+    // Initial state - hidden
+    whatsappFloat.style.opacity = '0';
+    whatsappFloat.style.transform = 'translateY(20px)';
+    whatsappFloat.style.transition = 'all 0.3s ease';
+    
+    // Add click tracking (optional)
+    whatsappLink.addEventListener('click', () => {
+        // You can add analytics tracking here
+        console.log('WhatsApp contact clicked');
+        
+        // Optional: Add a small delay to show the click effect
+        whatsappFloat.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            whatsappFloat.style.transform = 'scale(1)';
+        }, 150);
+    });
+    
+    // Add keyboard accessibility
+    whatsappLink.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            whatsappLink.click();
+        }
+    });
+    
+    // Add focus styles for accessibility
+    whatsappLink.addEventListener('focus', () => {
+        whatsappFloat.style.outline = '2px solid #25D366';
+        whatsappFloat.style.outlineOffset = '2px';
+    });
+    
+    whatsappLink.addEventListener('blur', () => {
+        whatsappFloat.style.outline = 'none';
+    });
 }
 
 // Blog Data and Handlers

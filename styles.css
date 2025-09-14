@@ -336,155 +336,110 @@ textarea:focus {
     outline-offset: 2px;
 }
 
-/* Image Slider */
-.slider-container {
+/* w3.CSS Carousel Styles - Custom overrides */
+.w3-content.w3-section {
     position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
 }
 
-.slider-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.slider-track {
-    display: flex;
-    width: 500%;
-    height: 100%;
-    transition: transform 1.5s ease-in-out;
-}
-
-.slider-slide {
-    position: relative;
-    width: 20%;
-    height: 100%;
-    flex-shrink: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.slider-slide.active {
-    opacity: 1;
-}
-
-.slider-image {
+.mySlides {
+    display: none;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
-    filter: brightness(0.4);
-    transition: all 0.5s ease;
 }
 
-.slider-slide.active .slider-image {
-    filter: brightness(0.6);
+.mySlides:first-child {
+    display: block;
 }
 
-.slider-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-    padding: 2rem;
-    transform: translateY(0);
-    transition: transform 1s ease;
-}
-
-/* Slider Arrows */
-.slider-arrow {
+/* Carousel Navigation Buttons */
+.carousel-nav {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(15, 23, 42, 0.25); /* Deep Navy translucent */
+    background: rgba(15, 23, 42, 0.7);
     border: none;
-    color: #F8FAFC;
-    font-size: 1.5rem;
-    width: 48px;
-    height: 48px;
+    color: white;
+    font-size: 1.2rem;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     cursor: pointer;
-    z-index: 30;
-    transition: all 0.2s ease;
+    z-index: 10;
+    transition: all 0.3s ease;
     backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.slider-arrow:hover {
-    background: rgba(20, 184, 166, 0.35); /* Teal tint */
-    transform: translateY(-50%) scale(1.05);
+.carousel-nav:hover {
+    background: rgba(20, 184, 166, 0.8);
+    transform: translateY(-50%) scale(1.1);
 }
 
-.slider-arrow-left { left: 16px; }
-.slider-arrow-right { right: 16px; }
+.carousel-nav-left {
+    left: 15px;
+}
 
-/* Slider Dots */
-.slider-dots {
+.carousel-nav-right {
+    right: 15px;
+}
+
+/* Carousel Dots */
+.carousel-dots {
     position: absolute;
-    bottom: 20px;
+    bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 10px;
+    gap: 8px;
     z-index: 10;
 }
 
-.dot {
-    width: 8px;
-    height: 8px;
+.carousel-dot {
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    background: rgba(248, 250, 252, 0.6);
+    background: rgba(255, 255, 255, 0.5);
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.dot.active {
-    background: #14B8A6; /* Teal */
+.carousel-dot.active {
+    background: #14B8A6;
     transform: scale(1.2);
 }
 
-.dot:hover {
+.carousel-dot:hover {
     background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
 }
 
-/* Responsive adjustments for slider */
+/* Responsive adjustments for carousel */
 @media (max-width: 768px) {
-    .slider-overlay {
-        padding: 1rem;
+    .carousel-nav {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
     }
     
-    .slider-overlay h3 {
-        font-size: 1.25rem;
-    }
-    
-    .slider-overlay p {
-        font-size: 0.875rem;
-    }
-    
-    .slider-arrow {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-    }
-    
-    .slider-arrow-left {
+    .carousel-nav-left {
         left: 10px;
     }
     
-    .slider-arrow-right {
+    .carousel-nav-right {
         right: 10px;
     }
     
-    .slider-dots {
-        bottom: 15px;
+    .carousel-dots {
+        bottom: 10px;
+        gap: 6px;
     }
     
-    .dot {
-        width: 10px;
-        height: 10px;
+    .carousel-dot {
+        width: 8px;
+        height: 8px;
     }
 }
 
@@ -855,6 +810,335 @@ textarea:focus {
     }
 }
 
+/* Scroll-based Parallax Animations */
+.parallax-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax-bg {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+.parallax-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Hero Section Parallax */
+.hero-parallax-bg {
+    background: linear-gradient(135deg, #FFD194 0%, #D1913C 100%);
+    transform: translateY(0);
+    transition: transform 0.1s ease-out;
+}
+
+.hero-parallax-content {
+    transform: translateY(0);
+    transition: transform 0.1s ease-out;
+}
+
+/* About Section Parallax */
+.about-parallax-bg {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.9) 100%);
+    transform: translateY(0);
+    transition: transform 0.1s ease-out;
+}
+
+.about-parallax-content {
+    transform: translateY(0);
+    transition: transform 0.1s ease-out;
+}
+
+/* Activities Section Parallax */
+.activities-parallax-bg {
+    background: linear-gradient(135deg, rgba(255, 209, 148, 0.15) 0%, rgba(209, 145, 60, 0.15) 100%);
+    transform: translateY(0);
+    transition: transform 0.1s ease-out;
+}
+
+.activities-parallax-content {
+    transform: translateY(0);
+    transition: transform 0.1s ease-out;
+}
+
+/* Gallery Section Parallax */
+.gallery-parallax-bg {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+    transform: translateY(0);
+    transition: transform 0.1s ease-out;
+}
+
+.gallery-parallax-content {
+    transform: translateY(0);
+    transition: transform 0.1s ease-out;
+}
+
+/* Contact Section Parallax */
+.contact-parallax-bg {
+    background: linear-gradient(135deg, rgba(255, 209, 148, 0.15) 0%, rgba(209, 145, 60, 0.15) 100%);
+    transform: translateY(0);
+    transition: transform 0.1s ease-out;
+}
+
+.contact-parallax-content {
+    transform: translateY(0);
+    transition: transform 0.1s ease-out;
+}
+
+/* Footer Section Parallax */
+.footer-parallax-bg {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    transform: translateY(0);
+    transition: transform 0.1s ease-out;
+}
+
+.footer-parallax-content {
+    transform: translateY(0);
+    transition: transform 0.1s ease-out;
+}
+
+/* Parallax Elements */
+.parallax-element {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+.parallax-slow {
+    transform: translateY(0);
+    transition: transform 0.1s ease-out;
+}
+
+.parallax-medium {
+    transform: translateY(0);
+    transition: transform 0.1s ease-out;
+}
+
+.parallax-fast {
+    transform: translateY(0);
+    transition: transform 0.1s ease-out;
+}
+
+/* Floating Elements */
+.floating-element {
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-element:nth-child(2n) {
+    animation-delay: -2s;
+}
+
+.floating-element:nth-child(3n) {
+    animation-delay: -4s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Scroll-triggered animations */
+.scroll-fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.scroll-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-slide-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.8s ease-out;
+}
+
+.scroll-slide-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scroll-slide-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.8s ease-out;
+}
+
+.scroll-slide-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scroll-scale-up {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.8s ease-out;
+}
+
+.scroll-scale-up.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Staggered animations */
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+
+/* Floating WhatsApp Icon */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    z-index: 1000;
+    animation: whatsappPulse 2s infinite;
+}
+
+.whatsapp-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: #25D366;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.whatsapp-link:hover {
+    background: #128C7E;
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-link i {
+    font-size: 28px;
+    z-index: 2;
+    position: relative;
+}
+
+.whatsapp-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.whatsapp-link:hover::before {
+    left: 100%;
+}
+
+.whatsapp-tooltip {
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #333;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.whatsapp-tooltip::after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 6px solid transparent;
+    border-left-color: #333;
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(-5px);
+}
+
+@keyframes whatsappPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* Responsive adjustments for WhatsApp float */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 15px;
+        right: 15px;
+        width: 55px;
+        height: 55px;
+    }
+    
+    .whatsapp-link i {
+        font-size: 24px;
+    }
+    
+    .whatsapp-tooltip {
+        right: 65px;
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .whatsapp-float {
+        bottom: 10px;
+        right: 10px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .whatsapp-link i {
+        font-size: 22px;
+    }
+    
+    .whatsapp-tooltip {
+        right: 60px;
+        font-size: 11px;
+        padding: 5px 8px;
+    }
+}
+
 /* Disable all animations and transitions when requested */
 html.disable-animations *,
 html.disable-animations *::before,
@@ -873,11 +1157,7 @@ html.disable-animations .recognition-stat:hover {
     box-shadow: none !important;
 }
 
-html.disable-animations .slider-track,
-html.disable-animations .slider-slide,
-html.disable-animations .slider-image,
-html.disable-animations .slider-overlay,
-html.disable-animations .dot {
+html.disable-animations .mySlides {
     transition: none !important;
 }
 

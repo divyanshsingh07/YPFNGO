@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Kanit:wght@500;700&family=Manrope:wght@400;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/luxia" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" sizes="32x32" href="Ach1.png">
     <link rel="icon" type="image/png" sizes="16x16" href="Ach1.png">
@@ -79,13 +80,13 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-bg min-h-screen flex items-center justify-start lg:justify-center relative overflow-hidden pt-24 md:pt-28 pb-6">
-        <div class="absolute inset-0 tiranga-gradient opacity-10"></div>
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-start lg:justify-center relative overflow-hidden pt-24 md:pt-28 pb-6 parallax-section">
+        <div class="absolute inset-0 tiranga-gradient opacity-10 hero-parallax-bg"></div>
         
-        <div class="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <div class="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full hero-parallax-content">
             <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
                 <!-- Left: 60% Description (3/5) -->
-                <div class="lg:col-span-3 text-center lg:text-left order-2 lg:order-1 hero-text-animate">
+                <div class="lg:col-span-3 text-center lg:text-left order-2 lg:order-1 hero-text-animate scroll-fade-in">
                     <h1 class="text-4xl text-zinc-800 sm:text-5xl lg:text-7xl font-bold hero-title-main mb-8 hero-animate-1 leading-tight">
                         <span class="block text-gradient bg-gradient-to-r from-orange-600 via-red-500 py-4 to-pink-600 bg-clip-text text-transparent">
                             युवा प्रेरणा फाउंडेशन
@@ -138,24 +139,20 @@
                 </div>
 
                 <!-- Right: 40% Auto-changing photos (2/5) -->
-                <div class="lg:col-span-2 order-1 lg:order-2 hero-image-animate">
-                    <div class="relative rounded-2xl overflow-hidden shadow-xl h-72 sm:h-96">
-                        <!-- Previous Arrow -->
-                        <button id="prevBtn" class="slider-arrow slider-arrow-left">
+                <div class="lg:col-span-2 order-1 lg:order-2 hero-image-animate scroll-slide-right">
+                    <div class="relative w3-content w3-section rounded-2xl overflow-hidden shadow-xl h-72 sm:h-96" style="max-width:100%">
+                        <!-- Navigation Arrows -->
+                        <button id="carouselPrev" class="carousel-nav carousel-nav-left">
                             <i class="fas fa-chevron-left"></i>
                         </button>
-                        <!-- Next Arrow -->
-                        <button id="nextBtn" class="slider-arrow slider-arrow-right">
+                        <button id="carouselNext" class="carousel-nav carousel-nav-right">
                             <i class="fas fa-chevron-right"></i>
                         </button>
-                        <!-- Slider -->
-                        <div class="slider-wrapper h-full">
-                            <div class="slider-track h-full" id="sliderTrack">
-                                
-                            </div>
-                        </div>
+                        
+                        <!-- Images will be dynamically inserted here by JavaScript -->
+                        
                         <!-- Dots Indicator -->
-                        <div class="slider-dots"></div>
+                        <div id="carouselDots" class="carousel-dots"></div>
                     </div>
                 </div>
             </div>
@@ -166,9 +163,10 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 slide-up">
+    <section id="about" class="py-20 bg-white parallax-section">
+        <div class="absolute inset-0 about-parallax-bg"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 about-parallax-content">
+            <div class="text-center mb-16 slide-up scroll-fade-in">
                 <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 flex items-center justify-center">
                     <i class="fas fa-info-circle mr-4 text-blue-600"></i>About Us
                 </h2>
@@ -178,7 +176,7 @@
             </div>
             
             <div class="grid md:grid-cols-3 gap-8 mb-16">
-                <div class=" border-2 border-gray-300 rounded-2xl p-4 text-center slide-up cursor-pointer blog-card hover:shadow-lg transition-all duration-300" data-blog="mission">
+                <div class=" border-2 border-gray-300 rounded-2xl p-4 text-center slide-up cursor-pointer blog-card hover:shadow-lg transition-all duration-300 scroll-slide-left stagger-1" data-blog="mission">
                     <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-bullseye text-3xl text-blue-600"></i>
                     </div>
@@ -188,7 +186,7 @@
                     </p>
                 </div>
                 
-                <div class=" border-2 border-gray-300 rounded-2xl p-4 text-center slide-up cursor-pointer blog-card hover:shadow-lg transition-all duration-300" data-blog="vision">
+                <div class=" border-2 border-gray-300 rounded-2xl p-4 text-center slide-up cursor-pointer blog-card hover:shadow-lg transition-all duration-300 scroll-scale-up stagger-2" data-blog="vision">
                     <div class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-eye text-3xl text-green-600"></i>
                     </div>
@@ -198,7 +196,7 @@
                     </p>
                 </div>
                 
-                <div class=" border-2 border-gray-300 rounded-2xl p-4 text-center slide-up cursor-pointer blog-card hover:shadow-lg transition-all duration-300" data-blog="values">
+                <div class=" border-2 border-gray-300 rounded-2xl p-4 text-center slide-up cursor-pointer blog-card hover:shadow-lg transition-all duration-300 scroll-slide-right stagger-3" data-blog="values">
                     <div class="bg-orange-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-hands-helping text-3xl text-orange-600"></i>
                     </div>
@@ -212,9 +210,10 @@
     </section>
 
     <!-- Activities Section -->
-    <section id="activities" class="py-20 section-gradient">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 slide-up">
+    <section id="activities" class="py-20 section-gradient parallax-section">
+        <div class="absolute inset-0 activities-parallax-bg"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 activities-parallax-content">
+            <div class="text-center mb-16 slide-up scroll-fade-in">
                 <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
                     Our Activities 
                 </h2>
@@ -224,7 +223,7 @@
             </div>
             
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="activity-card bg-white rounded-2xl shadow-lg card-hover text-center overflow-hidden cursor-pointer" data-activity="medical">
+                <div class="activity-card bg-white rounded-2xl shadow-lg card-hover text-center overflow-hidden cursor-pointer scroll-scale-up stagger-1" data-activity="medical">
                     <div class="relative">
                         <img src="https://savioursfoundation.org/wp-content/uploads/2020/03/Health.jpg" alt="Medical Care" class="w-full h-48 object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
@@ -248,7 +247,7 @@
                     </div>
                 </div>
                 
-                <div class="activity-card bg-white rounded-2xl shadow-lg card-hover text-center overflow-hidden cursor-pointer" data-activity="animal">
+                <div class="activity-card bg-white rounded-2xl shadow-lg card-hover text-center overflow-hidden cursor-pointer scroll-slide-left stagger-2" data-activity="animal">
                     <div class="relative">
                         <img src="/animal/an1.png">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
@@ -272,7 +271,7 @@
                     </div>
                 </div>
                 
-                <div class="activity-card bg-white rounded-2xl shadow-lg card-hover text-center overflow-hidden cursor-pointer" data-activity="food">
+                <div class="activity-card bg-white rounded-2xl shadow-lg card-hover text-center overflow-hidden cursor-pointer scroll-scale-up stagger-3" data-activity="food">
                     <div class="relative">
                         <img src="/food/fd1.png">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
@@ -296,7 +295,7 @@
                     </div>
                 </div>
                 
-                <div class="activity-card bg-white rounded-2xl shadow-lg card-hover text-center overflow-hidden cursor-pointer" data-activity="community">
+                <div class="activity-card bg-white rounded-2xl shadow-lg card-hover text-center overflow-hidden cursor-pointer scroll-slide-right stagger-4" data-activity="community">
                     <div class="relative">
                         <img src="/plantation/p3.jpeg">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
@@ -324,16 +323,17 @@
     </section>
 
     <!-- Gallery -->
-    <section id="gallery" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
+    <section id="gallery" class="py-20 bg-white parallax-section">
+        <div class="absolute inset-0 gallery-parallax-bg"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 gallery-parallax-content">
+            <div class="text-center mb-12 scroll-fade-in">
                 <h2 class="text-4xl sm:text-5xl font-extrabold text-[#0F172A] mb-4">Our Impact</h2>
                 <p class="text-lg sm:text-xl text-[#334155] max-w-3xl mx-auto">Numbers that reflect our commitment to service</p>
             </div>
 
             <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                 <!-- Impact Card 1 -->
-                <div class="impact-card-up bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition">
+                <div class="impact-card-up bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition scroll-scale-up stagger-1">
                     <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-heartbeat text-2xl text-red-600"></i>
                     </div>
@@ -343,7 +343,7 @@
                 </div>
 
                 <!-- Impact Card 2 -->
-                <div class="impact-card-up bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition">
+                <div class="impact-card-up bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition scroll-slide-left stagger-2">
                     <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-paw text-2xl text-green-600"></i>
                     </div>
@@ -353,7 +353,7 @@
                 </div>
 
                 <!-- Impact Card 3 -->
-                <div class="impact-card-down bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition">
+                <div class="impact-card-down bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition scroll-scale-up stagger-3">
                     <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-utensils text-2xl text-orange-600"></i>
                     </div>
@@ -363,7 +363,7 @@
                 </div>
 
                 <!-- Impact Card 4 -->
-                <div class="impact-card-down bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition">
+                <div class="impact-card-down bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition scroll-slide-right stagger-4">
                     <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-users text-2xl text-blue-600"></i>
                     </div>
@@ -376,17 +376,18 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 section-gradient">
-    <h1 class="text-4xl text-center sm:text-5xl font-bold text-gray-900 mb-6">Contact Us & Certificates</h1> 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 slide-up">
+    <section id="contact" class="py-20 section-gradient parallax-section">
+        <div class="absolute inset-0 contact-parallax-bg"></div>
+        <h1 class="text-4xl text-center sm:text-5xl font-bold text-gray-900 mb-6 contact-parallax-content scroll-fade-in">Contact Us & Certificates</h1> 
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 contact-parallax-content">
+            <div class="text-center mb-16 slide-up scroll-fade-in">
                 <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
                   
                
             </div>
             
             <div class="grid lg:grid-cols-2 gap-12">
-                <div class="slide-up">
+                <div class="slide-up scroll-slide-left">
                     <h3 class="text-2xl font-bold text-gray-900 mb-8">Get in Touch </h3>
                     
                     <div class="space-y-6">
@@ -444,7 +445,7 @@
                     </div>
                 </div>
                 
-                <div class="slide-up">
+                <div class="slide-up scroll-slide-right">
                     <div class="bg-white rounded-2xl p-8 shadow-lg">
                         <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">
                             Certificates & Awards 
@@ -661,10 +662,11 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer class="bg-gray-900 text-white py-12 parallax-section">
+        <div class="absolute inset-0 footer-parallax-bg"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 footer-parallax-content">
             <div class="grid md:grid-cols-4 gap-8">
-                <div class="md:col-span-2">
+                <div class="md:col-span-2 scroll-fade-in">
                     <div class="text-3xl font-bold mb-4">
                         <span class="text-blue-400">Yuva Prerna</span>
                         <span class="text-green-400"> फाउंडेशन</span>
@@ -685,7 +687,7 @@
                     </div>
                 </div>
                 
-                <div>
+                <div class="scroll-slide-left">
                     <h3 class="text-lg font-semibold mb-4">Quick Links </h3>
                     <ul class="space-y-2">
                         <li><a href="#about" class="text-gray-300 hover:text-white transition-colors flex items-center"><i class="fas fa-info-circle mr-2"></i>About Us</a></li>
@@ -695,7 +697,7 @@
                     </ul>
                 </div>
                 
-                <div>
+                <div class="scroll-slide-right">
                     <h3 class="text-lg font-semibold mb-4">Support </h3>
                     <ul class="space-y-2">
                         <li><a href="#" id="footerDonate" class="text-gray-300 hover:text-white transition-colors cursor-pointer flex items-center"><i class="fas fa-donate mr-2"></i>Donate</a></li>
@@ -1013,6 +1015,16 @@
             <article id="blogContent" class="prose prose-lg max-w-none">
                 <!-- Blog paragraphs will be inserted here -->
             </article>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Icon -->
+    <div id="whatsappFloat" class="whatsapp-float">
+        <a href="https://wa.me/919696525287" target="_blank" rel="noopener noreferrer" class="whatsapp-link">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <div class="whatsapp-tooltip">
+            <span>Contact us on WhatsApp</span>
         </div>
     </div>
 
