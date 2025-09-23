@@ -1,7 +1,13 @@
+.min-h-\[520px\]{min-height:520px}
+.h-\[520px\]{height:520px}
+.line-clamp-2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.line-clamp-3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.line-clamp-4{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
 /* Custom CSS for Yuva Prerna Foundation Website */
 
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
 
 /* Reset and Base Styles */
 * {
@@ -459,14 +465,6 @@ textarea:focus {
     visibility: visible;
 }
 
-.modal-content {
-    transform: scale(0.9);
-    transition: transform 0.3s ease;
-}
-
-#imageModal:not(.hidden) .modal-content {
-    transform: scale(1);
-}
 
 /* Gallery images in modal */
 .modal-gallery-item {
@@ -1295,4 +1293,91 @@ select:focus {
     .hero-text-soft {
         padding-left: 0;
     }
+}
+
+/* Line clamp utilities for blog cards */
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Blog section animations */
+.blog-card {
+    transition: all 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(255, 140, 66, 0.2);
+}
+
+/* Orange color utilities */
+.text-orange-500 {
+    color: #ff8c42;
+}
+
+.bg-orange-500 {
+    background-color: #ff8c42;
+}
+
+.bg-orange-100 {
+    background-color: #fff7ed;
+}
+
+.text-orange-800 {
+    color: #9a3412;
+}
+
+.from-orange-400 {
+    --tw-gradient-from: #fb923c;
+    --tw-gradient-to: rgba(251, 146, 60, 0);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-orange-500 {
+    --tw-gradient-to: #ff8c42;
+}
+
+.via-orange-500 {
+    --tw-gradient-to: rgba(255, 140, 66, 0);
+    --tw-gradient-stops: var(--tw-gradient-from), #ff8c42, var(--tw-gradient-to);
+}
+
+.to-orange-600 {
+    --tw-gradient-to: #ea580c;
+}
+
+.hover\:from-orange-500:hover {
+    --tw-gradient-from: #ff8c42;
+    --tw-gradient-to: rgba(255, 140, 66, 0);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.hover\:via-orange-600:hover {
+    --tw-gradient-to: rgba(234, 88, 12, 0);
+    --tw-gradient-stops: var(--tw-gradient-from), #ea580c, var(--tw-gradient-to);
+}
+
+.hover\:to-orange-700:hover {
+    --tw-gradient-to: #c2410c;
+}
+
+/* Loading animation */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
 }

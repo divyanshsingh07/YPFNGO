@@ -29,6 +29,7 @@ function initializeWebsite() {
     setupScrollAnimations();
     setupParallaxAnimations();
     setupWhatsAppFloat();
+    setupBlogAPI();
 }
 
 // Helper: check if animations are disabled via HTML class
@@ -431,9 +432,9 @@ function setupImageGallery() {
     if (!sliderContainer) return;
     
     // Build list of local images from known folders
-    const plantationImages = ['p2.jpeg','p3.jpeg','p4.jpeg','p5.jpeg','p6.jpeg','p7.jpeg'].map(f => `plantation/${f}`);
-    const newspaperImages = ['n1.jpeg','n2.jpeg','n3.jpeg','n4.jpeg','n5.jpeg','n6.jpeg'].map(f => `newspaper/${f}`);
-    const achievementImages = ['Ach2.png','Ach3.png','Ach4.png'].map(f => `acchivment/${f}`);
+    const plantationImages = ['p2.jpeg','p3.jpeg','p4.jpeg','p5.jpeg','p6.jpeg','p7.jpeg'].map(f => `assets/images/activities/${f}`);
+    const newspaperImages = ['n1.jpeg','n2.jpeg','n3.jpeg','n4.jpeg','n5.jpeg','n6.jpeg'].map(f => `assets/images/newspaper/${f}`);
+    const achievementImages = ['Ach2.png','Ach3.png','Ach4.png'].map(f => `assets/images/achievements/${f}`);
     
     const imageSources = [
         ...plantationImages,
@@ -1154,11 +1155,11 @@ const activityPhotos = {
         stats2: "150+",
         stats2Label: "Animals Treated",
         photos: [
-            "animal/an1.png",
+            "assets/images/activities/an1.png",
             
-            "animal/Screenshot 2025-09-10 at 7.10.43 PM.png",
-            "animal/Screenshot 2025-09-10 at 7.10.52 PM.png",
-            "animal/Screenshot 2025-09-10 at 7.11.05 PM.png"
+            "assets/images/activities/Screenshot 2025-09-10 at 7.10.43 PM.png",
+            "assets/images/activities/Screenshot 2025-09-10 at 7.10.52 PM.png",
+            "assets/images/activities/Screenshot 2025-09-10 at 7.11.05 PM.png"
         ]
     },
     food: {
@@ -1175,10 +1176,10 @@ const activityPhotos = {
         stats2: "25+",
         stats2Label: "Distribution Points",
         photos: [
-            "food/fd1.png",
-            "food/fd2.png",
-            "food/fd3.png",
-            "food/fd4.jpeg",
+            "assets/images/activities/fd1.png",
+            "assets/images/activities/fd2.png",
+            "assets/images/activities/fd3.png",
+            "assets/images/activities/fd4.jpeg",
        
            
         ]
@@ -1197,19 +1198,19 @@ const activityPhotos = {
         stats2: "200+",
         stats2Label: "Workshops Conducted",
         photos: [
-            "plantation/p2.jpeg",
-            "plantation/p3.jpeg",
-            "plantation/p4.jpeg",
-            "plantation/p5.jpeg",
-            "plantation/p6.jpeg",
-            "plantation/p7.jpeg",
-            "plantation/p8.jpeg",
-            "plantation/p9.jpeg",
-            "plantation/p10.jpeg",
-            "plantation/p11.jpeg",
-            "plantation/p12.jpeg",
-            "plantation/p13.jpeg",
-            "plantation/p14.jpeg",
+            "assets/images/activities/p2.jpeg",
+            "assets/images/activities/p3.jpeg",
+            "assets/images/activities/p4.jpeg",
+            "assets/images/activities/p5.jpeg",
+            "assets/images/activities/p6.jpeg",
+            "assets/images/activities/p7.jpeg",
+            "assets/images/activities/p8.jpeg",
+            "assets/images/activities/p9.jpeg",
+            "assets/images/activities/p10.jpeg",
+            "assets/images/activities/p11.jpeg",
+            "assets/images/activities/p12.jpeg",
+            "assets/images/activities/p13.jpeg",
+            "assets/images/activities/p14.jpeg",
         
 
         ]
@@ -1433,13 +1434,13 @@ function setupCertificatesGallery() {
     function getCertificateImages() {
         // Strictly use local certificate and newspaper images
         return [
-            'certificate.jpeg',
-            'newspaper/n1.jpeg',
-            'newspaper/n2.jpeg',
-            'newspaper/n3.jpeg',
-            'newspaper/n4.jpeg',
-            'newspaper/n5.jpeg',
-            'newspaper/n6.jpeg'
+            'assets/images/certificates/certificate.jpeg',
+            'assets/images/newspaper/n1.jpeg',
+            'assets/images/newspaper/n2.jpeg',
+            'assets/images/newspaper/n3.jpeg',
+            'assets/images/newspaper/n4.jpeg',
+            'assets/images/newspaper/n5.jpeg',
+            'assets/images/newspaper/n6.jpeg'
         ];
     }
 
@@ -1772,7 +1773,7 @@ function setupBlogPages() {
         mission: {
             title: 'Mission / मिशन',
             subtitle: 'Dedicated actions for health, animals, food relief, and welfare',
-            hero: './plantation/p5.jpeg',
+            hero: './assets/images/activities/p5.jpeg',
             paragraphs: [
                 'युवा प्रेरणा फाउंडेशन का मिशन समाज के प्रत्येक तबके तक मदद पहुँचाना और सतत विकास की दिशा में ठोस योगदान देना है। संस्था का मानना है कि शिक्षा, स्वास्थ्य, पशु संरक्षण, आपदा राहत और सामाजिक कल्याण जैसे क्षेत्रों में समन्वित प्रयास ही समाज को आत्मनिर्भर और सशक्त बना सकते हैं। हमारा लक्ष्य केवल तात्कालिक सहायता प्रदान करना ही नहीं, बल्कि दीर्घकालिक बदलाव लाना है जिससे हर व्यक्ति गरिमा के साथ जीवन जी सके।',
                 'विस्तृत मिशन: हमारा मिशन है कि वंचित और जरूरतमंद समुदायों को नि:शुल्क चिकित्सा सेवाएँ उपलब्ध कराई जाएँ। इसके अंतर्गत संस्था नियमित स्वास्थ्य शिविर, मोबाइल क्लिनिक और दवा वितरण कार्यक्रम आयोजित करती है, जहाँ अनुभवी डॉक्टर और समर्पित स्वयंसेवक अपनी सेवाएँ प्रदान करते हैं।',
@@ -1784,7 +1785,7 @@ function setupBlogPages() {
         vision: {
             title: 'Vision / दृष्टि',
             subtitle: 'A compassionate society for every human and animal',
-            hero: './newspaper/n4.jpeg',
+            hero: './assets/images/newspaper/n4.jpeg',
             paragraphs: [
                 'युवा प्रेरणा फाउंडेशन का विज़न है एक ऐसे समाज का निर्माण करना जहाँ हर व्यक्ति को समान अवसर, सम्मान और सुरक्षित जीवन मिले। हमारा लक्ष्य शिक्षा, स्वास्थ्य, पर्यावरण संरक्षण और सामाजिक न्याय के माध्यम से एक आत्मनिर्भर और जागरूक समाज की स्थापना करना है। हम मानते हैं कि सामूहिक प्रयासों से ही एक सशक्त, स्वच्छ और समृद्ध भारत का निर्माण संभव है।',
                 'विस्तृत विज़न: हमारा विज़न है कि कोई भी बच्चा शिक्षा से वंचित न रहे। संस्था एक ऐसे भविष्य की कल्पना करती है जहाँ हर बच्चा गुणवत्तापूर्ण शिक्षा प्राप्त करे और अपने सपनों को साकार करने में सक्षम बने।',
@@ -1797,7 +1798,7 @@ function setupBlogPages() {
         values: {
             title: 'Values / मूल्य',
             subtitle: 'Compassion, integrity, service, and unity',
-            hero: './plantation/p2.jpeg',
+            hero: './assets/images/activities/p2.jpeg',
             paragraphs: [
                 'युवा प्रेरणा फाउंडेशन के मूल्यों में वह सोच और सिद्धांत निहित हैं, जिनके आधार पर संस्था अपने सभी सामाजिक कार्य करती है। इन्हीं मूल्यों के आधार पर हम शिक्षा, स्वास्थ्य, पर्यावरण और सशक्तिकरण जैसे क्षेत्रों में स्थायी परिवर्तन लाने का प्रयास करते हैं।',
                 '1. समानता (Equality): हर व्यक्ति, चाहे उसका सामाजिक या आर्थिक स्तर कुछ भी हो, समान अधिकार और अवसर पाने का हकदार है। हम बिना किसी भेदभाव के सेवाएँ प्रदान करते हैं।',
@@ -1855,4 +1856,416 @@ function setupBlogPages() {
             closeBlog();
         }
     });
+}
+
+// Blog API Integration: support static dev on :5500 and same-origin prod
+const IS_STATIC_DEV = window.location.port === '5500';
+const BACKEND_ORIGIN = IS_STATIC_DEV ? 'http://localhost:3000' : '';
+const API_BASE_URL = `${BACKEND_ORIGIN}/api`;
+
+// Setup Blog API functionality
+function setupBlogAPI() {
+    // Load blogs when the page loads
+    loadBlogs();
+}
+
+// Load blogs from backend API
+async function loadBlogs() {
+    const loadingElement = document.getElementById('blogLoading');
+    const errorElement = document.getElementById('blogError');
+    const gridElement = document.getElementById('blogGrid');
+    const emptyElement = document.getElementById('blogEmpty');
+    const viewAllElement = document.getElementById('viewAllBlogs');
+
+    // Show loading state
+    showElement(loadingElement);
+    hideElement(errorElement);
+    hideElement(gridElement);
+    hideElement(emptyElement);
+    hideElement(viewAllElement);
+
+    try {
+        const response = await fetch(`${API_BASE_URL}/blogs?limit=50&page=1`);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+
+        const blogs = Array.isArray(data?.data) ? data.data : [];
+        if (data?.success && blogs.length > 0) {
+            displayBlogs(blogs);
+            hideElement(viewAllElement);
+        } else {
+            showEmptyState();
+        }
+    } catch (error) {
+        console.error('Error loading blogs:', error);
+        showErrorState();
+    } finally {
+        hideElement(loadingElement);
+    }
+}
+
+// Load all blogs (for "View All" button)
+async function loadAllBlogs() {
+    const loadingElement = document.getElementById('blogLoading');
+    const errorElement = document.getElementById('blogError');
+    const gridElement = document.getElementById('blogGrid');
+    const emptyElement = document.getElementById('blogEmpty');
+    const viewAllElement = document.getElementById('viewAllBlogs');
+
+    // Show loading state
+    showElement(loadingElement);
+    hideElement(errorElement);
+    hideElement(gridElement);
+    hideElement(emptyElement);
+    hideElement(viewAllElement);
+
+    try {
+        const response = await fetch(`${API_BASE_URL}/blogs?page=1&limit=100`);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+
+        const blogs = Array.isArray(data?.data) ? data.data : [];
+        if (data?.success && blogs.length > 0) {
+            displayBlogs(blogs);
+        } else {
+            showEmptyState();
+        }
+    } catch (error) {
+        console.error('Error loading all blogs:', error);
+        showErrorState();
+    } finally {
+        hideElement(loadingElement);
+    }
+}
+
+// Display blogs in the grid
+function displayBlogs(blogs) {
+    const gridElement = document.getElementById('blogGrid');
+    const emptyElement = document.getElementById('blogEmpty');
+
+    if (!blogs || blogs.length === 0) {
+        showEmptyState();
+        return;
+    }
+
+    gridElement.innerHTML = '';
+
+    blogs.forEach(blog => {
+        const blogCard = createBlogCard(blog);
+        gridElement.appendChild(blogCard);
+    });
+
+    showElement(gridElement);
+    hideElement(emptyElement);
+}
+
+// Create a blog card element
+function createBlogCard(blog) {
+    const card = document.createElement('div');
+    card.className = 'bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 border border-gray-100 flex flex-col h-[520px]';
+    
+    // Format date
+    const date = new Date(blog.created_at || blog.date || Date.now()).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+
+    // Image URL served by backend endpoint (absolute in static dev)
+    const imageUrl = blog.image_url ? `${BACKEND_ORIGIN}${blog.image_url}` : 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80';
+
+    // Create tags HTML
+    const tagsHtml = blog.tags && blog.tags.length > 0 
+        ? blog.tags.map(tag => `<span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full mr-1 mb-1">${tag}</span>`).join('')
+        : '';
+
+    card.innerHTML = `
+        <div class="relative overflow-hidden h-[40%]">
+            <img src="${imageUrl}" alt="${blog.title}" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+            <div class="absolute top-4 left-4">
+                <span class="bg-gradient-to-r from-orange-400 to-orange-500 text-white text-xs px-3 py-1 rounded-full font-medium shadow-lg">${blog.category || 'Update'}</span>
+            </div>
+            <div class="absolute top-4 right-4"><span class="bg-white/90 backdrop-blur-sm text-gray-700 text-xs px-3 py-1 rounded-full font-medium shadow-lg"><i class="fas fa-calendar-alt mr-1"></i>${date}</span></div>
+            <div class="absolute bottom-4 left-4 right-4">
+                <h3 class="text-white text-lg font-bold mb-1 line-clamp-2 drop-shadow-lg">${blog.title}</h3>
+            </div>
+        </div>
+        <div class="p-6 flex flex-col h-[60%]">
+            <div class="flex items-center text-sm text-gray-500 mb-2">
+                <i class="fas fa-calendar-alt mr-2 text-orange-500"></i>
+                <span class="font-medium">${date}</span>
+            </div>
+            <p class="text-gray-600 mb-2 line-clamp-1 font-medium">${blog.category || ''}</p>
+            <p class="text-gray-700 text-sm mb-4 line-clamp-4 leading-relaxed">${stripHtmlToText(blog.description || '')}</p>
+            ${tagsHtml ? `<div class="mb-6">${tagsHtml}</div>` : ''}
+            <button onclick="openBlogInSameTab('${blog.slug || blog._id}')" class="mt-auto w-full bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 text-white py-3 px-4 rounded-xl hover:from-orange-500 hover:via-orange-600 hover:to-orange-700 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105">
+                <i class="fas fa-book-open mr-2"></i>Read Full Story
+            </button>
+        </div>
+    `;
+
+    return card;
+}
+
+// View individual blog
+async function viewBlog(blogId) {
+    try {
+        const response = await fetch(`${API_BASE_URL}/blogs/${blogId}`);
+        const data = await response.json();
+
+        if (data.success) {
+            showBlogModal(data.data.blog);
+        } else {
+            showNotification('Blog not found', 'error');
+        }
+    } catch (error) {
+        console.error('Error loading blog:', error);
+        showNotification('Error loading blog', 'error');
+    }
+}
+
+// Open blog in same tab
+function openBlogInSameTab(slugOrId) {
+    const isDevStatic = window.location.port === '5500';
+    window.location.href = `${isDevStatic ? 'http://localhost:3000' : ''}/blog/${slugOrId}`;
+}
+
+// Create blog page content for new tab
+function createBlogPageContent(blog) {
+    const date = new Date(blog.date).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+
+    const imageFile2 = blog.image || blog.coverImage;
+    const imageUrl = imageFile2 ? `${API_BASE_URL.replace('/api', '')}/uploads/${imageFile2}` : 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80';
+
+    const tagsHtml = blog.tags && blog.tags.length > 0 
+        ? blog.tags.map(tag => `<span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">${tag}</span>`).join('')
+        : '';
+
+    return `
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>${blog.title} - NGO Shivam</title>
+            <script src="https://cdn.tailwindcss.com"></script>
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+            <style>
+                body {
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    min-height: 100vh;
+                }
+                .blog-content {
+                    line-height: 1.8;
+                }
+                .blog-content p {
+                    margin-bottom: 1.5rem;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="min-h-screen py-8">
+                <div class="max-w-4xl mx-auto px-4">
+                    <!-- Header -->
+                    <div class="bg-white rounded-2xl shadow-2xl overflow-hidden mb-8">
+                        <!-- Hero Image -->
+                        <div class="relative h-64 md:h-80">
+                            <img src="${imageUrl}" alt="${blog.title}" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">${blog.title}</h1>
+                                <p class="text-lg text-gray-200">${blog.subtitle}</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Blog Meta -->
+                        <div class="p-6 border-b border-gray-200">
+                            <div class="flex flex-wrap items-center text-sm text-gray-500 mb-4">
+                                <span class="mr-6"><i class="fas fa-calendar-alt mr-2"></i>${date}</span>
+                                <span class="mr-6"><i class="fas fa-user mr-2"></i>${blog.author}</span>
+                                <span><i class="fas fa-eye mr-2"></i>${blog.views || 0} views</span>
+                            </div>
+                            ${tagsHtml ? `<div class="mb-4">${tagsHtml}</div>` : ''}
+                        </div>
+                        
+                        <!-- Blog Content -->
+                        <div class="p-6">
+                            <div class="blog-content text-gray-700 text-lg">
+                                ${blog.description.replace(/\n/g, '<br>')}
+                            </div>
+                        </div>
+                        
+                        <!-- Footer -->
+                        <div class="p-6 bg-gray-50 border-t border-gray-200">
+                            <div class="flex justify-between items-center">
+                                <div class="text-sm text-gray-500">
+                                    <i class="fas fa-building mr-2"></i>NGO Shivam
+                                </div>
+                                <button onclick="window.close()" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                                    <i class="fas fa-times mr-2"></i>Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Back to Main Site -->
+                    <div class="text-center">
+                        <a href="${window.location.origin}/frontend/index.html" target="_parent" class="inline-flex items-center bg-white text-gray-700 px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                            <i class="fas fa-arrow-left mr-2"></i>
+                            Back to Main Site
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </body>
+        </html>
+    `;
+}
+
+// Show blog modal
+function showBlogModal(blog) {
+    // Create modal if it doesn't exist
+    let modal = document.getElementById('blogModal');
+    if (!modal) {
+        modal = createBlogModal();
+        document.body.appendChild(modal);
+    }
+
+    // Format date
+    const date = new Date(blog.date).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+
+    // Create image URL
+    const imageFile2 = blog.image || blog.coverImage;
+    const imageUrl = imageFile2 ? `${API_BASE_URL.replace('/api', '')}/uploads/${imageFile2}` : 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80';
+
+    // Create tags HTML
+    const tagsHtml = blog.tags && blog.tags.length > 0 
+        ? blog.tags.map(tag => `<span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mr-2 mb-2">${tag}</span>`).join('')
+        : '';
+
+    // Update modal content
+    modal.querySelector('#blogModalTitle').textContent = blog.title;
+    modal.querySelector('#blogModalSubtitle').textContent = blog.subtitle;
+    modal.querySelector('#blogModalImage').src = imageUrl;
+    modal.querySelector('#blogModalImage').alt = blog.title;
+    modal.querySelector('#blogModalDate').textContent = date;
+    modal.querySelector('#blogModalAuthor').textContent = blog.author;
+    modal.querySelector('#blogModalViews').textContent = blog.views || 0;
+    modal.querySelector('#blogModalContent').innerHTML = (blog.content || blog.description || '').replace(/\n/g, '<br>');
+    modal.querySelector('#blogModalTags').innerHTML = tagsHtml;
+
+    // Show modal
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+// Create blog modal
+function createBlogModal() {
+    const modal = document.createElement('div');
+    modal.id = 'blogModal';
+    modal.className = 'fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4';
+    
+    modal.innerHTML = `
+        <div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="sticky top-0 bg-white border-b border-gray-200 p-6 rounded-t-2xl">
+                <div class="flex justify-between items-start">
+                    <h2 id="blogModalTitle" class="text-2xl font-bold text-gray-800 pr-4"></h2>
+                    <button onclick="closeBlogModal()" class="text-gray-400 hover:text-gray-600 transition-colors">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="p-6">
+                <img id="blogModalImage" src="" alt="" class="w-full h-64 md:h-80 object-cover rounded-lg mb-6">
+                <div class="flex flex-wrap items-center text-sm text-gray-500 mb-4">
+                    <span class="mr-4"><i class="fas fa-calendar-alt mr-1"></i><span id="blogModalDate"></span></span>
+                    <span class="mr-4"><i class="fas fa-user mr-1"></i><span id="blogModalAuthor"></span></span>
+                    <span><i class="fas fa-eye mr-1"></i><span id="blogModalViews"></span> views</span>
+                </div>
+                <h3 id="blogModalSubtitle" class="text-xl text-gray-600 mb-4 font-medium"></h3>
+                <div id="blogModalContent" class="text-gray-700 leading-relaxed mb-6"></div>
+                <div id="blogModalTags" class="mb-6"></div>
+            </div>
+        </div>
+    `;
+
+    // Close modal on backdrop click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeBlogModal();
+        }
+    });
+
+    // Close modal on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+            closeBlogModal();
+        }
+    });
+
+    return modal;
+}
+
+// Close blog modal
+function closeBlogModal() {
+    const modal = document.getElementById('blogModal');
+    if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Show empty state
+function showEmptyState() {
+    const emptyElement = document.getElementById('blogEmpty');
+    const gridElement = document.getElementById('blogGrid');
+    const viewAllElement = document.getElementById('viewAllBlogs');
+
+    showElement(emptyElement);
+    hideElement(gridElement);
+    hideElement(viewAllElement);
+}
+
+// Show error state
+function showErrorState() {
+    const errorElement = document.getElementById('blogError');
+    const gridElement = document.getElementById('blogGrid');
+    const emptyElement = document.getElementById('blogEmpty');
+    const viewAllElement = document.getElementById('viewAllBlogs');
+
+    showElement(errorElement);
+    hideElement(gridElement);
+    hideElement(emptyElement);
+    hideElement(viewAllElement);
+}
+
+// Helper functions to show/hide elements
+function showElement(element) {
+    if (element) {
+        element.classList.remove('hidden');
+    }
+}
+
+function hideElement(element) {
+    if (element) {
+        element.classList.add('hidden');
+    }
+}
+
+// Utility: Strip HTML tags to plain text for safe excerpts
+function stripHtmlToText(htmlString) {
+    const tmp = document.createElement('div');
+    tmp.innerHTML = htmlString || '';
+    const text = tmp.textContent || tmp.innerText || '';
+    return text.replace(/\s+/g, ' ').trim();
 }
