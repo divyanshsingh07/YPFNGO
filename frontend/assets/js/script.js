@@ -12,6 +12,7 @@ const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz0Qu8MT
 
 // Initialize all website functionality
 function initializeWebsite() {
+    try { if (window.emailjs && emailjs.init) { emailjs.init({ publicKey: 'N7nwjrzlvj9HeRlFZ' }); } } catch (_) {}
     setupMobileMenu();
     setupSmoothScrolling();
     setupFormHandling();
@@ -30,6 +31,10 @@ function initializeWebsite() {
     setupParallaxAnimations();
     setupWhatsAppFloat();
     setupBlogAPI();
+    setupJoinMissionModal();
+    setupShareWorkButtons();
+    setupEmergencyHelp();
+    setupMarriageProgramModal();
 }
 
 // Helper: check if animations are disabled via HTML class
@@ -43,6 +48,9 @@ function setupActivityCtaWiring() {
     const donateCTA = document.getElementById('donateCTA');
     const joinBtn = document.getElementById('joinUsBtn');
     const donateBtn = document.getElementById('donateBtn');
+    const marriageApplyBtn = document.getElementById('marriageApplyBtn');
+    const joinMissionHeader = document.getElementById('joinMissionHeader');
+    const massMarriageCard = document.getElementById('massMarriageCard');
 
     if (volunteerCTA && joinBtn) {
         volunteerCTA.addEventListener('click', (e) => {
@@ -55,6 +63,36 @@ function setupActivityCtaWiring() {
         donateCTA.addEventListener('click', (e) => {
             e.preventDefault();
             donateBtn.click();
+        });
+    }
+
+    // Open Collective Marriage Program form from CTA header and button
+    const openMarriageModal = () => {
+        const modal = document.getElementById('marriageProgramModal');
+        if (!modal) return;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    };
+
+    if (marriageApplyBtn) {
+        marriageApplyBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openMarriageModal();
+        });
+    }
+
+    if (joinMissionHeader) {
+        joinMissionHeader.addEventListener('click', (e) => {
+            e.preventDefault();
+            openMarriageModal();
+        });
+    }
+
+    if (massMarriageCard) {
+        massMarriageCard.addEventListener('click', (e) => {
+            e.preventDefault();
+            openMarriageModal();
         });
     }
 }
@@ -336,10 +374,10 @@ const galleryData = {
         mainTitle: "Free Medical Treatment Program",
         description: "Our medical care initiative provides comprehensive healthcare services to underprivileged communities. We operate mobile clinics, organize health camps, and ensure access to essential medicines and treatments for those who cannot afford them. Our team of qualified doctors and medical professionals volunteer their time to serve the community.",
         images: [
-            "https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+            "assets/images/activities/p2.jpeg",
+            "assets/images/activities/p3.jpeg",
+            "assets/images/activities/p4.jpeg",
+            "assets/images/activities/p5.jpeg"
         ],
         stats: [
             { number: "500+", label: "Patients Treated" },
@@ -354,10 +392,10 @@ const galleryData = {
         mainTitle: "Animal Rescue & Care Program",
         description: "Our animal care program focuses on rescuing stray, injured, and abandoned animals. We provide medical treatment, shelter, and rehabilitation services. Our team works tirelessly to ensure every animal receives the care and love they deserve, promoting animal welfare in our communities.",
         images: [
-            "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1548247416-ec66f4900b2e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1596492784531-6e6eb4ea4b4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+            "assets/images/activities/an1.png",
+            "assets/images/activities/Screenshot 2025-09-10 at 7.10.43 PM.png",
+            "assets/images/activities/Screenshot 2025-09-10 at 7.10.52 PM.png",
+            "assets/images/activities/Screenshot 2025-09-10 at 7.11.05 PM.png"
         ],
         stats: [
             { number: "200+", label: "Animals Rescued" },
@@ -372,10 +410,10 @@ const galleryData = {
         mainTitle: "Emergency Food Distribution",
         description: "During natural disasters and emergencies, we provide essential food supplies to affected communities. Our food distribution program ensures that no one goes hungry during difficult times. We work with local authorities and volunteers to reach the most vulnerable populations.",
         images: [
-            "https://images.unsplash.com/photo-1593113598332-cd288d649433?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+            "assets/images/activities/fd1.png",
+            "assets/images/activities/fd2.png",
+            "assets/images/activities/fd3.png",
+            "assets/images/activities/fd4.jpeg"
         ],
         stats: [
             { number: "1000+", label: "Meals Served" },
@@ -390,10 +428,10 @@ const galleryData = {
         mainTitle: "Community Development Program",
         description: "Our community service initiatives focus on education, skill development, and social welfare. We organize workshops, provide educational support, and work towards creating sustainable development in rural and urban communities. Our goal is to empower individuals and strengthen community bonds.",
         images: [
-            "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-            "https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+            "assets/images/activities/p6.jpeg",
+            "assets/images/activities/p7.jpeg",
+            "assets/images/activities/p10.jpeg",
+            "assets/images/activities/p11.jpeg"
         ],
         stats: [
             { number: "50+", label: "Communities Served" },
@@ -422,7 +460,7 @@ const galleryData = {
     }
 };
 
-// Image Slider Functionality using w3.CSS with Manual Navigation
+// Image r Functionality using w3.CSS with Manual Navigation
 function setupImageGallery() {
     const sliderContainer = document.querySelector('.w3-content.w3-section');
     const dotsContainer = document.getElementById('carouselDots');
@@ -431,16 +469,27 @@ function setupImageGallery() {
     
     if (!sliderContainer) return;
     
-    // Build list of local images from known folders
-    const plantationImages = ['p2.jpeg','p3.jpeg','p4.jpeg','p5.jpeg','p6.jpeg','p7.jpeg'].map(f => `assets/images/activities/${f}`);
+    // Build list of local images from all available folders
+    const plantationImages = ['p2.jpeg','p3.jpeg','p4.jpeg','p5.jpeg','p6.jpeg','p7.jpeg','p10.jpeg','p11.jpeg','p12.jpeg','p13.jpeg','p14.jpeg'].map(f => `assets/images/activities/${f}`);
+    const foodDistributionImages = ['fd1.png','fd2.png','fd3.png','fd4.jpeg'].map(f => `assets/images/activities/${f}`);
+    const animalImages = ['an1.png','Screenshot 2025-09-10 at 7.10.43 PM.png','Screenshot 2025-09-10 at 7.10.52 PM.png','Screenshot 2025-09-10 at 7.11.05 PM.png'].map(f => `assets/images/activities/${f}`);
     const newspaperImages = ['n1.jpeg','n2.jpeg','n3.jpeg','n4.jpeg','n5.jpeg','n6.jpeg'].map(f => `assets/images/newspaper/${f}`);
     const achievementImages = ['Ach2.png','Ach3.png','Ach4.png'].map(f => `assets/images/achievements/${f}`);
+    const certificateImages = ['certificate.jpeg'].map(f => `assets/images/certificates/${f}`);
+    const generalImages = ['Ach1.png','qr.jpeg'].map(f => `assets/images/general/${f}`);
     
-    const imageSources = [
+    const allImages = [
         ...plantationImages,
+        ...foodDistributionImages,
+        ...animalImages,
         ...achievementImages,
         ...newspaperImages,
+        ...certificateImages,
+        ...generalImages,
     ];
+    
+    // Limit to first 16 images only
+    const imageSources = allImages.slice(0, 16);
     
     // Clear any existing content
     sliderContainer.innerHTML = '';
@@ -516,7 +565,7 @@ function setupImageGallery() {
     // Start auto slide
     function startAutoSlide() {
         stopAutoSlide();
-        autoSlideInterval = setInterval(autoCarousel, 5000);
+        autoSlideInterval = setInterval(autoCarousel, 3000); // Reduced from 5000ms to 3000ms for faster transitions
     }
     
     // Stop auto slide
@@ -715,14 +764,15 @@ function setupModal() {
 function setupJoinUsModal() {
     const joinBtn = document.getElementById('joinUsBtn');
     const joinModal = document.getElementById('joinModal');
-    const closeJoinModal = document.getElementById('closeJoinModal');
+    const closeJoinModal = document.getElementById('closeJoinFormModal');
     const cancelJoinBtn = document.getElementById('cancelJoinBtn');
     const joinForm = document.getElementById('joinForm');
     
     if (!joinBtn || !joinModal) return;
     
     // Open modal
-    joinBtn.addEventListener('click', () => {
+    joinBtn.addEventListener('click', (e) => {
+        e.preventDefault();
         joinModal.classList.remove('hidden');
         joinModal.classList.add('modal-enter');
         document.body.style.overflow = 'hidden';
@@ -1136,9 +1186,9 @@ const activityPhotos = {
         stats2: "25+",
         stats2Label: "Medical Camps",
         photos: [
-            "acchivment/Ach2.png",
-            "acchivment/Ach3.png",
-            "acchivment/Ach4.png"
+            "assets/images/achievements/Ach2.png",
+            "assets/images/achievements/Ach3.png",
+            "assets/images/achievements/Ach4.png"
         ]
     },
     animal: {
@@ -1204,15 +1254,11 @@ const activityPhotos = {
             "assets/images/activities/p5.jpeg",
             "assets/images/activities/p6.jpeg",
             "assets/images/activities/p7.jpeg",
-            "assets/images/activities/p8.jpeg",
-            "assets/images/activities/p9.jpeg",
             "assets/images/activities/p10.jpeg",
             "assets/images/activities/p11.jpeg",
             "assets/images/activities/p12.jpeg",
             "assets/images/activities/p13.jpeg",
-            "assets/images/activities/p14.jpeg",
-        
-
+            "assets/images/activities/p14.jpeg"
         ]
     }
 };
@@ -1428,13 +1474,34 @@ function setupCertificatesGallery() {
     const backBtn = document.getElementById('backFromCertificates');
     const grid = document.getElementById('certificatesGrid');
 
+    // Full screen image modal elements
+    const fullImageModal = document.getElementById('fullImageModal');
+    const fullImage = document.getElementById('fullImage');
+    const closeFullImage = document.getElementById('closeFullImage');
+    const prevImage = document.getElementById('prevImage');
+    const nextImage = document.getElementById('nextImage');
+    const imageCounter = document.getElementById('imageCounter');
+
     if (!openBtn || !page || !grid) return;
+
+    let currentImageIndex = 0;
+    let certificateImages = [];
 
     // Reuse award images from the cards in the contact section if present; otherwise use fallbacks
     function getCertificateImages() {
-        // Strictly use local certificate and newspaper images
+        // Use local certificate, achievement, activity, and newspaper images
         return [
             'assets/images/certificates/certificate.jpeg',
+            'assets/images/achievements/Ach2.png',
+            'assets/images/achievements/Ach3.png',
+            'assets/images/achievements/Ach4.png',
+            'assets/images/activities/p2.jpeg',
+            'assets/images/activities/p3.jpeg',
+            'assets/images/activities/p4.jpeg',
+            'assets/images/activities/p5.jpeg',
+            'assets/images/activities/fd1.png',
+            'assets/images/activities/fd2.png',
+            'assets/images/activities/an1.png',
             'assets/images/newspaper/n1.jpeg',
             'assets/images/newspaper/n2.jpeg',
             'assets/images/newspaper/n3.jpeg',
@@ -1445,12 +1512,18 @@ function setupCertificatesGallery() {
     }
 
     function populateGrid() {
-        const images = getCertificateImages();
+        certificateImages = getCertificateImages();
         grid.innerHTML = '';
-        images.forEach((src, i) => {
+        certificateImages.forEach((src, i) => {
             const item = document.createElement('div');
-            item.className = 'overflow-hidden rounded-lg bg-white shadow';
-            item.innerHTML = `<img src="${src}" alt="Certificate ${i + 1}" class="w-full h-40 sm:h-48 md:h-56 object-cover" loading="lazy">`;
+            item.className = 'certificate-card';
+            item.innerHTML = `<img src="${src}" alt="Certificate ${i + 1}" loading="lazy">`;
+            
+            // Add click event to open full screen
+            item.addEventListener('click', () => {
+                openFullImage(i);
+            });
+            
             grid.appendChild(item);
         });
     }
@@ -1466,18 +1539,80 @@ function setupCertificatesGallery() {
         document.body.style.overflow = 'auto';
     }
 
+    function openFullImage(index) {
+        currentImageIndex = index;
+        fullImage.src = certificateImages[currentImageIndex];
+        fullImage.alt = `Certificate ${currentImageIndex + 1}`;
+        updateImageCounter();
+        fullImageModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeFullImageModal() {
+        fullImageModal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    }
+
+    function showNextImage() {
+        currentImageIndex = (currentImageIndex + 1) % certificateImages.length;
+        fullImage.src = certificateImages[currentImageIndex];
+        fullImage.alt = `Certificate ${currentImageIndex + 1}`;
+        updateImageCounter();
+    }
+
+    function showPrevImage() {
+        currentImageIndex = (currentImageIndex - 1 + certificateImages.length) % certificateImages.length;
+        fullImage.src = certificateImages[currentImageIndex];
+        fullImage.alt = `Certificate ${currentImageIndex + 1}`;
+        updateImageCounter();
+    }
+
+    function updateImageCounter() {
+        imageCounter.textContent = `${currentImageIndex + 1} / ${certificateImages.length}`;
+    }
+
+    // Event listeners for certificates page
     openBtn.addEventListener('click', openPage);
     if (closeBtn) closeBtn.addEventListener('click', closePage);
     if (backBtn) backBtn.addEventListener('click', closePage);
+
+    // Event listeners for full screen image modal
+    if (closeFullImage) closeFullImage.addEventListener('click', closeFullImageModal);
+    if (prevImage) prevImage.addEventListener('click', showPrevImage);
+    if (nextImage) nextImage.addEventListener('click', showNextImage);
 
     // Close on backdrop click
     page.addEventListener('click', (e) => {
         if (e.target === page) closePage();
     });
 
+    // Close full screen modal on backdrop click
+    if (fullImageModal) {
+        fullImageModal.addEventListener('click', (e) => {
+            if (e.target === fullImageModal) closeFullImageModal();
+        });
+    }
+
     // Escape key close
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !page.classList.contains('hidden')) closePage();
+        if (e.key === 'Escape') {
+            if (!fullImageModal.classList.contains('hidden')) {
+                closeFullImageModal();
+            } else if (!page.classList.contains('hidden')) {
+                closePage();
+            }
+        }
+    });
+
+    // Keyboard navigation for full screen images
+    document.addEventListener('keydown', (e) => {
+        if (!fullImageModal.classList.contains('hidden')) {
+            if (e.key === 'ArrowLeft') {
+                showPrevImage();
+            } else if (e.key === 'ArrowRight') {
+                showNextImage();
+            }
+        }
     });
 }
 
@@ -1771,43 +1906,67 @@ function setupBlogPages() {
 
     const blogs = {
         mission: {
-            title: 'Mission / मिशन',
-            subtitle: 'Dedicated actions for health, animals, food relief, and welfare',
+            title: 'Building Hope and Empowering Lives – Yuva Prerna Foundation',
+            subtitle: 'आशा और सशक्त जीवन की ओर – युवा प्रेरणा फाउंडेशन',
             hero: './assets/images/activities/p5.jpeg',
             paragraphs: [
-                'युवा प्रेरणा फाउंडेशन का मिशन समाज के प्रत्येक तबके तक मदद पहुँचाना और सतत विकास की दिशा में ठोस योगदान देना है। संस्था का मानना है कि शिक्षा, स्वास्थ्य, पशु संरक्षण, आपदा राहत और सामाजिक कल्याण जैसे क्षेत्रों में समन्वित प्रयास ही समाज को आत्मनिर्भर और सशक्त बना सकते हैं। हमारा लक्ष्य केवल तात्कालिक सहायता प्रदान करना ही नहीं, बल्कि दीर्घकालिक बदलाव लाना है जिससे हर व्यक्ति गरिमा के साथ जीवन जी सके।',
-                'विस्तृत मिशन: हमारा मिशन है कि वंचित और जरूरतमंद समुदायों को नि:शुल्क चिकित्सा सेवाएँ उपलब्ध कराई जाएँ। इसके अंतर्गत संस्था नियमित स्वास्थ्य शिविर, मोबाइल क्लिनिक और दवा वितरण कार्यक्रम आयोजित करती है, जहाँ अनुभवी डॉक्टर और समर्पित स्वयंसेवक अपनी सेवाएँ प्रदान करते हैं।',
-                'पशु कल्याण हमारी एक अन्य महत्वपूर्ण प्राथमिकता है। हम घायल और आवारा पशुओं को बचाने, उनका उपचार करने और सुरक्षित पुनर्वास हेतु निरंतर प्रयासरत रहते हैं। साथ ही, समाज में पशुओं के प्रति दयालुता और जिम्मेदार व्यवहार की भावना को प्रोत्साहित करते हैं।',
-                'आपदाओं जैसे बाढ़ या अन्य संकट की स्थिति में संस्था तेजी से राहत कार्य शुरू करती है और प्रभावित परिवारों तक पौष्टिक भोजन पहुँचाती है। इन अभियानों में स्थानीय समुदाय और स्वयंसेवकों की सक्रिय भागीदारी सुनिश्चित की जाती है, ताकि राहत अधिक से अधिक लोगों तक पहुँच सके।',
-                'इसके अतिरिक्त, संस्था शिक्षा, कौशल विकास और महिला सशक्तिकरण जैसे क्षेत्रों में भी निरंतर कार्य कर रही है, जिससे समाज के कमजोर वर्ग आत्मनिर्भर बनकर एक बेहतर भविष्य का निर्माण कर सकें।'
+                '<h3 class="text-2xl font-bold text-gray-800 mb-4">Our Mission: Creating Positive Change in Every Life</h3>',
+                'At Yuva Prerna Foundation, our mission is to bring long-term positive change in the lives of people through coordinated efforts in education, healthcare, food distribution, disaster relief, and social welfare. We aim to ensure that every individual can live with dignity and hope.',
+                'We are currently focusing our efforts in Gonda, Uttar Pradesh, reaching out to families and individuals who need support the most. Our work includes:',
+                '<ul class="list-disc list-inside space-y-2 mb-4"><li><strong>Education:</strong> Supporting children and youth with learning resources, scholarships, and skill development programs.</li><li><strong>Health:</strong> Organizing medical camps, awareness programs, and healthcare support for underprivileged communities.</li><li><strong>Food and Nutrition:</strong> Providing meals, ration kits, and nutrition support to families in need.</li><li><strong>Disaster Relief:</strong> Extending quick aid and assistance during natural calamities and emergencies.</li></ul>',
+                '<h4 class="text-xl font-bold text-gray-800 mb-3">Collective Marriage Program:</h4>',
+                'One of our upcoming initiatives is a Collective Marriage Program, where we will help 10–15 couples at a time celebrate their weddings with dignity and joy. Many families struggle to arrange weddings due to financial difficulties, and this program aims to ease their burden while fostering community spirit.',
+                'Through all our initiatives, we believe in empowering lives, spreading hope, and creating a lasting positive impact. Together, with volunteers, donors, and well-wishers, we can make a meaningful difference in the lives of many.',
+                '<hr class="my-6 border-gray-300">',
+                '<h3 class="text-2xl font-bold text-gray-800 mb-4">हमारा मिशन: हर जीवन में सकारात्मक बदलाव लाना</h3>',
+                'युवा प्रेरणा फाउंडेशन का मिशन है शिक्षा, स्वास्थ्य, भोजन, आपदा राहत और सामाजिक कल्याण के माध्यम से लोगों के जीवन में दीर्घकालिक सकारात्मक बदलाव लाना। हमारा उद्देश्य है कि हर व्यक्ति गरिमा और आशा के साथ जीवन जी सके।',
+                'हमारा मुख्य ध्यान वर्तमान में गोंडा, उत्तर प्रदेश में उन परिवारों और व्यक्तियों तक सहायता पहुंचाना है जिन्हें इसकी सबसे अधिक जरूरत है। हमारे कार्यों में शामिल हैं:',
+                '<ul class="list-disc list-inside space-y-2 mb-4"><li><strong>शिक्षा:</strong> बच्चों और युवाओं को शिक्षण संसाधन, छात्रवृत्ति और कौशल विकास कार्यक्रमों के माध्यम से सहायता देना।</li><li><strong>स्वास्थ्य:</strong> चिकित्सकीय शिविर, जागरूकता कार्यक्रम और स्वास्थ्य सहायता प्रदान करना।</li><li><strong>भोजन और पोषण:</strong> जरूरतमंद परिवारों को भोजन, राशन किट और पोषण सहायता देना।</li><li><strong>आपदा राहत:</strong> प्राकृतिक आपदाओं और आपात स्थितियों में त्वरित सहायता और मदद प्रदान करना।</li></ul>',
+                '<h4 class="text-xl font-bold text-gray-800 mb-3">सामूहिक विवाह कार्यक्रम:</h4>',
+                'हमारी अगली पहल सामूहिक विवाह कार्यक्रम है, जिसमें हम एक बार में 10–15 जोड़ों की शादी समारोह में सहायता करेंगे, ताकि वे गरिमा और खुशी के साथ अपने जीवन का यह महत्वपूर्ण अवसर मना सकें। कई परिवार वित्तीय कठिनाइयों के कारण शादी का आयोजन नहीं कर पाते, और यह कार्यक्रम उनके बोझ को कम करने और सामुदायिक भावना बढ़ाने का प्रयास है।',
+                'हमारे सभी प्रयासों का उद्देश्य है जीवन सशक्त करना, आशा फैलाना और स्थायी सकारात्मक प्रभाव बनाना। स्वयंसेवकों, दानदाताओं और शुभचिंतकों के साथ मिलकर, हम कई लोगों के जीवन में वास्तविक बदलाव ला सकते हैं।'
             ]
         },
         vision: {
-            title: 'Vision / दृष्टि',
-            subtitle: 'A compassionate society for every human and animal',
+            title: 'Envisioning a Compassionate Future – Yuva Prerna Foundation',
+            subtitle: 'एक करुणामय भविष्य की कल्पना – युवा प्रेरणा फाउंडेशन',
             hero: './assets/images/newspaper/n4.jpeg',
             paragraphs: [
-                'युवा प्रेरणा फाउंडेशन का विज़न है एक ऐसे समाज का निर्माण करना जहाँ हर व्यक्ति को समान अवसर, सम्मान और सुरक्षित जीवन मिले। हमारा लक्ष्य शिक्षा, स्वास्थ्य, पर्यावरण संरक्षण और सामाजिक न्याय के माध्यम से एक आत्मनिर्भर और जागरूक समाज की स्थापना करना है। हम मानते हैं कि सामूहिक प्रयासों से ही एक सशक्त, स्वच्छ और समृद्ध भारत का निर्माण संभव है।',
-                'विस्तृत विज़न: हमारा विज़न है कि कोई भी बच्चा शिक्षा से वंचित न रहे। संस्था एक ऐसे भविष्य की कल्पना करती है जहाँ हर बच्चा गुणवत्तापूर्ण शिक्षा प्राप्त करे और अपने सपनों को साकार करने में सक्षम बने।',
-                'स्वास्थ्य के क्षेत्र में, हमारा उद्देश्य है कि समाज के सभी वर्गों को समय पर और उचित चिकित्सा सुविधा उपलब्ध हो। हम ऐसे भारत का निर्माण करना चाहते हैं जहाँ निःशुल्क स्वास्थ्य सेवाएँ हर ज़रूरतमंद तक पहुँचें।',
-                'पर्यावरण संरक्षण हमारे विज़न का अभिन्न अंग है। हम हरित और स्वच्छ भारत की दिशा में वृक्षारोपण, जल संरक्षण और स्वच्छता अभियान को बढ़ावा देते हैं ताकि आने वाली पीढ़ियों के लिए सुरक्षित पर्यावरण सुनिश्चित हो।',
-                'सामाजिक सशक्तिकरण के क्षेत्र में, हमारा विज़न है कि युवा और महिलाएँ कौशल विकास और रोजगार के अवसरों के माध्यम से आत्मनिर्भर बनें और समाज में सक्रिय भूमिका निभाएँ।',
-                'हम एक ऐसे समाज की कल्पना करते हैं जहाँ करुणा, सहयोग और जिम्मेदारी की भावना से सभी नागरिक एक बेहतर और समावेशी भारत के निर्माण में योगदान दें।'
+                '<h3 class="text-2xl font-bold text-gray-800 mb-4">Our Vision: A Compassionate Society for Every Human and Animal</h3>',
+                'At Yuva Prerna Foundation, we envision a world where every individual, regardless of their background, has equal opportunities to thrive. Our vision extends beyond immediate assistance to creating lasting, systemic change that empowers communities and builds a more just society.',
+                'We dream of a future where:',
+                '<ul class="list-disc list-inside space-y-2 mb-4"><li><strong>Education:</strong> Every child has access to quality education and the tools to achieve their dreams</li><li><strong>Healthcare:</strong> No one is denied medical care due to financial constraints</li><li><strong>Social Justice:</strong> Equal opportunities and dignity for all members of society</li><li><strong>Environmental Protection:</strong> A clean, green India for future generations</li><li><strong>Community Empowerment:</strong> Self-reliant communities that support each other</li></ul>',
+                '<h4 class="text-xl font-bold text-gray-800 mb-3">Our Long-term Goals:</h4>',
+                'Through our work in Gonda, Uttar Pradesh, and beyond, we aim to create a model of community development that can be replicated across India. We believe that by empowering individuals and strengthening communities, we can build a nation where compassion, cooperation, and collective responsibility form the foundation of society.',
+                'Our vision includes not just human welfare, but also the protection and care of animals, recognizing that a truly compassionate society extends its care to all living beings.',
+                '<hr class="my-6 border-gray-300">',
+                '<h3 class="text-2xl font-bold text-gray-800 mb-4">हमारा विज़न: हर मनुष्य और पशु के लिए करुणामय समाज</h3>',
+                'युवा प्रेरणा फाउंडेशन में, हम एक ऐसे विश्व की कल्पना करते हैं जहाँ हर व्यक्ति, उनकी पृष्ठभूमि के बावजूद, समान अवसरों के साथ फल-फूल सके। हमारा विज़न तत्कालिक सहायता से आगे बढ़कर स्थायी, व्यवस्थागत परिवर्तन लाने का है जो समुदायों को सशक्त बनाता है और एक अधिक न्यायपूर्ण समाज का निर्माण करता है।',
+                'हम एक ऐसे भविष्य की कल्पना करते हैं जहाँ:',
+                '<ul class="list-disc list-inside space-y-2 mb-4"><li><strong>शिक्षा:</strong> हर बच्चे को गुणवत्तापूर्ण शिक्षा और अपने सपनों को साकार करने के साधन मिलें</li><li><strong>स्वास्थ्य:</strong> आर्थिक कठिनाइयों के कारण किसी को भी चिकित्सा सुविधा से वंचित न रखा जाए</li><li><strong>सामाजिक न्याय:</strong> समाज के सभी सदस्यों के लिए समान अवसर और गरिमा</li><li><strong>पर्यावरण संरक्षण:</strong> आने वाली पीढ़ियों के लिए स्वच्छ, हरित भारत</li><li><strong>समुदाय सशक्तिकरण:</strong> आत्मनिर्भर समुदाय जो एक-दूसरे का समर्थन करते हैं</li></ul>',
+                '<h4 class="text-xl font-bold text-gray-800 mb-3">हमारे दीर्घकालिक लक्ष्य:</h4>',
+                'गोंडा, उत्तर प्रदेश और उससे आगे के अपने कार्य के माध्यम से, हम समुदाय विकास का एक मॉडल बनाना चाहते हैं जिसे पूरे भारत में दोहराया जा सके। हमारा मानना है कि व्यक्तियों को सशक्त बनाकर और समुदायों को मजबूत करके, हम एक ऐसे राष्ट्र का निर्माण कर सकते हैं जहाँ करुणा, सहयोग और सामूहिक जिम्मेदारी समाज की नींव बनती है।',
+                'हमारे विज़न में न केवल मानव कल्याण शामिल है, बल्कि पशुओं की सुरक्षा और देखभाल भी है, यह मानते हुए कि एक वास्तव में करुणामय समाज अपनी देखभाल सभी जीवित प्राणियों तक विस्तारित करता है।'
             ]
         },
         values: {
-            title: 'Values / मूल्य',
-            subtitle: 'Compassion, integrity, service, and unity',
+            title: 'Our Core Values – Yuva Prerna Foundation',
+            subtitle: 'हमारे मूल मूल्य – युवा प्रेरणा फाउंडेशन',
             hero: './assets/images/activities/p2.jpeg',
             paragraphs: [
-                'युवा प्रेरणा फाउंडेशन के मूल्यों में वह सोच और सिद्धांत निहित हैं, जिनके आधार पर संस्था अपने सभी सामाजिक कार्य करती है। इन्हीं मूल्यों के आधार पर हम शिक्षा, स्वास्थ्य, पर्यावरण और सशक्तिकरण जैसे क्षेत्रों में स्थायी परिवर्तन लाने का प्रयास करते हैं।',
-                '1. समानता (Equality): हर व्यक्ति, चाहे उसका सामाजिक या आर्थिक स्तर कुछ भी हो, समान अधिकार और अवसर पाने का हकदार है। हम बिना किसी भेदभाव के सेवाएँ प्रदान करते हैं।',
-                '2. सेवा भाव (Service): हमारी टीम निस्वार्थ भाव से कार्य करती है। समाज की सेवा करना ही हमारे सभी प्रयासों की नींव है।',
-                '3. करुणा (Compassion): ज़रूरतमंद लोगों और पशुओं के प्रति संवेदनशीलता और दयालुता हमारी प्राथमिकता है।',
-                '4. सतत विकास (Sustainability): हम ऐसे कार्यों को बढ़ावा देते हैं जो दीर्घकालिक और पर्यावरण के अनुकूल हों।',
-                '5. सशक्तिकरण (Empowerment): संस्था का विश्वास है कि शिक्षा और कौशल विकास से ही समाज के कमजोर वर्ग आत्मनिर्भर बन सकते हैं।',
-                '6. पारदर्शिता (Transparency): हमारे सभी कार्यक्रम और पहल पूरी तरह पारदर्शी और जवाबदेह होती हैं।',
-                '7. सहयोग (Collaboration): हम मानते हैं कि सरकार, संस्थाओं और नागरिकों के सामूहिक प्रयास से ही स्थायी बदलाव संभव है।'
+                '<h3 class="text-2xl font-bold text-gray-800 mb-4">Our Core Values: Compassion, Integrity, Service, and Unity</h3>',
+                'At Yuva Prerna Foundation, our values are the fundamental principles that guide every decision we make and every action we take. These core values shape our approach to social work and ensure that we remain true to our mission of creating positive change in society.',
+                'Our values are:',
+                '<ul class="list-disc list-inside space-y-3 mb-4"><li><strong>Compassion (करुणा):</strong> We approach every individual with empathy and understanding, recognizing the inherent dignity of all human beings and animals.</li><li><strong>Integrity (ईमानदारी):</strong> We maintain the highest standards of honesty, transparency, and ethical conduct in all our activities.</li><li><strong>Service (सेवा):</strong> We are committed to selfless service, putting the needs of the community above personal interests.</li><li><strong>Unity (एकता):</strong> We believe in the power of collective action and work to build bridges between different communities and stakeholders.</li><li><strong>Equality (समानता):</strong> We treat every person with equal respect and dignity, regardless of their background or circumstances.</li><li><strong>Empowerment (सशक्तिकरण):</strong> We focus on building the capacity of individuals and communities to become self-reliant.</li><li><strong>Sustainability (सततता):</strong> We promote practices that ensure long-term positive impact and environmental responsibility.</li></ul>',
+                '<h4 class="text-xl font-bold text-gray-800 mb-3">How We Live Our Values:</h4>',
+                'These values are not just words on paper – they are actively practiced in our daily work. From our medical camps in Gonda to our educational programs, every initiative reflects our commitment to these core principles. We believe that by staying true to these values, we can create lasting change that benefits the entire community.',
+                '<hr class="my-6 border-gray-300">',
+                '<h3 class="text-2xl font-bold text-gray-800 mb-4">हमारे मूल मूल्य: करुणा, ईमानदारी, सेवा और एकता</h3>',
+                'युवा प्रेरणा फाउंडेशन में, हमारे मूल्य वे मौलिक सिद्धांत हैं जो हमारे हर निर्णय और हर कार्य को निर्देशित करते हैं। ये मूल मूल्य सामाजिक कार्य के प्रति हमारे दृष्टिकोण को आकार देते हैं और यह सुनिश्चित करते हैं कि हम समाज में सकारात्मक बदलाव लाने के अपने मिशन के प्रति सच्चे रहें।',
+                'हमारे मूल्य हैं:',
+                '<ul class="list-disc list-inside space-y-3 mb-4"><li><strong>करुणा (Compassion):</strong> हम हर व्यक्ति के साथ सहानुभूति और समझ के साथ पेश आते हैं, सभी मनुष्यों और पशुओं की अंतर्निहित गरिमा को पहचानते हैं।</li><li><strong>ईमानदारी (Integrity):</strong> हम अपनी सभी गतिविधियों में ईमानदारी, पारदर्शिता और नैतिक आचरण के उच्चतम मानकों को बनाए रखते हैं।</li><li><strong>सेवा (Service):</strong> हम निःस्वार्थ सेवा के लिए प्रतिबद्ध हैं, व्यक्तिगत हितों से ऊपर समुदाय की जरूरतों को रखते हैं।</li><li><strong>एकता (Unity):</strong> हम सामूहिक कार्य की शक्ति में विश्वास करते हैं और विभिन्न समुदायों और हितधारकों के बीच पुल बनाने का काम करते हैं।</li><li><strong>समानता (Equality):</strong> हम हर व्यक्ति के साथ समान सम्मान और गरिमा के साथ व्यवहार करते हैं, उनकी पृष्ठभूमि या परिस्थितियों की परवाह किए बिना।</li><li><strong>सशक्तिकरण (Empowerment):</strong> हम व्यक्तियों और समुदायों की क्षमता निर्माण पर ध्यान केंद्रित करते हैं ताकि वे आत्मनिर्भर बन सकें।</li><li><strong>सततता (Sustainability):</strong> हम ऐसी प्रथाओं को बढ़ावा देते हैं जो दीर्घकालिक सकारात्मक प्रभाव और पर्यावरणीय जिम्मेदारी सुनिश्चित करती हैं।</li></ul>',
+                '<h4 class="text-xl font-bold text-gray-800 mb-3">हम अपने मूल्यों को कैसे जीते हैं:</h4>',
+                'ये मूल्य केवल कागज पर शब्द नहीं हैं – ये हमारे दैनिक कार्य में सक्रिय रूप से अभ्यास किए जाते हैं। गोंडा में हमारे चिकित्सा शिविरों से लेकर हमारे शैक्षिक कार्यक्रमों तक, हर पहल इन मूल सिद्धांतों के प्रति हमारी प्रतिबद्धता को दर्शाती है। हम मानते हैं कि इन मूल्यों के प्रति सच्चे रहकर, हम स्थायी बदलाव ला सकते हैं जो पूरे समुदाय को लाभ पहुंचाता है।'
             ]
         }
     };
@@ -1818,6 +1977,7 @@ function setupBlogPages() {
         blogTitle.textContent = data.title;
         blogSubtitle.textContent = data.subtitle;
         blogContent.innerHTML = '';
+        blogContent.setAttribute('data-blog', key); // Add data attribute for icon styling
         if (data.hero) {
             blogHeroImage.src = data.hero;
             blogHeroImage.alt = data.title;
@@ -1826,8 +1986,8 @@ function setupBlogPages() {
             blogHero.classList.add('hidden');
         }
         data.paragraphs.forEach(p => {
-            const para = document.createElement('p');
-            para.textContent = p;
+            const para = document.createElement('div');
+            para.innerHTML = p;
             blogContent.appendChild(para);
         });
         blogPage.classList.remove('hidden');
@@ -1865,8 +2025,67 @@ const API_BASE_URL = `${BACKEND_ORIGIN}/api`;
 
 // Setup Blog API functionality
 function setupBlogAPI() {
-    // Load blogs when the page loads
-    loadBlogs();
+    // Show static blog cards instead of loading from API
+    showStaticBlogCards();
+}
+
+// Show static blog cards
+function showStaticBlogCards() {
+    const loadingElement = document.getElementById('blogLoading');
+    const errorElement = document.getElementById('blogError');
+    const gridElement = document.getElementById('blogGrid');
+    const emptyElement = document.getElementById('blogEmpty');
+    const viewAllElement = document.getElementById('viewAllBlogs');
+
+    // Hide all other states
+    hideElement(loadingElement);
+    hideElement(errorElement);
+    hideElement(emptyElement);
+    hideElement(viewAllElement);
+    
+    // Show the grid with our static cards
+    showElement(gridElement);
+}
+
+// Emergency Help Button Setup
+function setupEmergencyHelp() {
+    const emergencyBtn = document.getElementById('emergencyHelpBtn');
+    
+    if (!emergencyBtn) return;
+    
+    // Add click event listener
+    emergencyBtn.addEventListener('click', function(e) {
+        // Add visual feedback
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 150);
+        
+        // Optional: Add analytics or tracking here
+        console.log('Emergency help button clicked');
+        
+        // The tel: link will handle the actual phone call
+        // No need to prevent default as we want the phone to dial
+    });
+    
+    // Add keyboard accessibility
+    emergencyBtn.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            this.click();
+        }
+    });
+    
+    // Add focus management for better accessibility
+    emergencyBtn.addEventListener('focus', function() {
+        this.style.outline = '2px solid #fbbf24';
+        this.style.outlineOffset = '2px';
+    });
+    
+    emergencyBtn.addEventListener('blur', function() {
+        this.style.outline = '';
+        this.style.outlineOffset = '';
+    });
 }
 
 // Load blogs from backend API
@@ -2268,4 +2487,277 @@ function stripHtmlToText(htmlString) {
     tmp.innerHTML = htmlString || '';
     const text = tmp.textContent || tmp.innerText || '';
     return text.replace(/\s+/g, ' ').trim();
+}
+
+// Setup Join Mission Modal functionality
+function setupJoinMissionModal() {
+    const modal = document.getElementById('joinMissionModal');
+    const modalContent = document.getElementById('joinMissionModalContent');
+    const closeBtn = document.getElementById('closeJoinModal');
+    const volunteerBtns = document.querySelectorAll('#volunteerBtn1, #volunteerBtn2');
+    
+    if (!modal || !modalContent) {
+        console.log('Modal elements not found');
+        return;
+    }
+    
+    // Open modal function
+    function openModal() {
+        console.log('Opening modal');
+        modal.classList.remove('hidden');
+        // Trigger animation
+        setTimeout(() => {
+            modalContent.style.transform = 'scale(1)';
+            modalContent.style.opacity = '1';
+        }, 10);
+        document.body.style.overflow = 'hidden';
+    }
+    
+    // Close modal function
+    function closeModal() {
+        console.log('Closing modal');
+        modalContent.style.transform = 'scale(0.95)';
+        modalContent.style.opacity = '0';
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }, 300);
+    }
+    
+    // Event listeners for volunteer buttons
+    volunteerBtns.forEach(btn => {
+        if (btn) {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal();
+            });
+        }
+    });
+    
+    // Close button event listener
+    if (closeBtn) {
+        closeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            closeModal();
+        });
+    } else {
+        console.log('Close button not found');
+    }
+    
+    // Close on backdrop click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+    
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+            closeModal();
+        }
+    });
+}
+
+// Collective Marriage Program Modal
+function setupMarriageProgramModal() {
+    const modal = document.getElementById('marriageProgramModal');
+    const closeBtn = document.getElementById('closeMarriageProgramModal');
+    const cancelBtn = document.getElementById('cancelMarriageProgram');
+    const fileBtn = document.getElementById('marriageFilesBtn');
+    const fileInput = document.getElementById('marriageFiles');
+    const fileList = document.getElementById('marriageFilesList');
+    const form = document.getElementById('marriageProgramForm');
+
+    if (!modal || !form) return;
+
+    // Attachment limits to avoid EmailJS 413 (payload too large)
+    const MAX_FILES = 2;                // allow up to 2 files
+    const MAX_FILE_BYTES = 300_000;     // ~300 KB per file (to avoid base64 overhead hitting limits)
+    const MAX_TOTAL_BYTES = 600_000;    // ~600 KB total
+
+    async function compressImageFile(originalFile, options = {}) {
+        const { maxDimension = 1280, quality = 0.6 } = options;
+        if (!originalFile || !originalFile.type || !originalFile.type.startsWith('image/')) return originalFile;
+
+        const fileDataUrl = await new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = reject;
+            reader.readAsDataURL(originalFile);
+        });
+
+        const img = await new Promise((resolve, reject) => {
+            const image = new Image();
+            image.onload = () => resolve(image);
+            image.onerror = reject;
+            image.src = fileDataUrl;
+        });
+
+        let { width, height } = img;
+        const scale = Math.min(1, maxDimension / Math.max(width, height));
+        width = Math.round(width * scale);
+        height = Math.round(height * scale);
+
+        const canvas = document.createElement('canvas');
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, width, height);
+
+        // Use JPEG for broad compatibility and size
+        const blob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/jpeg', quality));
+        if (!blob) return originalFile;
+        return new File([blob], originalFile.name.replace(/\.(png|webp|heic|jpeg|jpg)$/i, '.jpg'), { type: 'image/jpeg' });
+    }
+
+    function closeModal() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+
+    // Close on backdrop
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    // Esc key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+    });
+
+    // File button
+    if (fileBtn && fileInput) {
+        fileBtn.addEventListener('click', () => fileInput.click());
+        fileInput.addEventListener('change', async () => {
+            const picked = Array.from(fileInput.files || []);
+            // Compress images, keep non-images as-is
+            const processed = [];
+            for (const f of picked.slice(0, MAX_FILES)) {
+                if (f.type && f.type.startsWith('image/')) {
+                    const compressed = await compressImageFile(f, { maxDimension: 1280, quality: 0.6 });
+                    processed.push(compressed);
+                } else {
+                    processed.push(f);
+                }
+            }
+
+            // Validate sizes
+            const total = processed.reduce((sum, f) => sum + (f.size || 0), 0);
+            const tooMany = processed.length > MAX_FILES;
+            const tooLargeOne = processed.some(f => (f.size || 0) > MAX_FILE_BYTES);
+            const tooLargeTotal = total > MAX_TOTAL_BYTES;
+            if (tooMany || tooLargeOne || tooLargeTotal) {
+                showNotification('Max 2 files, ~300 KB each, ~600 KB total. Please compress and try again.', 'error');
+                fileInput.value = '';
+                if (fileList) fileList.innerHTML = '';
+                return;
+            }
+
+            // Replace input files using DataTransfer
+            const dt = new DataTransfer();
+            processed.forEach(f => dt.items.add(f));
+            fileInput.files = dt.files;
+
+            if (fileList) {
+                const items = processed.map(f => `• ${f.name} (${Math.ceil((f.size||0)/1024)} KB)`).join('<br>');
+                fileList.innerHTML = items || '';
+            }
+        });
+    }
+
+    // Submit handler via EmailJS
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Basic validation (phone)
+        const coupleName = (form.coupleName?.value || '').trim();
+        const contact = (form.contact?.value || '').trim();
+        const address = (form.address?.value || '').trim();
+        const supportType = (form.supportType?.value || '').trim();
+        const phoneOk = /^\+?\d[\d\s-]{7,}$/.test(contact);
+        if (!coupleName || !address || !supportType || !phoneOk) {
+            showNotification('Please fill all required fields with valid details. / कृपया सभी आवश्यक फ़ील्ड सही भरें।', 'error');
+            return;
+        }
+
+        // Enforce file constraints again before submit
+        if (fileInput) {
+            const files = Array.from(fileInput.files || []);
+            const total = files.reduce((sum, f) => sum + (f.size || 0), 0);
+            const tooMany = files.length > MAX_FILES;
+            const tooLargeOne = files.some(f => (f.size || 0) > MAX_FILE_BYTES);
+            const tooLargeTotal = total > MAX_TOTAL_BYTES;
+            if (tooMany || tooLargeOne || tooLargeTotal) {
+                showNotification('Max 2 files, ~300 KB each, ~600 KB total. Please compress and try again.', 'error');
+                return;
+            }
+        }
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn ? submitBtn.innerHTML : '';
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Submitting...';
+        }
+
+        try {
+            // Map form fields to EmailJS template vars using name attributes
+            // Ensure your EmailJS template has variables: coupleName, contact, address, supportType
+            const serviceId = 'service_iated1v';
+            const templateId = 'template_dj5to49';
+
+            if (!(window.emailjs && emailjs.sendForm)) throw new Error('EmailJS not loaded');
+
+            await emailjs.sendForm(serviceId, templateId, form);
+
+            showNotification('Submitted successfully. We will contact you soon. / सफलतापूर्वक जमा हो गया।', 'success');
+            form.reset();
+            if (fileList) fileList.innerHTML = '';
+            closeModal();
+        } catch (err) {
+            showNotification('Unable to submit right now. Please try again later. / अभी सबमिट नहीं हो सका, बाद में पुनः प्रयास करें।', 'error');
+        } finally {
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+            }
+        }
+    });
+}
+
+// Global function for close button (inline onclick)
+function closeJoinModal() {
+    const modal = document.getElementById('joinMissionModal');
+    const modalContent = document.getElementById('joinMissionModalContent');
+    
+    if (modal && modalContent) {
+        console.log('Closing modal via global function');
+        modalContent.style.transform = 'scale(0.95)';
+        modalContent.style.opacity = '0';
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }, 300);
+    }
+}
+
+// Setup Share Work buttons to redirect to Instagram
+function setupShareWorkButtons() {
+    const shareBtns = document.querySelectorAll('#shareWorkBtn1, #shareWorkBtn2');
+    const driveUrl = 'https://drive.google.com/drive/folders/1rc8qvqcQqQZgFogQXjJvXFEBk5LttMYg?usp=sharing';
+    
+    shareBtns.forEach(btn => {
+        if (btn) {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.open(driveUrl, '_blank', 'noopener,noreferrer');
+            });
+        }
+    });
 }

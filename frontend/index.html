@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>युवा प्रेरणा फाउंडेशन | Yuva Prerna Foundation</title>
+    <title>Yuva Prerna Foundation Nawabganj Gonda| युवा प्रेरणा फाउंडेशन </title>
     <!-- Tailwind CSS CDN - For production, install locally: https://tailwindcss.com/docs/installation -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Kanit:wght@500;700&family=Manrope:wght@400;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -11,69 +11,72 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/general/Ach1.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/general/Ach1.png">
-    <link rel="apple-touch-icon" href="assets/images/general/Ach1.png">
-    <link rel="shortcut icon" href="assets/images/general/Ach1.png">
+    <!-- EmailJS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logo.png">
+    <link rel="apple-touch-icon" href="assets/images/logo.png">
+    <link rel="shortcut icon" href="assets/images/logo.png">
 </head>
-<body class="bg-gray-50">
+<body class="bg-neutral-50">
     <!-- Navigation -->
-    <nav class="bg-orange-50 shadow-lg fixed w-full z-50">
+    <nav class="bg-neutral-50 shadow-sm fixed w-full z-50 navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <a href="#home" class="text-3xl font-extrabold tracking-widest font-logo flex items-center cursor-pointer hover:opacity-80 transition-opacity">
-                        <span  class="logo-primary bg-gradient-to-r from-blue-600 to-green-500 text-transparent bg-clip-text drop-shadow-md">
-                          Y P
-                        </span>
-                        <span class="logo-accent text-orange-500 drop-shadow-md ml-1">
-                          F
-                        </span>
+                    <a href="#home" class="logo flex items-center cursor-pointer hover:opacity-80 transition-opacity">
+                        <img src="assets/images/logo.png" alt="Yuva Prerna Foundation" class="h-12 w-auto">
                       </a>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4 font-nav">
-                        <a href="#home" class="text-[#334155] hover:text-[#EA580C] px-3 py-2 rounded-md text-sm font-semibold transition-colors flex items-center">
+                        <a href="#home" class="text-neutral-700 hover:text-primary-blue px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
                             <i class="fas fa-home mr-2"></i>Home
                         </a>
-                        <a href="#about" class="text-[#334155] hover:text-[#EA580C] px-3 py-2 rounded-md text-sm font-semibold transition-colors flex items-center">
+                        <a href="#about" class="text-neutral-700 hover:text-primary-blue px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
                             <i class="fas fa-info-circle mr-2"></i>About
                         </a>
                         
-                        <a href="#activities" class="text-[#334155] hover:text-[#EA580C] px-3 py-2 rounded-md text-sm font-semibold transition-colors flex items-center">
-                            <i class="fas fa-images mr-2"></i>Gallery
-                        </a>
-                        <a href="#gallery" class="text-[#334155] hover:text-[#EA580C] px-3 py-2 rounded-md text-sm font-semibold transition-colors flex items-center">
-                            <i class="fas fa-hands-helping mr-2"></i>Our Impact
-                        </a>
-                        <a href="#contact" class="text-[#334155] hover:text-[#EA580C] px-3 py-2 rounded-md text-sm font-semibold transition-colors flex items-center">
+                        <a href="#activities" class="text-neutral-700 hover:text-primary-blue px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
+                            <i class="fas fa-hands-helping mr-2"></i>Activities
+                       
+                        <a href="#contact" class="text-neutral-700 hover:text-primary-blue px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center">
                             <i class="fas fa-envelope mr-2"></i>Contact
                         </a>
                     </div>
                 </div>
+                <div class="flex items-center space-x-3">
+                    <!-- Emergency Help Button - Always visible -->
+                    <a href="tel:+919696525287" id="emergencyHelpBtn" class="bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 flex items-center shadow-md hover:shadow-lg transform hover:scale-105">
+                        <i class="fas fa-phone mr-2"></i>
+                        <span class="hidden sm:inline">Emergency</span>
+                    </a>
+                    
+                    <!-- Mobile Menu Button -->
                 <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-[#334155] hover:text-[#EA580C] focus:outline-none font-nav">
+                        <button id="mobile-menu-btn" class="text-neutral-700 hover:text-primary-blue focus:outline-none font-nav">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
+                    </div>
                 </div>
             </div>
         </div>
         <!-- Mobile menu -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white border-t font-nav">
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-neutral-200 font-nav">
             <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#home" class="block px-3 py-2 text-[#334155] hover:text-[#EA580C] flex items-center">
+                <a href="#home" class="block px-3 py-2 text-neutral-700 hover:text-primary-blue flex items-center">
                     <i class="fas fa-home mr-3 w-5"></i>Home
                 </a>
-                <a href="#about" class="block px-3 py-2 text-[#334155] hover:text-[#EA580C] flex items-center">
+                <a href="#about" class="block px-3 py-2 text-neutral-700 hover:text-primary-blue flex items-center">
                     <i class="fas fa-info-circle mr-3 w-5"></i>About
                 </a>
-                <a href="#activities" class="block px-3 py-2 text-[#334155] hover:text-[#EA580C] flex items-center">
+                <a href="#activities" class="block px-3 py-2 text-neutral-700 hover:text-primary-blue flex items-center">
                     <i class="fas fa-hands-helping mr-3 w-5"></i>Activities
                 </a>
-                <a href="#gallery" class="block px-3 py-2 text-[#334155] hover:text-[#EA580C] flex items-center">
+                <a href="#gallery" class="block px-3 py-2 text-neutral-700 hover:text-primary-blue flex items-center">
                     <i class="fas fa-images mr-3 w-5"></i>Gallery
                 </a>
-                <a href="#contact" class="block px-3 py-2 text-[#334155] hover:text-[#EA580C] flex items-center">
+                <a href="#contact" class="block px-3 py-2 text-neutral-700 hover:text-primary-blue flex items-center">
                     <i class="fas fa-envelope mr-3 w-5"></i>Contact
                 </a>
             </div>
@@ -81,67 +84,80 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-bg min-h-screen flex items-center justify-start lg:justify-center relative overflow-hidden pt-24 md:pt-28 pb-6 parallax-section">
-        <div class="absolute inset-0 tiranga-gradient opacity-10 hero-parallax-bg"></div>
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 md:pt-24 pb-12" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);">
+        <!-- Subtle background pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-20 left-20 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-20 w-40 h-40 bg-green-500 rounded-full blur-3xl"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-orange-500 rounded-full blur-2xl"></div>
+        </div>
         
-        <div class="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full hero-parallax-content">
-            <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
-                <!-- Left: 60% Description (3/5) -->
-                <div class="lg:col-span-3 text-center lg:text-left order-2 lg:order-1 hero-text-animate scroll-fade-in">
-                    <h1 class="text-4xl text-zinc-800 sm:text-5xl lg:text-7xl font-bold hero-title-main mb-8 hero-animate-1 leading-tight">
-                        <span class="block text-gradient bg-gradient-to-r from-orange-600 via-red-500 py-4 to-pink-600 bg-clip-text text-transparent">
+        <div class="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Left: Content -->
+                <div class="text-center lg:text-left order-2 lg:order-1">
+                    <!-- NGO Badge -->
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-blue-200 mb-8 shadow-sm">
+                        <div class="w-2 h-2 bg-blue-500 rounded-full mr-3 animate-pulse"></div>
+                        <span class="text-sm font-medium text-blue-700">NGO • Social Impact</span>
+                    </div>
+                    
+                    <h1 class="text-5xl sm:text-6xl lg:text-6xl font-bold mb-8 leading-tight">
+                        <span class="block text-gray-900 mb-4">
                             युवा प्रेरणा फाउंडेशन
                         </span>
-                        <span class="block text-2xl sm:text-3xl lg:text-4xl font-light mt-6 text-gray-600 hero-title-sub">
+                        <span class="block text-4xl sm:text-5xl lg:text-3xl font-bold text-green-800 mb-6">
                             Yuva Prerna Foundation
                         </span>
-                        <span class="block text-xl sm:text-2xl lg:text-3xl font-medium mt-4 text-orange-500 hero-title-sub">
-                            समुदायों को सशक्त बनाना
+                        <span class="block text-2xl sm:text-3xl font-medium text-blue-600">
+                            Building Hope, Empowering Lives
                         </span>
                     </h1>
                     
-                    <div class="mb-10 space-y-4 hero-animate-2">
-                        <p class="text-xl sm:text-2xl hero-text-strong max-w-3xl lg:max-w-none leading-relaxed mx-auto lg:mx-0 text-gray-700 font-medium">
-                            <span class="block mb-3 text-gray-800">
-                                दया, सेवा और सामाजिक कल्याण के माध्यम से एक बेहतर समाज का निर्माण
-                            </span>
-                            <span class="block text-lg text-gray-600 font-normal">
-                                Building a better society through compassion, service, and social welfare
-                            </span>
+                    <div class="mb-12 space-y-6">
+                        <p class="text-xl sm:text-2xl text-gray-700 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                            Creating positive change through education, healthcare, and social welfare in 
+                            <span class="font-semibold text-green-600">Gonda, Uttar Pradesh</span>
                         </p>
                         
-                        <p class="text-lg sm:text-xl hero-text-soft max-w-2xl lg:max-w-none mx-auto lg:mx-0 text-gray-600 leading-relaxed">
-                            <span class="block mb-2 text-gray-700 font-medium">
-                                लोगों और जानवरों की सेवा करने के हमारे मिशन में शामिल हों
-                            </span>
-                            <span class="block text-base text-gray-500">
-                                Join our mission to serve people and animals with care
-                            </span>
-                        </p>
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-4 text-sm text-gray-600">
+                            <div class="flex items-center">
+                                <i class="fas fa-graduation-cap text-blue-500 mr-2"></i>
+                                Education
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-heartbeat text-green-500 mr-2"></i>
+                                Healthcare
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-hands-helping text-orange-500 mr-2"></i>
+                                Social Welfare
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="flex flex-col sm:flex-row gap-6 lg:justify-start justify-center mb-4 hero-animate-3">
-                        <button id="joinUsBtn" class="group relative bg-gradient-to-r from-orange-500 to-red-500 text-white px-10 py-5 rounded-full text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:from-orange-600 hover:to-red-600">
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <button id="joinUsBtn" class="group relative bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                             <div class="flex items-center justify-center">
-                                <i class="fas fa-heart mr-3 text-xl group-hover:animate-pulse"></i>
-                                <span class="font-bold tracking-wide">Join Us</span>
+                                <i class="fas fa-heart mr-3 text-lg group-hover:animate-pulse"></i>
+                                <span>Join Our Mission</span>
                             </div>
-                            <div class="absolute inset-0 rounded-full bg-gradient-to-r from-orange-400 to-red-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                         </button>
                         
-                        <button id="donateBtn" class="group relative bg-gradient-to-r from-teal-500 to-cyan-500 text-white px-10 py-5 rounded-full text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:from-teal-600 hover:to-cyan-600">
+                        <button id="donateBtn" class="group relative bg-white hover:bg-gray-50 text-blue-600 border-2 border-blue-600 hover:border-blue-700 px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                             <div class="flex items-center justify-center">
-                                <i class="fas fa-donate mr-3 text-xl group-hover:animate-bounce"></i>
-                                <span class="font-bold tracking-wide">Donate</span>
+                                <i class="fas fa-donate mr-3 text-lg group-hover:animate-bounce"></i>
+                                <span>Donate Now</span>
                             </div>
-                            <div class="absolute inset-0 rounded-full bg-gradient-to-r from-teal-400 to-cyan-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                         </button>
                     </div>
                 </div>
 
-                <!-- Right: 40% Auto-changing photos (2/5) -->
-                <div class="lg:col-span-2 order-1 lg:order-2 hero-image-animate scroll-slide-right">
-                    <div class="relative w3-content w3-section rounded-2xl overflow-hidden shadow-xl h-72 sm:h-96" style="max-width:100%">
+                <!-- Right: Image/Visual -->
+                <div class="order-1 lg:order-2">
+                    <div class="relative">
+                        <!-- Main image container -->
+                        <div class="relative w3-content w3-section rounded-3xl overflow-hidden shadow-2xl h-80 sm:h-96" style="max-width:100%">
                         <!-- Navigation Arrows -->
                         <button id="carouselPrev" class="carousel-nav carousel-nav-left">
                             <i class="fas fa-chevron-left"></i>
@@ -155,495 +171,741 @@
                         <!-- Dots Indicator -->
                         <div id="carouselDots" class="carousel-dots"></div>
                     </div>
+                        
+                        <!-- Floating elements for visual appeal -->
+                        <div class="absolute -top-4 -right-4 w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center shadow-lg">
+                            <i class="fas fa-users text-blue-600 text-2xl"></i>
+                </div>
+                        <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-green-100 rounded-full flex items-center justify-center shadow-lg">
+                            <i class="fas fa-heart text-green-600 text-xl"></i>
+            </div>
+        </div>
                 </div>
             </div>
         </div>
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <i class="fas fa-chevron-down text-white text-2xl"></i>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+            <div class="flex flex-col items-center text-gray-500">
+                <span class="text-sm mb-2">Scroll to explore</span>
+                <i class="fas fa-chevron-down text-xl animate-bounce"></i>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white parallax-section">
-        <div class="absolute inset-0 about-parallax-bg"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 about-parallax-content">
-            <div class="text-center mb-16 slide-up scroll-fade-in">
-                <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6 flex items-center justify-center">
-                    <i class="fas fa-info-circle mr-4 text-blue-600"></i>About Us
+    <section id="about" class="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-600 to-green-600 rounded-full mb-6 shadow-lg">
+                    <i class="fas fa-heart text-white text-3xl"></i>
+                </div>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                    About <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-600">Us</span>
                 </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Dedicated to serving humanity and animals with compassion and care
+                <p class="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    Building hope and empowering lives through education, healthcare, food distribution, disaster relief, and social welfare in <span class="font-semibold text-green-600">Gonda, Uttar Pradesh</span>
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8 mb-16">
-                <div class=" border-2 border-gray-300 rounded-2xl p-4 text-center slide-up cursor-pointer blog-card hover:shadow-lg transition-all duration-300 scroll-slide-left stagger-1" data-blog="mission">
-                    <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-bullseye text-3xl text-blue-600"></i>
+            <!-- Impact Statistics -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <!-- Lives Impacted -->
+                <div class="stat-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-center group">
+                    <div class="stat-icon w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Mission / मिशन</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        शिक्षा, स्वास्थ्य, पशु संरक्षण और आपदा राहत में समन्वित प्रयासों से दीर्घकालिक बदलाव—ताकि हर व्यक्ति गरिमा के साथ जी सके।
-                    </p>
+                    <div class="stat-number text-3xl sm:text-4xl mb-2">500+</div>
+                    <div class="text-sm font-medium text-gray-600 uppercase tracking-wide">Lives Impacted</div>
+                </div>
+
+                <!-- Medical Camps -->
+                <div class="stat-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-center group">
+                    <div class="stat-icon w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-stethoscope text-white text-2xl"></i>
+                    </div>
+                    <div class="stat-number text-3xl sm:text-4xl mb-2">50+</div>
+                    <div class="text-sm font-medium text-gray-600 uppercase tracking-wide">Medical Camps</div>
+                </div>
+
+                <!-- Families Helped -->
+                <div class="stat-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-center group">
+                    <div class="stat-icon w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-home text-white text-2xl"></i>
+                    </div>
+                    <div class="stat-number text-3xl sm:text-4xl mb-2">100+</div>
+                    <div class="text-sm font-medium text-gray-600 uppercase tracking-wide">Families Helped</div>
+                </div>
+
+                <!-- Volunteers -->
+                <div class="stat-card bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-center group">
+                    <div class="stat-icon w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-hands-helping text-white text-2xl"></i>
+                    </div>
+                    <div class="stat-number text-3xl sm:text-4xl mb-2">25+</div>
+                    <div class="text-sm font-medium text-gray-600 uppercase tracking-wide">Volunteers</div>
+                </div>
+            </div>
+
+            <!-- Mission, Vision, Values Cards -->
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Mission Card -->
+                <div class="group cursor-pointer blog-card" data-blog="mission">
+                    <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 h-full">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-bullseye text-white text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900">Mission</h3>
+                                <p class="text-blue-600 font-medium">मिशन</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Creating positive change through education, healthcare, food distribution, disaster relief, and social welfare. Currently focusing on Gonda, Uttar Pradesh to empower lives and spread hope.
+                        </p>
+                        <div class="flex items-center text-blue-600 font-semibold group-hover:text-green-600 transition-colors">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class=" border-2 border-gray-300 rounded-2xl p-4 text-center slide-up cursor-pointer blog-card hover:shadow-lg transition-all duration-300 scroll-scale-up stagger-2" data-blog="vision">
-                    <div class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-eye text-3xl text-green-600"></i>
+                <!-- Vision Card -->
+                <div class="group cursor-pointer blog-card" data-blog="vision">
+                    <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 h-full">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-eye text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Vision / दृष्टि</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        समान अवसर, सुरक्षित जीवन और स्वच्छ पर्यावरण वाला आत्मनिर्भर समाज—जहाँ शिक्षा और स्वास्थ्य सबके लिए सुलभ हों।
-                    </p>
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900">Vision</h3>
+                                <p class="text-green-600 font-medium">दृष्टि</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Envisioning a compassionate future where every individual has equal opportunities to thrive through education, healthcare, and social justice.
+                        </p>
+                        <div class="flex items-center text-green-600 font-semibold group-hover:text-blue-600 transition-colors">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class=" border-2 border-gray-300 rounded-2xl p-4 text-center slide-up cursor-pointer blog-card hover:shadow-lg transition-all duration-300 scroll-slide-right stagger-3" data-blog="values">
-                    <div class="bg-orange-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-hands-helping text-3xl text-orange-600"></i>
+                <!-- Values Card -->
+                <div class="group cursor-pointer blog-card" data-blog="values">
+                    <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 h-full">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-hands-helping text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Values/मूल्य</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        समानता, सेवा, करुणा, सतत विकास, सशक्तिकरण, पारदर्शिता और सहयोग—हमारे हर कार्य की पहचान।
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900">Values</h3>
+                                <p class="text-orange-600 font-medium">मूल्य</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Our core values of compassion, integrity, service, and unity guide every decision and action we take in our mission.
+                        </p>
+                        <div class="flex items-center text-orange-600 font-semibold group-hover:text-blue-600 transition-colors">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center mt-16">
+                <div class="about-cta rounded-3xl p-8">
+                    <h3 id="joinMissionHeader" class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 cursor-pointer">Join Our Mission</h3>
+                    <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
+                        Be part of creating positive change in Gonda, Uttar Pradesh. Together, we can make a lasting impact.
                     </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button id="marriageApplyBtn" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                            <i class="fas fa-heart mr-2"></i>शादी में किसी भी प्रकार की मदद के लिए फॉर्म भरें
+                        </button>
+                        <button id="shareWorkBtn1" class="bg-white hover:bg-gray-50 text-blue-600 border-2 border-blue-600 hover:border-blue-700 px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                            <i class="fas fa-share mr-2"></i>Share Your Work — Upload your video and photo of your work
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Activities Section -->
-    <section id="activities" class="py-20 section-gradient parallax-section">
-        <div class="absolute inset-0 activities-parallax-bg"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 activities-parallax-content">
-            <div class="text-center mb-16 slide-up scroll-fade-in">
+    <section id="activities" class="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-6">
+                    <i class="fas fa-hands-helping text-blue-600 text-2xl"></i>
+                </div>
                 <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-                    Our Activities 
+                    Our <span class="text-blue-600">Activities</span>
                 </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Making a difference through dedicated service and care
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Making a meaningful difference through dedicated service and compassionate care in Gonda, Uttar Pradesh
                 </p>
             </div>
             
+            <!-- Activities Grid -->
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="activity-card bg-white rounded-2xl shadow-lg card-hover text-center overflow-hidden cursor-pointer scroll-scale-up stagger-1" data-activity="medical">
+                <!-- Medical Care -->
+                <div class="activity-card bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 text-center overflow-hidden cursor-pointer group" data-activity="medical">
                     <div class="relative">
-                        <img src="https://savioursfoundation.org/wp-content/uploads/2020/03/Health.jpg" alt="Medical Care" class="w-full h-48 object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <img src="assets/images/activities/p2.jpeg" alt="Medical Care" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-blue-900/60 to-transparent"></div>
                         <div class="absolute top-4 right-4">
-                            <div class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <div class="bg-blue-600 text-white px-3 py-2 rounded-full text-sm font-semibold shadow-lg">
                                 <i class="fas fa-camera mr-1"></i>View Photos
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 left-4">
+                            <div class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-blue-700">
+                                <i class="fas fa-heartbeat mr-1"></i>Healthcare
                             </div>
                         </div>
                     </div>
                     <div class="p-6">
-                        <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-stethoscope text-2xl text-red-600"></i>
+                        <div class="bg-blue-50 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-100 transition-colors duration-300">
+                            <i class="fas fa-stethoscope text-2xl text-blue-600"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-3">Medical Care</h3>
                         <p class="text-gray-600 text-sm leading-relaxed mb-4">
                             Free medical treatment and healthcare services for underprivileged communities
                         </p>
-                        <div class="text-xs text-gray-500">
-                            <i class="fas fa-images mr-1"></i>12 Photos Available
+                        <div class="flex items-center justify-center text-xs text-blue-600 font-medium">
+                            <i class="fas fa-images mr-2"></i>12 Photos Available
                         </div>
                     </div>
                 </div>
                 
-                <div class="activity-card bg-white rounded-2xl shadow-lg card-hover text-center overflow-hidden cursor-pointer scroll-slide-left stagger-2" data-activity="animal">
+                <!-- Animal Care -->
+                <div class="activity-card bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 text-center overflow-hidden cursor-pointer group" data-activity="animal">
                     <div class="relative">
-                        <img src="assets/images/activities/an1.png">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <img src="assets/images/activities/an1.png" alt="Animal Care" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-green-900/60 to-transparent"></div>
                         <div class="absolute top-4 right-4">
-                            <div class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <div class="bg-green-600 text-white px-3 py-2 rounded-full text-sm font-semibold shadow-lg">
                                 <i class="fas fa-camera mr-1"></i>View Photos
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 left-4">
+                            <div class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-green-700">
+                                <i class="fas fa-paw mr-1"></i>Animal Welfare
                             </div>
                         </div>
                     </div>
                     <div class="p-6">
-                        <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div class="bg-green-50 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-green-100 transition-colors duration-300">
                             <i class="fas fa-paw text-2xl text-green-600"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Animal Care / पशु सेवा</h3>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Animal Care</h3>
                         <p class="text-gray-600 text-sm leading-relaxed mb-4">
                             Rescue, treatment, and care for stray and injured animals
                         </p>
-                        <div class="text-xs text-gray-500">
-                            <i class="fas fa-images mr-1"></i>8 Photos Available
+                        <div class="flex items-center justify-center text-xs text-green-600 font-medium">
+                            <i class="fas fa-images mr-2"></i>8 Photos Available
                         </div>
                     </div>
                 </div>
                 
-                <div class="activity-card bg-white rounded-2xl shadow-lg card-hover text-center overflow-hidden cursor-pointer scroll-scale-up stagger-3" data-activity="food">
+                <!-- Food Distribution -->
+                <div class="activity-card bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 text-center overflow-hidden cursor-pointer group" data-activity="food">
                     <div class="relative">
-                        <img src="assets/images/activities/fd1.png">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <img src="assets/images/activities/fd1.png" alt="Food Distribution" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-orange-900/60 to-transparent"></div>
                         <div class="absolute top-4 right-4">
-                            <div class="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <div class="bg-orange-600 text-white px-3 py-2 rounded-full text-sm font-semibold shadow-lg">
                                 <i class="fas fa-camera mr-1"></i>View Photos
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 left-4">
+                            <div class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-orange-700">
+                                <i class="fas fa-utensils mr-1"></i>Food Aid
                             </div>
                         </div>
                     </div>
                     <div class="p-6">
-                        <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div class="bg-orange-50 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-100 transition-colors duration-300">
                             <i class="fas fa-utensils text-2xl text-orange-600"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Food Distribution / भोजन वितरण</h3>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Food Distribution</h3>
                         <p class="text-gray-600 text-sm leading-relaxed mb-4">
                             Emergency food distribution during floods and natural disasters
                         </p>
-                        <div class="text-xs text-gray-500">
-                            <i class="fas fa-images mr-1"></i>15 Photos Available
+                        <div class="flex items-center justify-center text-xs text-orange-600 font-medium">
+                            <i class="fas fa-images mr-2"></i>15 Photos Available
                         </div>
                     </div>
                 </div>
                 
-                <div class="activity-card bg-white rounded-2xl shadow-lg card-hover text-center overflow-hidden cursor-pointer scroll-slide-right stagger-4" data-activity="community">
+                <!-- Social Welfare -->
+                <div class="activity-card bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 text-center overflow-hidden cursor-pointer group" data-activity="community">
                     <div class="relative">
-                        <img src="assets/images/activities/p3.jpeg">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <img src="assets/images/activities/p3.jpeg" alt="Social Welfare" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-purple-900/60 to-transparent"></div>
                         <div class="absolute top-4 right-4">
-                            <div class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <div class="bg-purple-600 text-white px-3 py-2 rounded-full text-sm font-semibold shadow-lg">
                                 <i class="fas fa-camera mr-1"></i>View Photos
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 left-4">
+                            <div class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-purple-700">
+                                <i class="fas fa-users mr-1"></i>Community
                             </div>
                         </div>
                     </div>
                     <div class="p-6">
-                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-users text-2xl text-blue-600"></i>
+                        <div class="bg-purple-50 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-100 transition-colors duration-300">
+                            <i class="fas fa-users text-2xl text-purple-600"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Social Welfare / सामाजिक कल्याण</h3>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Social Welfare</h3>
                         <p class="text-gray-600 text-sm leading-relaxed mb-4">
                             Community development and social welfare programs
                         </p>
-                        <div class="text-xs text-gray-500">
-                            <i class="fas fa-images mr-1"></i>10 Photos Available
+                        <div class="flex items-center justify-center text-xs text-purple-600 font-medium">
+                            <i class="fas fa-images mr-2"></i>10 Photos Available
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Gallery -->
-    <section id="gallery" class="py-20 bg-white parallax-section">
-        <div class="absolute inset-0 gallery-parallax-bg"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 gallery-parallax-content">
-            <div class="text-center mb-12 scroll-fade-in">
-                <h2 class="text-4xl sm:text-5xl font-extrabold text-[#0F172A] mb-4">Our Impact</h2>
-                <p class="text-lg sm:text-xl text-[#334155] max-w-3xl mx-auto">Numbers that reflect our commitment to service</p>
+            
+            <!-- Call to Action -->
+            <div class="text-center mt-16">
+                <div class="activities-cta rounded-3xl p-8 shadow-lg max-w-2xl mx-auto">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Join Our Mission</h3>
+                    <p class="text-gray-600 mb-6">Be part of creating positive change in Gonda, Uttar Pradesh</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button id="volunteerBtn2" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-heart mr-2"></i>Volunteer Now
+                        </button>
+                        <button id="shareWorkBtn2" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-share mr-2"></i>Share Our Work
+                        </button>
             </div>
-
-            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                <!-- Impact Card 1 -->
-                <div class="impact-card-up bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition scroll-scale-up stagger-1">
-                    <div class="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-heartbeat text-2xl text-red-600"></i>
                     </div>
-                    <div class="text-5xl font-extrabold text-[#0F172A] mb-2">500+</div>
-                    <div class="text-sm uppercase tracking-wide text-[#14B8A6] mb-1">Lives Saved</div>
-                    <p class="text-sm text-[#334155]">Medical treatments provided</p>
-                </div>
-
-                <!-- Impact Card 2 -->
-                <div class="impact-card-up bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition scroll-slide-left stagger-2">
-                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-paw text-2xl text-green-600"></i>
-                    </div>
-                    <div class="text-5xl font-extrabold text-[#0F172A] mb-2">200+</div>
-                    <div class="text-sm uppercase tracking-wide text-[#14B8A6] mb-1">Animals Helped</div>
-                    <p class="text-sm text-[#334155]">Animals rescued and treated</p>
-                </div>
-
-                <!-- Impact Card 3 -->
-                <div class="impact-card-down bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition scroll-scale-up stagger-3">
-                    <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-utensils text-2xl text-orange-600"></i>
-                    </div>
-                    <div class="text-5xl font-extrabold text-[#0F172A] mb-2">1000+</div>
-                    <div class="text-sm uppercase tracking-wide text-[#14B8A6] mb-1">Meals Served</div>
-                    <p class="text-sm text-[#334155]">During emergency situations</p>
-                </div>
-
-                <!-- Impact Card 4 -->
-                <div class="impact-card-down bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition scroll-slide-right stagger-4">
-                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-users text-2xl text-blue-600"></i>
-                    </div>
-                    <div class="text-5xl font-extrabold text-[#0F172A] mb-2">50+</div>
-                    <div class="text-sm uppercase tracking-wide text-[#14B8A6] mb-1">Communities</div>
-                    <p class="text-sm text-[#334155]">Communities served</p>
-                </div>
             </div>
         </div>
     </section>
+
+
 
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 section-gradient parallax-section">
-        <div class="absolute inset-0 contact-parallax-bg"></div>
-        <h1 class="text-4xl text-center sm:text-5xl font-bold text-gray-900 mb-6 contact-parallax-content scroll-fade-in">Contact Us & Certificates</h1> 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 contact-parallax-content">
-            <div class="text-center mb-16 slide-up scroll-fade-in">
-                <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-                  
-               
+    <section id="contact" class="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-600 to-green-600 rounded-full mb-6 shadow-lg">
+                    <i class="fas fa-envelope text-white text-3xl"></i>
+                </div>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                    Contact <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-600">Us</span>
+                </h2>
+                <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Get in touch with us to learn more about our work or join our mission in Gonda, Uttar Pradesh
+                </p>
             </div>
             
             <div class="grid lg:grid-cols-2 gap-12">
-                <div class="slide-up scroll-slide-left">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-8">Get in Touch </h3>
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div class="contact-info-card bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-8 flex items-center">
+                            <i class="fas fa-phone mr-3 text-blue-600"></i>
+                            Get in Touch
+                        </h3>
                     
                     <div class="space-y-6">
-                        <div class="flex items-center">
-                            <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-envelope text-blue-600"></i>
+                            <!-- Email -->
+                            <div class="flex items-start group">
+                                <div class="bg-blue-50 w-14 h-14 rounded-2xl flex items-center justify-center mr-4 group-hover:bg-blue-100 transition-colors duration-300">
+                                    <i class="fas fa-envelope text-blue-600 text-xl"></i>
                             </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900">Email </h4>
-                                <p class="text-gray-600">yuvaafoundationn@gmail.com</p>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-gray-900 mb-1">Email Address</h4>
+                                    <p class="text-gray-600 mb-2">Send us an email anytime</p>
+                                    <a href="mailto:yuvaafoundationn@gmail.com" class="text-blue-600 hover:text-blue-800 hover:underline transition-colors font-medium">
+                                        yuvaafoundationn@gmail.com
+                                    </a>
                             </div>
                         </div>
                         
-                        <div class="flex items-center">
-                            <div class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-phone text-green-600"></i>
+                            <!-- Phone -->
+                            <div class="flex items-start group">
+                                <div class="bg-green-50 w-14 h-14 rounded-2xl flex items-center justify-center mr-4 group-hover:bg-green-100 transition-colors duration-300">
+                                    <i class="fas fa-phone text-green-600 text-xl"></i>
                             </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900">Phone </h4>
-                                <p class="text-gray-600">
-                                    <a href="tel:+919696525287" class="text-blue-600 hover:text-blue-800 hover:underline transition-colors">
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-gray-900 mb-1">Phone Number</h4>
+                                    <p class="text-gray-600 mb-2">Call us for immediate assistance</p>
+                                    <a href="tel:+919696525287" class="text-green-600 hover:text-green-800 hover:underline transition-colors font-medium">
                                         +91 96965 25287
                                     </a>
-                                </p>
                             </div>
                         </div>
                         
-                        <div class="flex items-center">
-                            <div class="bg-orange-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-map-marker-alt text-orange-600"></i>
+                            <!-- Address -->
+                            <div class="flex items-start group">
+                                <div class="bg-orange-50 w-14 h-14 rounded-2xl flex items-center justify-center mr-4 group-hover:bg-orange-100 transition-colors duration-300">
+                                    <i class="fas fa-map-marker-alt text-orange-600 text-xl"></i>
                             </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900">Address </h4>
-                                <p class="text-gray-600">Nawabganj Gonda Uttar pradesh </p>
+                                <div class="flex-1">
+                                    <h4 class="font-semibold text-gray-900 mb-1">Office Address</h4>
+                                    <p class="text-gray-600 mb-2">Visit our office in Gonda</p>
+                                    <p class="text-orange-600 font-medium">Nawabganj, Gonda, Uttar Pradesh</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="mt-8">
-                        <h4 class="font-semibold text-gray-900 mb-4">Follow Us </h4>
-                        <div class="flex space-x-4">
-                            <a href="https://www.facebook.com/people/YUVA-PRENA-foundation/61576672051265" class="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-facebook-f"></i>
+                    <!-- Social Media -->
+                    <div class="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                            <i class="fas fa-share-alt mr-3 text-purple-600"></i>
+                            Follow Us
+                        </h3>
+                        <p class="text-gray-600 mb-6">Stay connected with our latest updates and activities</p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://www.facebook.com/people/YUVA-PRENA-foundation/61576672051265" 
+                               class="social-btn bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg" 
+                               aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-facebook-f mr-2"></i>Facebook
                             </a>
-                         
-                            <a href="https://www.instagram.com/yuvaa_foundation/?utm_source=qr&igsh=ZTc4cmM0YWdkb3Rp#" class="bg-pink-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-instagram"></i>
+                            <a href="https://www.instagram.com/yuvaa_foundation/?utm_source=qr&igsh=ZTc4cmM0YWdkb3Rp#" 
+                               class="social-btn bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg" 
+                               aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-instagram mr-2"></i>Instagram
                             </a>
-                            <a href="https://wa.me/919696525287" class="bg-green-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-green-700 transition-colors" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/919696525287" 
+                               class="social-btn bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg" 
+                               aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-whatsapp mr-2"></i>WhatsApp
                             </a>
                         </div>
                     </div>
                 </div>
                 
-                <div class="slide-up scroll-slide-right">
-                    <div class="bg-white rounded-2xl p-8 shadow-lg">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">
-                            Certificates & Awards 
+                <!-- Certificates & Recognition -->
+                <div class="space-y-8">
+                    <!-- Certificates Section -->
+                    <div class="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                            <i class="fas fa-certificate mr-3 text-yellow-600"></i>
+                            Our Certificates & Newspaper Coverage
                         </h3>
                         
-                        <!-- Awards Grid -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 award-grid">
-                            <!-- Certificate -->
-                            <div class="award-card group">
-                                <div class="award-image">
-                                    <img src="assets/images/certificates/certificate.jpeg" alt="Registration Certificate" loading="lazy">
-                                    <div class="award-overlay">
+                        <!-- Certificate Grid -->
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+                            <!-- Registration Certificate -->
+                            <div class="certificate-card group cursor-pointer">
+                                <div class="relative overflow-hidden rounded-xl">
+                                    <img src="assets/images/certificates/certificate.jpeg" 
+                                         alt="Registration Certificate" 
+                                         class="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300">
+                                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                         <i class="fas fa-certificate text-3xl text-yellow-400"></i>
                                     </div>
                                 </div>
-                                <div class="award-content">
-                                    <h4 class="award-title">Registration Certificate</h4>
-                                    <p class="award-organization">Society Registration Act</p>
-                                    <p class="award-year">Valid</p>
+                                <div class="mt-3 text-center">
+                                    <h4 class="text-sm font-semibold text-gray-900">Registration</h4>
+                                    <p class="text-xs text-gray-600">Society Act</p>
                                 </div>
                             </div>
 
-                            <!-- Newspaper 1 -->
-                            <div class="award-card group">
-                                <div class="award-image">
-                                    <img src="assets/images/newspaper/n1.jpeg" alt="Newspaper Coverage 1" loading="lazy">
-                                    <div class="award-overlay">
+                            <!-- Newspaper Coverage 1 -->
+                            <div class="certificate-card group cursor-pointer">
+                                <div class="relative overflow-hidden rounded-xl">
+                                    <img src="assets/images/newspaper/n1.jpeg" 
+                                         alt="Newspaper Coverage 1" 
+                                         class="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300">
+                                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                         <i class="fas fa-newspaper text-3xl text-blue-500"></i>
                                     </div>
                                 </div>
-                                <div class="award-content">
-                                    <h4 class="award-title">Newspaper Coverage</h4>
-                                    <p class="award-organization">Local Daily</p>
-                                    <p class="award-year">--</p>
+                                <div class="mt-3 text-center">
+                                    <h4 class="text-sm font-semibold text-gray-900">Press Coverage</h4>
+                                    <p class="text-xs text-gray-600">Local Daily</p>
                                 </div>
                             </div>
 
-                            <!-- Newspaper 2 -->
-                            <div class="award-card group">
-                                <div class="award-image">
-                                    <img src="assets/images/newspaper/n2.jpeg" alt="Newspaper Coverage 2" loading="lazy">
-                                    <div class="award-overlay">
+                            <!-- Newspaper Coverage 2 -->
+                            <div class="certificate-card group cursor-pointer">
+                                <div class="relative overflow-hidden rounded-xl">
+                                    <img src="assets/images/newspaper/n2.jpeg" 
+                                         alt="Newspaper Coverage 2" 
+                                         class="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300">
+                                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                         <i class="fas fa-newspaper text-3xl text-green-500"></i>
                                     </div>
                                 </div>
-                                <div class="award-content">
-                                    <h4 class="award-title">Newspaper Coverage</h4>
-                                    <p class="award-organization">Regional Press</p>
-                                    <p class="award-year">--</p>
+                                <div class="mt-3 text-center">
+                                    <h4 class="text-sm font-semibold text-gray-900">Press Coverage</h4>
+                                    <p class="text-xs text-gray-600">Regional Press</p>
                                 </div>
                             </div>
 
-                            <!-- Newspaper 3 -->
-                            <div class="award-card group">
-                                <div class="award-image">
-                                    <img src="assets/images/newspaper/n3.jpeg" alt="Newspaper Coverage 3" loading="lazy">
-                                    <div class="award-overlay">
+                            <!-- Newspaper Coverage 3 -->
+                            <div class="certificate-card group cursor-pointer">
+                                <div class="relative overflow-hidden rounded-xl">
+                                    <img src="assets/images/newspaper/n3.jpeg" 
+                                         alt="Newspaper Coverage 3" 
+                                         class="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300">
+                                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                         <i class="fas fa-newspaper text-3xl text-red-500"></i>
                                     </div>
                                 </div>
-                                <div class="award-content">
-                                    <h4 class="award-title">Newspaper Coverage</h4>
-                                    <p class="award-organization">Regional Press</p>
-                                    <p class="award-year">--</p>
+                                <div class="mt-3 text-center">
+                                    <h4 class="text-sm font-semibold text-gray-900">Press Coverage</h4>
+                                    <p class="text-xs text-gray-600">Regional Press</p>
                                 </div>
                             </div>
 
-                            <!-- Newspaper 4 -->
-                            <div class="award-card group">
-                                <div class="award-image">
-                                    <img src="assets/images/newspaper/n4.jpeg" alt="Newspaper Coverage 4" loading="lazy">
-                                    <div class="award-overlay">
+                            <!-- Newspaper Coverage 4 -->
+                            <div class="certificate-card group cursor-pointer">
+                                <div class="relative overflow-hidden rounded-xl">
+                                    <img src="assets/images/newspaper/n4.jpeg" 
+                                         alt="Newspaper Coverage 4" 
+                                         class="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300">
+                                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                         <i class="fas fa-newspaper text-3xl text-purple-500"></i>
                                     </div>
                                 </div>
-                                <div class="award-content">
-                                    <h4 class="award-title">Newspaper Coverage</h4>
-                                    <p class="award-organization">Regional Press</p>
-                                    <p class="award-year">--</p>
+                                <div class="mt-3 text-center">
+                                    <h4 class="text-sm font-semibold text-gray-900">Press Coverage</h4>
+                                    <p class="text-xs text-gray-600">Regional Press</p>
                                 </div>
                             </div>
 
-                            <!-- Newspaper 5 -->
-                            <div class="award-card group">
-                                <div class="award-image">
-                                    <img src="assets/images/newspaper/n5.jpeg" alt="Newspaper Coverage 5" loading="lazy">
-                                    <div class="award-overlay">
+                            <!-- Newspaper Coverage 5 -->
+                            <div class="certificate-card group cursor-pointer">
+                                <div class="relative overflow-hidden rounded-xl">
+                                    <img src="assets/images/newspaper/n5.jpeg" 
+                                         alt="Newspaper Coverage 5" 
+                                         class="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300">
+                                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                         <i class="fas fa-newspaper text-3xl text-orange-500"></i>
                                     </div>
                                 </div>
-                                <div class="award-content">
-                                    <h4 class="award-title">Newspaper Coverage</h4>
-                                    <p class="award-organization">Regional Press</p>
-                                    <p class="award-year">--</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Recognition Stats -->
-                        <div class="bg-gradient-to-r from-blue-50 to-green-50 rounded-xl p-6 mb-6">
-                            <h4 class="text-lg font-semibold text-gray-800 mb-4 text-center flex items-center justify-center"><i class="fas fa-trophy mr-2 text-yellow-500"></i>Our Recognition</h4>
-                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                                <div class="text-center">
-                                    <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
-                                        <i class="fas fa-award text-blue-600"></i>
-                                    </div>
-                                    <div class="text-2xl font-bold text-blue-600">10+</div>
-                                    <div class="text-sm text-gray-600">Newspaper Coverage</div>
-                                </div>
-                                <div class="text-center">
-                                    <div class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
-                                        <i class="fas fa-calendar-alt text-green-600"></i>
-                                    </div>
-                                    <div class="text-2xl font-bold text-green-600">3+</div>
-                                    <div class="text-sm text-gray-600">Years of Service</div>
-                                </div>
-                                <div class="text-center">
-                                    <div class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
-                                        <i class="fas fa-certificate text-purple-600"></i>
-                                    </div>
-                                    <div class="text-2xl font-bold text-purple-600">5+</div>
-                                    <div class="text-sm text-gray-600">Certifications</div>
-                                </div>
-                                <div class="text-center">
-                                    <div class="bg-orange-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
-                                        <i class="fas fa-shield-alt text-orange-600"></i>
-                                    </div>
-                                    <div class="text-2xl font-bold text-orange-600">100%</div>
-                                    <div class="text-sm text-gray-600">Transparency</div>
+                                <div class="mt-3 text-center">
+                                    <h4 class="text-sm font-semibold text-gray-900">Press Coverage</h4>
+                                    <p class="text-xs text-gray-600">Regional Press</p>
                                 </div>
                             </div>
                         </div>
 
                         <!-- View All Button -->
-                        <div class="text-center">
-                            <button id="viewAllCertificatesBtn" class="btn-primary text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+                                <div class="text-center">
+                            <button id="viewAllCertificatesBtn" class="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
                                 <i class="fas fa-certificate mr-2"></i>
-                                View All Certificates 
+                                View All Certificates
                             </button>
+                                    </div>
+                                </div>
+
+                    <!-- Recognition Stats -->
+                    <div class="bg-gradient-to-r from-blue-50 to-green-50 rounded-3xl p-8 border border-blue-100">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center justify-center">
+                            <i class="fas fa-trophy mr-3 text-yellow-500"></i>
+                            Our Recognition
+                        </h3>
+                        
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="recognition-stat text-center group">
+                                <div class="bg-blue-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-award text-blue-600 text-2xl"></i>
+                                    </div>
+                                <div class="text-3xl font-bold text-blue-600 mb-1">10+</div>
+                                <div class="text-sm text-gray-600 font-medium">Newspaper Coverage</div>
+                                </div>
+                            
+                            <div class="recognition-stat text-center group">
+                                <div class="bg-green-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-calendar-alt text-green-600 text-2xl"></i>
+                                    </div>
+                                <div class="text-3xl font-bold text-green-600 mb-1">3+</div>
+                                <div class="text-sm text-gray-600 font-medium">Years of Service</div>
+                                </div>
+                            
+                            <div class="recognition-stat text-center group">
+                                <div class="bg-purple-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-certificate text-purple-600 text-2xl"></i>
+                                    </div>
+                                <div class="text-3xl font-bold text-purple-600 mb-1">5+</div>
+                                <div class="text-sm text-gray-600 font-medium">Certifications</div>
+                                </div>
+                            
+                            <div class="recognition-stat text-center group">
+                                <div class="bg-orange-100 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-shield-alt text-orange-600 text-2xl"></i>
+                            </div>
+                                <div class="text-3xl font-bold text-orange-600 mb-1">100%</div>
+                                <div class="text-sm text-gray-600 font-medium">Transparency</div>
+                        </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-<section id="blog" class="py-20 bg-white parallax-section">
+
+
+    <!-- Blog Section -->
+<section id="blog" class="py-20 bg-white">
     <div class="container mx-auto px-4">
         <!-- Section Header -->
         <div class="text-center mb-16">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 to-green-600 rounded-2xl mb-6">
+                <i class="fas fa-newspaper text-white text-2xl"></i>
+            </div>
             <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
                 Latest News & Updates
                 <span class="block text-2xl md:text-3xl text-blue-600 mt-2">ताज़ा समाचार और अपडेट</span>
             </h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 Stay updated with our latest activities, achievements, and community impact stories
             </p>
         </div>
 
         <!-- Loading State -->
-        <div id="blogLoading" class="text-center py-12">
-            <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-            <p class="mt-4 text-gray-600">Loading latest updates...</p>
+        <div id="blogLoading" class="text-center py-16 hidden">
+            <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-100 to-green-100 rounded-full mb-6">
+                <div class="animate-spin rounded-full h-8 w-8 border-2 border-blue-600 border-t-transparent"></div>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Loading Latest Updates</h3>
+            <p class="text-gray-600">Please wait while we fetch the latest news and updates...</p>
         </div>
 
         <!-- Error State -->
-        <div id="blogError" class="text-center py-12 hidden">
-            <div class="bg-red-50 border border-red-200 rounded-lg p-6 max-w-md mx-auto">
-                <i class="fas fa-exclamation-triangle text-red-500 text-3xl mb-4"></i>
-                <h3 class="text-lg font-semibold text-red-800 mb-2">Unable to Load Updates</h3>
-                <p class="text-red-600 mb-4">We're having trouble loading the latest news. Please try again later.</p>
-                <button onclick="loadBlogs()" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
+        <div id="blogError" class="text-center py-16 hidden">
+            <div class="bg-gradient-to-br from-red-50 to-red-100 border border-red-200 rounded-2xl p-8 max-w-lg mx-auto shadow-lg">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-6">
+                    <i class="fas fa-exclamation-triangle text-red-600 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-red-800 mb-3">Unable to Load Updates</h3>
+                <p class="text-red-600 mb-6 leading-relaxed">We're having trouble loading the latest news. Please try again later.</p>
+                <button onclick="loadBlogs()" class="bg-gradient-to-r from-red-600 to-red-700 text-white px-6 py-3 rounded-xl hover:from-red-700 hover:to-red-800 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
                     <i class="fas fa-refresh mr-2"></i>Try Again
                 </button>
             </div>
         </div>
 
         <!-- Blog Grid -->
-        <div id="blogGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 hidden">
-            <!-- Blog cards will be dynamically inserted here -->
+        <div id="blogGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Mass Marriage Planning Card -->
+            <div id="massMarriageCard" class="blog-card bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden group cursor-pointer">
+                <div class="relative">
+                    <img src="assets/images/activities/p6.jpeg" alt="Mass Marriage Planning" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-purple-900/60 to-transparent"></div>
+                    <div class="absolute top-4 right-4">
+                        <div class="bg-purple-600 text-white px-3 py-2 rounded-full text-sm font-semibold shadow-lg">
+                            <i class="fas fa-heart mr-1"></i>Upcoming Event
+                        </div>
+                    </div>
+                    <div class="absolute bottom-4 left-4">
+                        <div class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-purple-700">
+                            <i class="fas fa-calendar-alt mr-1"></i>Planning Phase
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="bg-purple-50 w-12 h-12 rounded-xl flex items-center justify-center group-hover:bg-purple-100 transition-colors duration-300">
+                            <i class="fas fa-heart text-purple-600 text-xl"></i>
+                        </div>
+                        <div class="blog-meta text-sm text-gray-500">
+                            <i class="fas fa-calendar mr-1"></i>
+                            <span class="blog-date">December 2025</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors duration-300">
+                        Mass Marriage Program in Gonda
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        We are planning a collective marriage ceremony for 10-15 couples in Gonda, Uttar Pradesh. This initiative aims to help families who cannot afford wedding expenses while fostering community spirit and joy.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="blog-category bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">
+                            <i class="fas fa-tag mr-1"></i>Community Service
+                        </span>
+                        <div class="flex items-center text-purple-600 text-sm font-medium">
+                            <i class="fas fa-users mr-1"></i>10-15 Couples
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Animal Help Card -->
+            <div class="blog-card bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden group">
+                <div class="relative">
+                    <img src="assets/images/activities/an1.png" alt="Animal Help" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-green-900/60 to-transparent"></div>
+                    <div class="absolute top-4 right-4">
+                        <div class="bg-green-600 text-white px-3 py-2 rounded-full text-sm font-semibold shadow-lg">
+                            <i class="fas fa-paw mr-1"></i>Active Program
+                        </div>
+                    </div>
+                    <div class="absolute bottom-4 left-4">
+                        <div class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-green-700">
+                            <i class="fas fa-heart mr-1"></i>Ongoing
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="bg-green-50 w-12 h-12 rounded-xl flex items-center justify-center group-hover:bg-green-100 transition-colors duration-300">
+                            <i class="fas fa-paw text-green-600 text-xl"></i>
+                        </div>
+                        <div class="blog-meta text-sm text-gray-500">
+                            <i class="fas fa-calendar mr-1"></i>
+                            <span class="blog-date">Ongoing</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors duration-300">
+                        Animal Rescue & Care Program
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Our dedicated team rescues, treats, and cares for stray and injured animals. We provide medical treatment, shelter, and rehabilitation services to ensure every animal receives love and care.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="blog-category bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-medium">
+                            <i class="fas fa-tag mr-1"></i>Animal Welfare
+                        </span>
+                        <div class="flex items-center text-green-600 text-sm font-medium">
+                            <i class="fas fa-heart mr-1"></i>200+ Helped
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Empty State -->
-        <div id="blogEmpty" class="text-center py-12 hidden">
-            <div class="bg-gray-50 border border-gray-200 rounded-lg p-8 max-w-md mx-auto">
-                <i class="fas fa-newspaper text-gray-400 text-4xl mb-4"></i>
-                <h3 class="text-lg font-semibold text-gray-700 mb-2">No Updates Yet</h3>
-                <p class="text-gray-500">Check back soon for the latest news and updates from our organization.</p>
+        <div id="blogEmpty" class="text-center py-16 hidden">
+            <div class="bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 rounded-2xl p-8 max-w-lg mx-auto shadow-lg">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-gray-100 rounded-full mb-6">
+                    <i class="fas fa-newspaper text-gray-500 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-700 mb-3">No Updates Yet</h3>
+                <p class="text-gray-600 leading-relaxed">Check back soon for the latest news and updates from our organization.</p>
             </div>
         </div>
 
         <!-- View All Button -->
-        <div id="viewAllBlogs" class="text-center mt-12 hidden">
-            <button onclick="loadAllBlogs()" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
+        <div id="viewAllBlogs" class="text-center mt-16 hidden">
+            <button onclick="loadAllBlogs()" class="bg-gradient-to-r from-blue-600 to-green-600 text-white px-8 py-4 rounded-xl hover:from-blue-700 hover:to-green-700 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                 <i class="fas fa-newspaper mr-2"></i>View All Updates
             </button>
         </div>
     </div>
 </section>
+
+
     <!-- Thank You Card Popup Modal -->
     <div id="thankYouModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 transform transition-all duration-300 scale-95 opacity-0" id="thankYouCard">
@@ -693,32 +955,83 @@
     </section>
 
     <!-- Certificates Gallery Page (photos only) -->
-    <div id="certificatesPage" class="fixed inset-0 bg-black bg-opacity-80 z-50 hidden">
-        <div class="absolute inset-0 overflow-y-auto">
-            <div class="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8">
-                <!-- Top bar with back/close -->
-                <div class="flex items-center justify-between mb-4">
-                    <button id="backFromCertificates" class="text-white bg-[#14B8A6] hover:bg-[#0EA5A3] px-4 py-2 rounded-md font-semibold">
-                        <i class="fas fa-arrow-left mr-2"></i> Back
+      <!-- Certificates Gallery Page -->
+    <div id="certificatesPage" class="hidden fixed inset-0 bg-white z-50 overflow-y-auto">
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-blue-600 to-green-600 text-white py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <button id="backFromCertificates" class="flex items-center text-white hover:text-gray-200 transition-colors mb-4">
+                            <i class="fas fa-arrow-left mr-2"></i>
+                            Back to Contact
                     </button>
-                    <button id="closeCertificates" class="text-white bg-white/10 hover:bg-white/20 px-4 py-2 rounded-md">
-                        <i class="fas fa-times"></i>
+                        <h1 class="text-4xl font-bold mb-2">Our Certificates & Recognition</h1>
+                        <p class="text-white/90 text-lg">Awards and certificates that recognize our commitment to social service</p>
+                    </div>
+                    <button id="closeCertificates" class="text-white hover:text-gray-200 transition-colors">
+                        <i class="fas fa-times text-2xl"></i>
                     </button>
                 </div>
-                <!-- Grid of certificate photos only -->
-                <div id="certificatesGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                    <!-- Filled by JS with <img> only cards -->
                 </div>
+            </div>
+        
+        <!-- Certificates Content -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <!-- Introduction -->
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-100 to-green-100 rounded-full mb-6">
+                    <i class="fas fa-award text-2xl text-blue-600"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Recognition & Achievements</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    These certificates and awards represent our dedication to making a positive impact in the community. 
+                    Each recognition motivates us to continue our mission of service and social welfare.
+                </p>
+            </div>
+            
+            <!-- Certificates Grid -->
+            <div id="certificatesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
+                <!-- Certificates will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Screen Image Modal -->
+    <div id="fullImageModal" class="hidden fixed inset-0 bg-black bg-opacity-95 z-60 flex items-center justify-center p-4">
+        <div class="relative max-w-7xl max-h-full w-full h-full flex items-center justify-center">
+            <!-- Close Button -->
+            <button id="closeFullImage" class="absolute top-4 right-4 z-10 w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center backdrop-blur-sm transition-all duration-300 group">
+                <i class="fas fa-times text-white text-xl group-hover:scale-110"></i>
+            </button>
+            
+            <!-- Previous Button -->
+            <button id="prevImage" class="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center backdrop-blur-sm transition-all duration-300 group">
+                <i class="fas fa-chevron-left text-white text-xl group-hover:scale-110"></i>
+            </button>
+            
+            <!-- Next Button -->
+            <button id="nextImage" class="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center backdrop-blur-sm transition-all duration-300 group">
+                <i class="fas fa-chevron-right text-white text-xl group-hover:scale-110"></i>
+            </button>
+            
+            <!-- Image Container -->
+            <div class="relative w-full h-full flex items-center justify-center">
+                <img id="fullImage" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl transition-all duration-300">
+            </div>
+            
+            <!-- Image Counter -->
+            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-white text-sm font-medium">
+                <span id="imageCounter">1 / 1</span>
             </div>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12 parallax-section">
-        <div class="absolute inset-0 footer-parallax-bg"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 footer-parallax-content">
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
-                <div class="md:col-span-2 scroll-fade-in">
+                <div class="md:col-span-2">
                     <div class="text-3xl font-bold mb-4">
                         <span class="text-blue-400">Yuva Prerna</span>
                         <span class="text-green-400"> फाउंडेशन</span>
@@ -739,24 +1052,43 @@
                     </div>
                 </div>
                 
-                <div class="scroll-slide-left">
-                    <h3 class="text-lg font-semibold mb-4">Quick Links </h3>
+                <!-- Quick Links and Support in a responsive container -->
+                <div class="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="">
+                        <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
                         <li><a href="#about" class="text-gray-300 hover:text-white transition-colors flex items-center"><i class="fas fa-info-circle mr-2"></i>About Us</a></li>
                         <li><a href="#activities" class="text-gray-300 hover:text-white transition-colors flex items-center"><i class="fas fa-hands-helping mr-2"></i>Activities</a></li>
-                    
                         <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors flex items-center"><i class="fas fa-envelope mr-2"></i>Contact</a></li>
                     </ul>
                 </div>
                 
-                <div class="scroll-slide-right">
-                    <h3 class="text-lg font-semibold mb-4">Support </h3>
+                    <div class="">
+                        <h3 class="text-lg font-semibold mb-4">Support</h3>
                     <ul class="space-y-2">
                         <li><a href="#" id="footerDonate" class="text-gray-300 hover:text-white transition-colors cursor-pointer flex items-center"><i class="fas fa-donate mr-2"></i>Donate</a></li>
                         <li><a href="#" id="footerVolunteer" class="text-gray-300 hover:text-white transition-colors cursor-pointer flex items-center"><i class="fas fa-user-plus mr-2"></i>Volunteer</a></li>
                         <li><a href="#" id="footerEmergency" class="text-gray-300 hover:text-white transition-colors cursor-pointer flex items-center"><i class="fas fa-phone mr-2"></i>Emergency Help</a></li>
                         <li><a href="#" id="footerSupport" class="text-gray-300 hover:text-white transition-colors cursor-pointer flex items-center"><i class="fas fa-code mr-2"></i>Developer Contact</a></li>
                     </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Google Maps Section -->
+            <div class="mt-12 mb-8">
+                <h3 class="text-xl font-semibold mb-6 text-center text-white">Our Location</h3>
+                <div class="relative w-full h-64 md:h-80 lg:h-96 rounded-lg overflow-hidden shadow-lg">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.0486536763424!2d82.13513853864829!3d26.86640341284066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399a019ac835b8af%3A0x2bbbe66846344f47!2sMaster%20computer%20institute!5e1!3m2!1sen!2sin!4v1758927788922!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        class="w-full h-full">
+                    </iframe>
                 </div>
             </div>
             
@@ -805,7 +1137,7 @@
         <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
             <div class="relative">
                 <!-- Close Button -->
-                <button id="closeJoinModal" class="absolute top-4 right-4 z-10 bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800 rounded-full w-10 h-10 flex items-center justify-center transition-all duration-300">
+                <button id="closeJoinFormModal" class="absolute top-4 right-4 z-10 bg-white bg-opacity-90 hover:bg-opacity-100 text-gray-800 rounded-full w-10 h-10 flex items-center justify-center transition-all duration-300">
                     <i class="fas fa-times text-xl"></i>
                 </button>
                 
@@ -1077,6 +1409,247 @@
         </a>
         <div class="whatsapp-tooltip">
             <span>Contact us on WhatsApp</span>
+        </div>
+    </div>
+
+    <!-- Collective Marriage Program - Application Modal -->
+    <div id="marriageProgramModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative">
+            <!-- Close Button -->
+            <button id="closeMarriageProgramModal" class="absolute top-4 right-4 z-20 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 group cursor-pointer">
+                <i class="fas fa-times text-gray-600 group-hover:text-gray-800 text-lg"></i>
+            </button>
+    
+            <!-- Header -->
+            <div class="text-center p-8" style="background: linear-gradient(135deg, #7f1d1d, #b45309); color: #fff;">
+                <div class="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center" style="background: rgba(255,255,255,0.2);">
+                    <i class="fas fa-ring text-3xl"></i>
+                </div>
+                <h2 class="text-3xl font-extrabold mb-1">सामूहिक विवाह कार्यक्रम - आवेदन फॉर्म</h2>
+                <p class="text-white/90">जीवन को सशक्त बनाना, खुशियाँ फैलाना</p>
+            </div>
+    
+            <!-- Form Body -->
+            <form id="marriageProgramForm" class="p-8 space-y-6" enctype="multipart/form-data">
+                <input type="hidden" name="title" value="Collective Marriage Application">
+                <!-- Couple Name -->
+                <div>
+                    <label class="block text-sm font-medium mb-2" style="color:#7f1d1d;">जोड़े का नाम</label>
+                    <input type="text" name="coupleName" required placeholder="उदाहरण: राहुल & प्रिया"
+                           class="w-full px-4 py-3 rounded-xl border focus:outline-none"
+                           style="border-color:#f5e6c8; background:#fffaf1; box-shadow: 0 1px 0 rgba(0,0,0,0.02);">
+                </div>
+    
+                <!-- Contact & Address -->
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2" style="color:#7f1d1d;">संपर्क नंबर</label>
+                        <input type="tel" name="contact" required placeholder="+91 98765 43210"
+                               class="w-full px-4 py-3 rounded-xl border focus:outline-none"
+                               style="border-color:#f5e6c8; background:#fffaf1;">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2" style="color:#7f1d1d;">पता</label>
+                        <input type="text" name="address" required placeholder="घर नंबर, क्षेत्र, शहर, राज्य"
+                               class="w-full px-4 py-3 rounded-xl border focus:outline-none"
+                               style="border-color:#f5e6c8; background:#fffaf1;">
+                    </div>
+                </div>
+    
+                <!-- Type of Support Needed -->
+                <div>
+                    <label class="block text-sm font-medium mb-2" style="color:#7f1d1d;">ज़रूरत का प्रकार</label>
+                    <select name="supportType" required
+                            class="w-full px-4 py-3 rounded-xl border focus:outline-none"
+                            style="border-color:#f5e6c8; background:#fffaf1;">
+                        <option value="" disabled selected>सहायता का प्रकार चुनें</option>
+                        <option value="venue">स्थान / आयोजन स्थल</option>
+                        <option value="catering">भोजन / कैटरिंग</option>
+                        <option value="attire">शादी के वस्त्र</option>
+                        <option value="photography">फोटोग्राफी & वीडियोग्राफी</option>
+                        <option value="financial">वित्तीय सहायता</option>
+                        <option value="other">अन्य</option>
+                    </select>
+                </div>
+    
+                <!-- Explanation (Why we should help you) -->
+                <div>
+                    <label class="block text-sm font-medium mb-2" style="color:#7f1d1d;">हमें आपकी सहायता क्यों करनी चाहिए?</label>
+                    <textarea name="message" rows="5" required
+                              class="w-full px-4 py-3 rounded-xl border focus:outline-none"
+                              style="border-color:#f5e6c8; background:#fffaf1;"
+                              placeholder="अपनी स्थिति, आर्थिक पृष्ठभूमि, और किस प्रकार की सहायता चाहिए – संक्षेप में लिखें।"></textarea>
+                    <p class="text-xs mt-2" style="color:#7f1d1d;">कृपया स्पष्ट और ईमानदारी से विवरण लिखें ताकि आपकी मदद शीघ्र और सही ढंग से की जा सके।</p>
+                </div>
+    
+                <!-- Decorative wedding placeholders -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="rounded-xl p-4 text-center" style="background:#fff5e6; border:1px solid #f5e6c8;">
+                        <i class="fas fa-dove text-2xl" style="color:#7f1d1d;"></i>
+                        <div class="mt-2 text-sm" style="color:#7f1d1d;">आशीर्वाद और शांति</div>
+                    </div>
+                    <div class="rounded-xl p-4 text-center" style="background:#fff5e6; border:1px solid #f5e6c8;">
+                        <i class="fas fa-gifts text-2xl" style="color:#7f1d1d;"></i>
+                        <div class="mt-2 text-sm" style="color:#7f1d1d;">सामुदायिक सहयोग</div>
+                    </div>
+                </div>
+    
+                <!-- Actions -->
+                <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                    <button type="submit" class="flex-1 px-6 py-3 rounded-xl text-white font-semibold shadow"
+                            style="background:#7f1d1d; box-shadow: 0 8px 24px rgba(127,29,29,0.2);">
+                        <i class="fas fa-paper-plane mr-2"></i>आवेदन भेजें
+                    </button>
+                    <button type="button" id="cancelMarriageProgram" class="flex-1 px-6 py-3 rounded-xl font-semibold"
+                            style="background:#fff5e6; color:#7f1d1d; border:1px solid #f5e6c8;">
+                        <i class="fas fa-times mr-2"></i>रद्द करें
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Join Our Mission Modal -->
+    <div id="joinMissionModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl transform transition-all duration-300 scale-95 opacity-0 relative" id="joinMissionModalContent">
+            <!-- Close Button -->
+            <button id="closeJoinModal" class="absolute top-4 right-4 z-20 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 group cursor-pointer" onclick="closeJoinModal()">
+                <i class="fas fa-times text-gray-600 group-hover:text-gray-800 text-lg"></i>
+            </button>
+            
+            <!-- Modal Header -->
+            <div class="bg-gradient-to-r from-blue-600 to-green-600 text-white p-8 text-center">
+                <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-heart text-white text-3xl"></i>
+                </div>
+                <h2 class="text-3xl font-bold mb-2">Join Our Mission</h2>
+                <p class="text-white/90 text-lg">हमारे मिशन में शामिल हों</p>
+                <p class="text-white/80 mt-2">Be a part of positive change in society</p>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="p-8 overflow-y-auto max-h-[calc(90vh-200px)]">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">How You Can Help</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Join us in creating meaningful change in Gonda, Uttar Pradesh. There are many ways you can contribute to our mission.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <!-- Volunteer -->
+                    <div class="bg-blue-50 rounded-2xl p-6 text-center">
+                        <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-hands-helping text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Volunteer</h4>
+                        <p class="text-gray-600 text-sm mb-4">Join our field activities and help directly in the community</p>
+                        <div class="text-sm text-blue-600 font-semibold">Time Commitment: Flexible</div>
+                    </div>
+                    
+                    <!-- Donate -->
+                    <div class="bg-green-50 rounded-2xl p-6 text-center">
+                        <div class="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-donate text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Donate</h4>
+                        <p class="text-gray-600 text-sm mb-4">Support our programs with financial contributions</p>
+                        <div class="text-sm text-green-600 font-semibold">Any Amount Welcome</div>
+                    </div>
+                    
+                    <!-- Spread Awareness -->
+                    <div class="bg-orange-50 rounded-2xl p-6 text-center">
+                        <div class="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-share-alt text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Spread Awareness</h4>
+                        <p class="text-gray-600 text-sm mb-4">Share our work on social media and with your network</p>
+                        <div class="text-sm text-orange-600 font-semibold">Free & Easy</div>
+                    </div>
+                    
+                    <!-- Partner -->
+                    <div class="bg-purple-50 rounded-2xl p-6 text-center">
+                        <div class="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-handshake text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Partner</h4>
+                        <p class="text-gray-600 text-sm mb-4">Collaborate with us for larger impact projects</p>
+                        <div class="text-sm text-purple-600 font-semibold">Long-term Partnership</div>
+                    </div>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="bg-gray-50 rounded-2xl p-6 mb-6">
+                    <h4 class="text-xl font-bold text-gray-900 mb-4 text-center">Get in Touch</h4>
+                    <div class="grid md:grid-cols-2 gap-4 mb-4">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-3">
+                                <i class="fas fa-phone text-blue-600"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-900">Call Us</div>
+                                <a href="tel:+919696525287" class="text-blue-600 hover:underline">+91 96965 25287</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mr-3">
+                                <i class="fas fa-envelope text-green-600"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-900">Email Us</div>
+                                <a href="mailto:yuvaafoundationn@gmail.com" class="text-green-600 hover:underline">yuvaafoundationn@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Address -->
+                    <div class="flex items-center justify-center mt-4">
+                        <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mr-3">
+                            <i class="fas fa-map-marker-alt text-orange-600"></i>
+                        </div>
+                        <div class="text-center">
+                            <div class="font-semibold text-gray-900">Visit Us</div>
+                            <div class="text-orange-600">Nawabganj, Gonda, Uttar Pradesh</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Social Media -->
+                <div class="bg-gradient-to-r from-blue-50 to-green-50 rounded-2xl p-6 mb-6">
+                    <h4 class="text-xl font-bold text-gray-900 mb-4 text-center">Follow Us</h4>
+                    <p class="text-gray-600 text-center mb-4">Stay connected with our latest updates</p>
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <a href="https://www.facebook.com/people/YUVA-PRENA-foundation/61576672051265" 
+                           class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 flex items-center" 
+                           target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook-f mr-2"></i>Facebook
+                        </a>
+                        <a href="https://www.instagram.com/yuvaa_foundation/?utm_source=qr&igsh=ZTc4cmM0YWdkb3Rp#" 
+                           class="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 flex items-center" 
+                           target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram mr-2"></i>Instagram
+                        </a>
+                        <a href="https://wa.me/919696525287" 
+                           class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 flex items-center" 
+                           target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="tel:+919696525287" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 text-center transform hover:scale-105 shadow-lg">
+                        <i class="fas fa-phone mr-2"></i>Call Now
+                    </a>
+                    <a href="mailto:yuvaafoundationn@gmail.com" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 text-center transform hover:scale-105 shadow-lg">
+                        <i class="fas fa-envelope mr-2"></i>Send Email
+                    </a>
+                    <a href="https://wa.me/919696525287" class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 text-center transform hover:scale-105 shadow-lg" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 
