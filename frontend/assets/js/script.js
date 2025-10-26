@@ -1392,11 +1392,11 @@ function setupFooterLinks() {
     const closeEmergency = document.getElementById('closeEmergency');
     const callEmergency = document.getElementById('callEmergency');
 
-    // Developer Contact - open Gmail
+    // Developer Contact - open website
     if (footerSupport) {
         footerSupport.addEventListener('click', (e) => {
             e.preventDefault();
-            window.location.href = 'mailto:divyanshsingharsh@gmail.com';
+            window.location.href = 'https://divyansh.codes/';
         });
     }
 

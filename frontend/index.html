@@ -13,13 +13,16 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <!-- EmailJS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/logo.png">
-    <link rel="apple-touch-icon" href="assets/images/logo.png">
-    <link rel="shortcut icon" href="assets/images/logo.png">
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Yuva Prerna Foundation" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
 </head>
 <body class="bg-neutral-50">
-    <!-- Navigation -->
+<!-- Navigation -->
     <nav class="bg-neutral-50 shadow-sm fixed w-full z-50 navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
@@ -83,7 +86,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+<!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 md:pt-24 pb-12" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);">
         <!-- Subtle background pattern -->
         <div class="absolute inset-0 opacity-5">
@@ -192,8 +195,9 @@
             </div>
         </div>
     </section>
+    
 
-    <!-- About Section -->
+<!-- About Section -->
     <section id="about" class="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Header -->
@@ -337,7 +341,7 @@
         </div>
     </section>
 
-    <!-- Activities Section -->
+<!-- Activities Section -->
     <section id="activities" class="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Header -->
@@ -494,10 +498,7 @@
         </div>
     </section>
 
-
-
-
-    <!-- Contact Section -->
+<!-- Contact Section -->
     <section id="contact" class="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Header -->
@@ -756,7 +757,7 @@
     </section>
 
 
-    <!-- Blog Section -->
+<!-- Blog Section -->
 <section id="blog" class="py-20 bg-white">
     <div class="container mx-auto px-4">
         <!-- Section Header -->
@@ -906,7 +907,7 @@
 </section>
 
 
-    <!-- Thank You Card Popup Modal -->
+<!-- Thank You Card Popup Modal -->
     <div id="thankYouModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 transform transition-all duration-300 scale-95 opacity-0" id="thankYouCard">
             <div class="p-8 text-center">
@@ -947,15 +948,16 @@
         </div>
     </div>
 
-    <!-- Join Feed: Thank You Cards (hidden for now) -->
+
+<!-- Join Feed: Thank You Cards (hidden for now) -->
     <section id="join-feed" class="py-10 z-20 hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div id="joinFeedContainer" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
         </div>
     </section>
 
-    <!-- Certificates Gallery Page (photos only) -->
-      <!-- Certificates Gallery Page -->
+
+<!-- Certificates Gallery Page (photos only) -->
     <div id="certificatesPage" class="hidden fixed inset-0 bg-white z-50 overflow-y-auto">
         <!-- Header -->
         <div class="bg-gradient-to-r from-blue-600 to-green-600 text-white py-8">
@@ -997,6 +999,7 @@
         </div>
     </div>
 
+
     <!-- Full Screen Image Modal -->
     <div id="fullImageModal" class="hidden fixed inset-0 bg-black bg-opacity-95 z-60 flex items-center justify-center p-4">
         <div class="relative max-w-7xl max-h-full w-full h-full flex items-center justify-center">
@@ -1026,6 +1029,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
@@ -1094,11 +1098,12 @@
             
             <div class="border-t border-gray-800 mt-8 pt-8 text-center">
                 <p class="text-gray-400">
-                    © 2024 युवा प्रेरणा फाउंडेशन (Yuva Prerna Foundation). All rights reserved.
+                    © 2025 युवा प्रेरणा फाउंडेशन (Yuva Prerna Foundation). All rights reserved.
                 </p>
             </div>
         </div>
     </footer>
+
 
     <!-- Emergency Help Modal -->
     <div id="emergencyModal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4">
@@ -1131,6 +1136,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- Join Us Form Modal -->
     <div id="joinModal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4">
@@ -1231,6 +1237,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- Donate Popup Modal -->
     <div id="donateModal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-start justify-center p-4 overflow-y-auto">
