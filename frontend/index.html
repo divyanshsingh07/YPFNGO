@@ -49,7 +49,36 @@
 <body class="bg-neutral-50">
 <!-- Navigation -->
     <nav class="bg-neutral-50 shadow-sm fixed w-full z-50 navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Topbar -->
+        <div id="topbar" class="bg-indigo-900 text-white transform transition-transform duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-10 text-xs sm:text-sm">
+                    <div class="flex items-center space-x-2 sm:space-x-3">
+                        <span class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Nawabganj, Gonda, U.P.</span>
+                        </span>
+                    </div>
+                    <div class="flex items-center space-x-2 sm:space-x-3">
+                        <button id="donateBtnTop" class="bg-orange-500 hover:bg-orange-600 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-semibold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all duration-300">
+                            <span>Donate</span>
+                            <i class="fas fa-heart ml-1 text-white"></i>
+                        </button>
+                        <span class="hidden sm:inline opacity-80 ml-1">Follow us:</span>
+                        <a href="https://www.facebook.com/people/YUVA-PRENA-foundation/61576672051265" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="hover:text-blue-300 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/yuvaa_foundation/?utm_source=qr&igsh=ZTc4cmM0YWdkb3Rp#" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="hover:text-pink-300 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/919696525287" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="hover:text-green-300 transition-colors">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mainbar" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
                     <a href="#home" class="logo flex items-center cursor-pointer hover:opacity-80 transition-opacity">
@@ -110,6 +139,8 @@
             </div>
         </div>
     </nav>
+    <!-- Spacer to avoid content being hidden behind fixed header -->
+    <div id="nav-spacer"></div>
 
 <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 md:pt-24 pb-12" style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);">
@@ -1686,8 +1717,44 @@
     </div>
 
     <script src="assets/js/script.js"></script>
-    
-    
+    <script>
+        (function() {
+            const topbar = document.getElementById('topbar');
+            const navbar = document.querySelector('nav.navbar');
+            const spacer = document.getElementById('nav-spacer');
+
+            let isTopbarHidden = false;
+            function setSpacerHeight() {
+                if (!navbar || !spacer) return;
+                const base = navbar.offsetHeight;
+                const topbarHeight = topbar ? topbar.offsetHeight : 0;
+                const adjusted = isTopbarHidden ? (base - topbarHeight) : base;
+                spacer.style.height = Math.max(0, adjusted) + 'px';
+            }
+
+            let lastScroll = window.scrollY;
+            function onScroll() {
+                const current = window.scrollY;
+                const scrollingDown = current > lastScroll;
+                if (topbar) {
+                    if (scrollingDown && current > 20) {
+                        topbar.style.transform = 'translateY(-100%)';
+                        isTopbarHidden = true;
+                    } else {
+                        topbar.style.transform = 'translateY(0)';
+                        isTopbarHidden = false;
+                    }
+                }
+                setSpacerHeight();
+                lastScroll = current;
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', setSpacerHeight);
+            window.addEventListener('load', setSpacerHeight);
+            setSpacerHeight();
+        })();
+    </script>
   
 </body>
 </html>

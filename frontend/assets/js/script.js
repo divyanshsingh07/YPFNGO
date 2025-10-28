@@ -48,6 +48,7 @@ function setupActivityCtaWiring() {
     const donateCTA = document.getElementById('donateCTA');
     const joinBtn = document.getElementById('joinUsBtn');
     const donateBtn = document.getElementById('donateBtn');
+    const donateBtnTop = document.getElementById('donateBtnTop');
     const marriageApplyBtn = document.getElementById('marriageApplyBtn');
     const joinMissionHeader = document.getElementById('joinMissionHeader');
     const massMarriageCard = document.getElementById('massMarriageCard');
@@ -61,6 +62,14 @@ function setupActivityCtaWiring() {
 
     if (donateCTA && donateBtn) {
         donateCTA.addEventListener('click', (e) => {
+            e.preventDefault();
+            donateBtn.click();
+        });
+    }
+
+    // Topbar donate mirrors primary donate behavior
+    if (donateBtnTop && donateBtn) {
+        donateBtnTop.addEventListener('click', (e) => {
             e.preventDefault();
             donateBtn.click();
         });
@@ -770,12 +779,10 @@ function setupJoinUsModal() {
     
     if (!joinBtn || !joinModal) return;
     
-    // Open modal
+    // Open Google Form in new tab
     joinBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        joinModal.classList.remove('hidden');
-        joinModal.classList.add('modal-enter');
-        document.body.style.overflow = 'hidden';
+        window.open('https://forms.gle/o4p9sZwVBh13cu8m9', '_blank', 'noopener,noreferrer');
     });
     
     // Close modal functions
