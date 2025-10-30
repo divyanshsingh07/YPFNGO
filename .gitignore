@@ -7,6 +7,7 @@ Icon
 # Node / tooling
 node_modules/
 .npm/
+.npm-cache/
 .pnpm-store/
 package-lock.json
 pnpm-lock.yaml
@@ -36,3 +37,6 @@ yarn-error.log*
 
 # Misc
 *.local
+
+# Project-specific
+frontend/assets/images.backup/
