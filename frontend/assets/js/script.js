@@ -25,7 +25,6 @@ function initializeWebsite() {
     setupActivityGallery();
     setupActivityCtaWiring();
     setupFooterLinks();
-    setupCertificatesGallery();
     setupBlogPages();
     setupScrollAnimations();
     setupParallaxAnimations();
@@ -43,6 +42,8 @@ function initializeWebsite() {
 function isAnimationsDisabled() {
     return document.documentElement.classList.contains('disable-animations');
 }
+
+// (Removed) certificate image modal utilities
 
 // Wire Activity CTA buttons to existing modals
 function setupActivityCtaWiring() {
@@ -385,10 +386,10 @@ const galleryData = {
         mainTitle: "Free Medical Treatment Program",
         description: "Our medical care initiative provides comprehensive healthcare services to underprivileged communities. We operate mobile clinics, organize health camps, and ensure access to essential medicines and treatments for those who cannot afford them. Our team of qualified doctors and medical professionals volunteer their time to serve the community.",
         images: [
-            "assets/images/activities/p2.jpeg",
-            "assets/images/activities/p3.jpeg",
-            "assets/images/activities/p4.jpeg",
-            "assets/images/activities/p5.jpeg"
+            "assets/images.optimized/p2.jpeg",
+            "assets/images.optimized/p3.jpeg",
+            "assets/images.optimized/p4.jpeg",
+            "assets/images.optimized/p5.jpeg"
         ],
         stats: [
             { number: "500+", label: "Patients Treated" },
@@ -403,10 +404,10 @@ const galleryData = {
         mainTitle: "Animal Rescue & Care Program",
         description: "Our animal care program focuses on rescuing stray, injured, and abandoned animals. We provide medical treatment, shelter, and rehabilitation services. Our team works tirelessly to ensure every animal receives the care and love they deserve, promoting animal welfare in our communities.",
         images: [
-            "assets/images/activities/an1.png",
-            "assets/images/activities/Screenshot 2025-09-10 at 7.10.43 PM.png",
-            "assets/images/activities/Screenshot 2025-09-10 at 7.10.52 PM.png",
-            "assets/images/activities/Screenshot 2025-09-10 at 7.11.05 PM.png"
+            "assets/images.optimized/an1.png",
+            "assets/images.optimized/Screenshot 2025-09-10 at 7.10.43 PM.png",
+            "assets/images.optimized/Screenshot 2025-09-10 at 7.10.52 PM.png",
+            "assets/images.optimized/Screenshot 2025-09-10 at 7.11.05 PM.png"
         ],
         stats: [
             { number: "200+", label: "Animals Rescued" },
@@ -421,10 +422,10 @@ const galleryData = {
         mainTitle: "Emergency Food Distribution",
         description: "During natural disasters and emergencies, we provide essential food supplies to affected communities. Our food distribution program ensures that no one goes hungry during difficult times. We work with local authorities and volunteers to reach the most vulnerable populations.",
         images: [
-            "assets/images/activities/fd1.png",
-            "assets/images/activities/fd2.png",
-            "assets/images/activities/fd3.png",
-            "assets/images/activities/fd4.jpeg"
+            "assets/images.optimized/fd1.png",
+            "assets/images.optimized/fd2.png",
+            "assets/images.optimized/fd3.png",
+            "assets/images.optimized/fd4.jpeg"
         ],
         stats: [
             { number: "1000+", label: "Meals Served" },
@@ -439,10 +440,10 @@ const galleryData = {
         mainTitle: "Community Development Program",
         description: "Our community service initiatives focus on education, skill development, and social welfare. We organize workshops, provide educational support, and work towards creating sustainable development in rural and urban communities. Our goal is to empower individuals and strengthen community bonds.",
         images: [
-            "assets/images/activities/p6.jpeg",
-            "assets/images/activities/p7.jpeg",
-            "assets/images/activities/p10.jpeg",
-            "assets/images/activities/p11.jpeg"
+            "assets/images.optimized/p6.jpeg",
+            "assets/images.optimized/p7.jpeg",
+            "assets/images.optimized/p10.jpeg",
+            "assets/images.optimized/p11.jpeg"
         ],
         stats: [
             { number: "50+", label: "Communities Served" },
@@ -481,12 +482,11 @@ function setupImageGallery() {
     if (!sliderContainer) return;
     
     // Build list of local images from all available folders
-    const plantationImages = ['p2.jpeg','p3.jpeg','p4.jpeg','p5.jpeg','p6.jpeg','p7.jpeg','p10.jpeg','p11.jpeg','p12.jpeg','p13.jpeg','p14.jpeg'].map(f => `assets/images/activities/${f}`);
-    const foodDistributionImages = ['fd1.png','fd2.png','fd3.png','fd4.jpeg'].map(f => `assets/images/activities/${f}`);
-    const animalImages = ['an1.png','Screenshot 2025-09-10 at 7.10.43 PM.png','Screenshot 2025-09-10 at 7.10.52 PM.png','Screenshot 2025-09-10 at 7.11.05 PM.png'].map(f => `assets/images/activities/${f}`);
-    const newspaperImages = ['n1.jpeg','n2.jpeg','n3.jpeg','n4.jpeg','n5.jpeg','n6.jpeg'].map(f => `assets/images/newspaper/${f}`);
-    const achievementImages = ['Ach2.png','Ach3.png','Ach4.png'].map(f => `assets/images/achievements/${f}`);
-    const certificateImages = ['certificate.jpeg'].map(f => `assets/images/certificates/${f}`);
+    const plantationImages = ['p2.jpeg','p3.jpeg','p4.jpeg','p5.jpeg','p6.jpeg','p7.jpeg','p10.jpeg','p11.jpeg','p12.jpeg','p13.jpeg','p14.jpeg'].map(f => `assets/images.optimized/${f}`);
+    const foodDistributionImages = ['fd1.png','fd2.png','fd3.png','fd4.jpeg'].map(f => `assets/images.optimized/${f}`);
+    const animalImages = ['an1.png','Screenshot 2025-09-10 at 7.10.43 PM.png','Screenshot 2025-09-10 at 7.10.52 PM.png','Screenshot 2025-09-10 at 7.11.05 PM.png'].map(f => `assets/images.optimized/${f}`);
+    const newspaperImages = ['n1.jpeg','n2.jpeg','n3.jpeg','n4.jpeg','n5.jpeg','n6.jpeg'].map(f => `assets/images.optimized/${f}`);
+    const achievementImages = ['Ach2.png','Ach3.png','Ach4.png'].map(f => `assets/images.optimized/${f}`);
     const generalImages = ['Ach1.png','qr.jpeg'].map(f => `assets/images/general/${f}`);
     
     const allImages = [
@@ -495,7 +495,6 @@ function setupImageGallery() {
         ...animalImages,
         ...achievementImages,
         ...newspaperImages,
-        ...certificateImages,
         ...generalImages,
     ];
     
@@ -1195,9 +1194,9 @@ const activityPhotos = {
         stats2: "25+",
         stats2Label: "Medical Camps",
         photos: [
-            "assets/images/achievements/Ach2.png",
-            "assets/images/achievements/Ach3.png",
-            "assets/images/achievements/Ach4.png"
+            "assets/images.optimized/Ach2.png",
+            "assets/images.optimized/Ach3.png",
+            "assets/images.optimized/Ach4.png"
         ]
     },
     animal: {
@@ -1216,9 +1215,9 @@ const activityPhotos = {
         photos: [
             "assets/images/activities/an1.png",
             
-            "assets/images/activities/Screenshot 2025-09-10 at 7.10.43 PM.png",
-            "assets/images/activities/Screenshot 2025-09-10 at 7.10.52 PM.png",
-            "assets/images/activities/Screenshot 2025-09-10 at 7.11.05 PM.png"
+            "assets/images.optimized/an2.png",
+            "assets/images.optimized/an3.png",
+            "assets/images.optimized/an4.png"
         ]
     },
     food: {
@@ -1475,155 +1474,7 @@ function setupFooterLinks() {
     });
 }
 
-// Certificates Gallery (photos-only)
-function setupCertificatesGallery() {
-    const openBtn = document.getElementById('viewAllCertificatesBtn');
-    const page = document.getElementById('certificatesPage');
-    const closeBtn = document.getElementById('closeCertificates');
-    const backBtn = document.getElementById('backFromCertificates');
-    const grid = document.getElementById('certificatesGrid');
-
-    // Full screen image modal elements
-    const fullImageModal = document.getElementById('fullImageModal');
-    const fullImage = document.getElementById('fullImage');
-    const closeFullImage = document.getElementById('closeFullImage');
-    const prevImage = document.getElementById('prevImage');
-    const nextImage = document.getElementById('nextImage');
-    const imageCounter = document.getElementById('imageCounter');
-
-    if (!openBtn || !page || !grid) return;
-
-    let currentImageIndex = 0;
-    let certificateImages = [];
-
-    // Reuse award images from the cards in the contact section if present; otherwise use fallbacks
-    function getCertificateImages() {
-        // Use local certificate, achievement, activity, and newspaper images
-        return [
-            'assets/images/certificates/certificate.jpeg',
-            'assets/images/achievements/Ach2.png',
-            'assets/images/achievements/Ach3.png',
-            'assets/images/achievements/Ach4.png',
-            'assets/images/activities/p2.jpeg',
-            'assets/images/activities/p3.jpeg',
-            'assets/images/activities/p4.jpeg',
-            'assets/images/activities/p5.jpeg',
-            'assets/images/activities/fd1.png',
-            'assets/images/activities/fd2.png',
-            'assets/images/activities/an1.png',
-            'assets/images/newspaper/n1.jpeg',
-            'assets/images/newspaper/n2.jpeg',
-            'assets/images/newspaper/n3.jpeg',
-            'assets/images/newspaper/n4.jpeg',
-            'assets/images/newspaper/n5.jpeg',
-            'assets/images/newspaper/n6.jpeg'
-        ];
-    }
-
-    function populateGrid() {
-        certificateImages = getCertificateImages();
-        grid.innerHTML = '';
-        certificateImages.forEach((src, i) => {
-            const item = document.createElement('div');
-            item.className = 'certificate-card';
-            item.innerHTML = `<img src="${src}" alt="Certificate ${i + 1}" loading="lazy">`;
-            
-            // Add click event to open full screen
-            item.addEventListener('click', () => {
-                openFullImage(i);
-            });
-            
-            grid.appendChild(item);
-        });
-    }
-
-    function openPage() {
-        populateGrid();
-        page.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closePage() {
-        page.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-    }
-
-    function openFullImage(index) {
-        currentImageIndex = index;
-        fullImage.src = certificateImages[currentImageIndex];
-        fullImage.alt = `Certificate ${currentImageIndex + 1}`;
-        updateImageCounter();
-        fullImageModal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeFullImageModal() {
-        fullImageModal.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-    }
-
-    function showNextImage() {
-        currentImageIndex = (currentImageIndex + 1) % certificateImages.length;
-        fullImage.src = certificateImages[currentImageIndex];
-        fullImage.alt = `Certificate ${currentImageIndex + 1}`;
-        updateImageCounter();
-    }
-
-    function showPrevImage() {
-        currentImageIndex = (currentImageIndex - 1 + certificateImages.length) % certificateImages.length;
-        fullImage.src = certificateImages[currentImageIndex];
-        fullImage.alt = `Certificate ${currentImageIndex + 1}`;
-        updateImageCounter();
-    }
-
-    function updateImageCounter() {
-        imageCounter.textContent = `${currentImageIndex + 1} / ${certificateImages.length}`;
-    }
-
-    // Event listeners for certificates page
-    openBtn.addEventListener('click', openPage);
-    if (closeBtn) closeBtn.addEventListener('click', closePage);
-    if (backBtn) backBtn.addEventListener('click', closePage);
-
-    // Event listeners for full screen image modal
-    if (closeFullImage) closeFullImage.addEventListener('click', closeFullImageModal);
-    if (prevImage) prevImage.addEventListener('click', showPrevImage);
-    if (nextImage) nextImage.addEventListener('click', showNextImage);
-
-    // Close on backdrop click
-    page.addEventListener('click', (e) => {
-        if (e.target === page) closePage();
-    });
-
-    // Close full screen modal on backdrop click
-    if (fullImageModal) {
-        fullImageModal.addEventListener('click', (e) => {
-            if (e.target === fullImageModal) closeFullImageModal();
-        });
-    }
-
-    // Escape key close
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            if (!fullImageModal.classList.contains('hidden')) {
-                closeFullImageModal();
-            } else if (!page.classList.contains('hidden')) {
-                closePage();
-            }
-        }
-    });
-
-    // Keyboard navigation for full screen images
-    document.addEventListener('keydown', (e) => {
-        if (!fullImageModal.classList.contains('hidden')) {
-            if (e.key === 'ArrowLeft') {
-                showPrevImage();
-            } else if (e.key === 'ArrowRight') {
-                showNextImage();
-            }
-        }
-    });
-}
+// (Removed) certificates gallery logic
 
 // Add CSS for reveal animation
 const style = document.createElement('style');
@@ -1917,7 +1768,7 @@ function setupBlogPages() {
         mission: {
             title: 'Building Hope and Empowering Lives – Yuva Prerna Foundation',
             subtitle: 'आशा और सशक्त जीवन की ओर – युवा प्रेरणा फाउंडेशन',
-            hero: './assets/images/activities/p5.jpeg',
+            hero: './assets/images.optimized/p5.jpeg',
             paragraphs: [
                 '<h3 class="text-2xl font-bold text-gray-800 mb-4">Our Mission: Creating Positive Change in Every Life</h3>',
                 'At Yuva Prerna Foundation, our mission is to bring long-term positive change in the lives of people through coordinated efforts in education, healthcare, food distribution, disaster relief, and social welfare. We aim to ensure that every individual can live with dignity and hope.',
@@ -1939,7 +1790,7 @@ function setupBlogPages() {
         vision: {
             title: 'Envisioning a Compassionate Future – Yuva Prerna Foundation',
             subtitle: 'एक करुणामय भविष्य की कल्पना – युवा प्रेरणा फाउंडेशन',
-            hero: './assets/images/newspaper/n4.jpeg',
+            hero: './assets/images.optimized/n4.jpeg',
             paragraphs: [
                 '<h3 class="text-2xl font-bold text-gray-800 mb-4">Our Vision: A Compassionate Society for Every Human and Animal</h3>',
                 'At Yuva Prerna Foundation, we envision a world where every individual, regardless of their background, has equal opportunities to thrive. Our vision extends beyond immediate assistance to creating lasting, systemic change that empowers communities and builds a more just society.',
@@ -1961,7 +1812,7 @@ function setupBlogPages() {
         values: {
             title: 'Our Core Values – Yuva Prerna Foundation',
             subtitle: 'हमारे मूल मूल्य – युवा प्रेरणा फाउंडेशन',
-            hero: './assets/images/activities/p2.jpeg',
+            hero: './assets/images.optimized/p2.jpeg',
             paragraphs: [
                 '<h3 class="text-2xl font-bold text-gray-800 mb-4">Our Core Values: Compassion, Integrity, Service, and Unity</h3>',
                 'At Yuva Prerna Foundation, our values are the fundamental principles that guide every decision we make and every action we take. These core values shape our approach to social work and ensure that we remain true to our mission of creating positive change in society.',
