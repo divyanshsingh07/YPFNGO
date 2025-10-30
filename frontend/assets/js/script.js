@@ -35,6 +35,8 @@ function initializeWebsite() {
     setupShareWorkButtons();
     setupEmergencyHelp();
     setupMarriageProgramModal();
+    setupMVCardsSlider();
+    setupBlogCardsSlider();
 }
 
 // Helper: check if animations are disabled via HTML class
@@ -2767,4 +2769,320 @@ function setupShareWorkButtons() {
             });
         }
     });
+}
+
+// Mission, Vision, Values Cards Slider for Mobile
+function setupMVCardsSlider() {
+    const track = document.getElementById('mvCardsTrack');
+    const prevBtn = document.getElementById('mvCardsPrev');
+    const nextBtn = document.getElementById('mvCardsNext');
+    const dots = document.querySelectorAll('.mvCardsDot');
+    
+    if (!track || !prevBtn || !nextBtn || dots.length === 0) {
+        console.log('MV Cards slider elements not found');
+        return;
+    }
+    
+    let currentIndex = 0;
+    const totalCards = 3;
+    
+    // Update slider position
+    function updateSlider() {
+        const translateX = -currentIndex * 100;
+        track.style.transform = `translateX(${translateX}%)`;
+        
+        // Update dots
+        dots.forEach((dot, index) => {
+            if (index === currentIndex) {
+                dot.classList.remove('bg-gray-300');
+                dot.classList.add('bg-blue-600');
+            } else {
+                dot.classList.remove('bg-blue-600');
+                dot.classList.add('bg-gray-300');
+            }
+        });
+        
+        // Update button states
+        prevBtn.style.opacity = currentIndex === 0 ? '0.3' : '0.8';
+        nextBtn.style.opacity = currentIndex === totalCards - 1 ? '0.3' : '0.8';
+    }
+    
+    // Next slide
+    function nextSlide() {
+        if (currentIndex < totalCards - 1) {
+            currentIndex++;
+            updateSlider();
+        }
+    }
+    
+    // Previous slide
+    function prevSlide() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
+        }
+    }
+    
+    // Event listeners
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    
+    // Dot navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            updateSlider();
+        });
+    });
+    
+    // Touch/Swipe support
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+    
+    track.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        startX = e.touches[0].clientX;
+    });
+    
+    track.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        currentX = e.touches[0].clientX;
+    });
+    
+    track.addEventListener('touchend', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        
+        const diffX = startX - currentX;
+        const threshold = 50; // Minimum swipe distance
+        
+        if (Math.abs(diffX) > threshold) {
+            if (diffX > 0 && currentIndex < totalCards - 1) {
+                nextSlide();
+            } else if (diffX < 0 && currentIndex > 0) {
+                prevSlide();
+            }
+        }
+    });
+    
+    // Mouse drag support
+    let mouseStartX = 0;
+    let mouseCurrentX = 0;
+    let isMouseDragging = false;
+    
+    track.addEventListener('mousedown', (e) => {
+        isMouseDragging = true;
+        mouseStartX = e.clientX;
+    });
+    
+    track.addEventListener('mousemove', (e) => {
+        if (!isMouseDragging) return;
+        mouseCurrentX = e.clientX;
+    });
+    
+    track.addEventListener('mouseup', () => {
+        if (!isMouseDragging) return;
+        isMouseDragging = false;
+        
+        const diffX = mouseStartX - mouseCurrentX;
+        const threshold = 50;
+        
+        if (Math.abs(diffX) > threshold) {
+            if (diffX > 0 && currentIndex < totalCards - 1) {
+                nextSlide();
+            } else if (diffX < 0 && currentIndex > 0) {
+                prevSlide();
+            }
+        }
+    });
+    
+    // Auto-play (optional)
+    let autoSlideInterval;
+    
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(() => {
+            if (currentIndex < totalCards - 1) {
+                nextSlide();
+            } else {
+                currentIndex = 0;
+                updateSlider();
+            }
+        }, 4000); // Change slide every 4 seconds
+    }
+    
+    function stopAutoSlide() {
+        if (autoSlideInterval) {
+            clearInterval(autoSlideInterval);
+        }
+    }
+    
+    // Start auto-slide
+    startAutoSlide();
+    
+    // Pause on hover/interaction
+    track.addEventListener('mouseenter', stopAutoSlide);
+    track.addEventListener('mouseleave', startAutoSlide);
+    track.addEventListener('touchstart', stopAutoSlide);
+    
+    // Initialize
+    updateSlider();
+}
+
+// Blog Cards Slider for Mobile
+function setupBlogCardsSlider() {
+    const track = document.getElementById('blogCardsTrack');
+    const prevBtn = document.getElementById('blogCardsPrev');
+    const nextBtn = document.getElementById('blogCardsNext');
+    const dots = document.querySelectorAll('.blogCardsDot');
+    
+    if (!track || !prevBtn || !nextBtn || dots.length === 0) {
+        console.log('Blog Cards slider elements not found');
+        return;
+    }
+    
+    let currentIndex = 0;
+    const totalCards = 3;
+    
+    // Update slider position
+    function updateSlider() {
+        const translateX = -currentIndex * 100;
+        track.style.transform = `translateX(${translateX}%)`;
+        
+        // Update dots
+        dots.forEach((dot, index) => {
+            if (index === currentIndex) {
+                dot.classList.remove('bg-gray-300');
+                dot.classList.add('bg-blue-600');
+            } else {
+                dot.classList.remove('bg-blue-600');
+                dot.classList.add('bg-gray-300');
+            }
+        });
+        
+        // Update button states
+        prevBtn.style.opacity = currentIndex === 0 ? '0.3' : '0.8';
+        nextBtn.style.opacity = currentIndex === totalCards - 1 ? '0.3' : '0.8';
+    }
+    
+    // Next slide
+    function nextSlide() {
+        if (currentIndex < totalCards - 1) {
+            currentIndex++;
+            updateSlider();
+        }
+    }
+    
+    // Previous slide
+    function prevSlide() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
+        }
+    }
+    
+    // Event listeners
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    
+    // Dot navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            updateSlider();
+        });
+    });
+    
+    // Touch/Swipe support
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+    
+    track.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        startX = e.touches[0].clientX;
+    });
+    
+    track.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        currentX = e.touches[0].clientX;
+    });
+    
+    track.addEventListener('touchend', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        
+        const diffX = startX - currentX;
+        const threshold = 50; // Minimum swipe distance
+        
+        if (Math.abs(diffX) > threshold) {
+            if (diffX > 0 && currentIndex < totalCards - 1) {
+                nextSlide();
+            } else if (diffX < 0 && currentIndex > 0) {
+                prevSlide();
+            }
+        }
+    });
+    
+    // Mouse drag support
+    let mouseStartX = 0;
+    let mouseCurrentX = 0;
+    let isMouseDragging = false;
+    
+    track.addEventListener('mousedown', (e) => {
+        isMouseDragging = true;
+        mouseStartX = e.clientX;
+    });
+    
+    track.addEventListener('mousemove', (e) => {
+        if (!isMouseDragging) return;
+        mouseCurrentX = e.clientX;
+    });
+    
+    track.addEventListener('mouseup', () => {
+        if (!isMouseDragging) return;
+        isMouseDragging = false;
+        
+        const diffX = mouseStartX - mouseCurrentX;
+        const threshold = 50;
+        
+        if (Math.abs(diffX) > threshold) {
+            if (diffX > 0 && currentIndex < totalCards - 1) {
+                nextSlide();
+            } else if (diffX < 0 && currentIndex > 0) {
+                prevSlide();
+            }
+        }
+    });
+    
+    // Auto-play (optional)
+    let autoSlideInterval;
+    
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(() => {
+            if (currentIndex < totalCards - 1) {
+                nextSlide();
+            } else {
+                currentIndex = 0;
+                updateSlider();
+            }
+        }, 4000); // Change slide every 4 seconds
+    }
+    
+    function stopAutoSlide() {
+        if (autoSlideInterval) {
+            clearInterval(autoSlideInterval);
+        }
+    }
+    
+    // Start auto-slide
+    startAutoSlide();
+    
+    // Pause on hover/interaction
+    track.addEventListener('mouseenter', stopAutoSlide);
+    track.addEventListener('mouseleave', startAutoSlide);
+    track.addEventListener('touchstart', stopAutoSlide);
+    
+    // Initialize
+    updateSlider();
 }
